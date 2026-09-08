@@ -13,13 +13,15 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-08-prefix-v5"
+APP_VERSION = "2026-09-08-ttx-v6"
 START_TEXT = (
     "Справка по характеристикам Korting.\n\n"
-    "Напишите модель и свойство, например:\n"
+    "Одно свойство:\n"
     "длина шнура OKB 792\n"
     "шнур OKB 792\n"
-    "глубина KMI 720"
+    "глубина KMI 720\n\n"
+    "Все характеристики модели:\n"
+    "ТТХ OKB 792 CFN"
 )
 
 TOKEN_ENV_NAMES = ("TELEGRAM_BOT_TOKEN", "TELEGRAM_TOKEN", "BOT_TOKEN", "TG_TOKEN")
@@ -31,6 +33,21 @@ def _token() -> str:
         if val:
             return val
     return ""
+
+
+def _reply_chunks(text: str, limit: int = 4000) -> list[str]:
+    chunks: list[str] = []
+    rest = text or ""
+    while rest:
+        if len(rest) <= limit:
+            chunks.append(rest)
+            break
+        cut = rest.rfind("\n", 0, limit)
+        if cut < limit // 2:
+            cut = limit
+        chunks.append(rest[:cut])
+        rest = rest[cut:].lstrip("\n")
+    return chunks
 
 
 def _run_cli(argv: list[str]) -> int:
@@ -65,17 +82,25 @@ def _run_telegram(token: str) -> int:
         if update.message:
             await update.message.reply_text(START_TEXT)
 
+    async def _reply(update: Update, text: str) -> None:
+        if not update.message:
+            return
+        for chunk in _reply_chunks(text):
+            await update.message.reply_text(chunk)
+
+    async def on_ttx(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        if not update.message:
+            return
+        model = " ".join(context.args or []).strip()
+        await _reply(update, answer_query("ТТХ " + model if model else "ТТХ"))
+
     async def on_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         if not update.message:
             return
         text = (update.message.text or "").strip()
         if not text:
             return
-        reply = answer_query(text)
-        while reply:
-            chunk = reply[:4000]
-            reply = reply[4000:]
-            await update.message.reply_text(chunk)
+        await _reply(update, answer_query(text))
 
     app = (
         Application.builder()
@@ -85,6 +110,7 @@ def _run_telegram(token: str) -> int:
     )
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", start))
+    app.add_handler(CommandHandler("ttx", on_ttx))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, on_text))
     app.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
     return 0

@@ -12,6 +12,11 @@ from .synonyms import Canon, SynonymIndex, alnum, load_synonyms, norm
 MSG_NO_PARAM = "такой параметр не представлен в базе данных"
 MSG_NO_DATA = "нет данных"
 MSG_NO_MODEL = "модель не найдена в базе данных"
+MSG_TTX_NEED_MODEL = "Укажите модель: ТТХ OKB 792 CFN"
+
+TTX_HEAD = re.compile(r"^(?:[/!])?(?:ттх|ttx)[\s:_\-]*", re.IGNORECASE)
+SKIP_TTX_FIELDS = {"видео", "привязка к цветам"}
+MAX_TTX_PRODUCTS = 8
 
 LATIN = "QWERTYUIOPASDFGHJKLZXCVBNM"
 CYR_ON_LATIN = "ЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ"
@@ -266,6 +271,76 @@ def _product_type_text(product: dict) -> str:
     return norm(f"{product.get('name') or ''} {product.get('category') or ''}")
 
 
+def _parse_ttx(query: str) -> str | None:
+    m = TTX_HEAD.match(query or "")
+    if not m:
+        return None
+    return (query or "")[m.end() :].strip()
+
+
+def _ttx_label(name: str) -> tuple[str, str]:
+    raw = (name or "").strip()
+    m = re.search(r"[\(（]([^\)）]+)[\)）]\s*$", raw)
+    unit = (m.group(1).strip() if m else "")
+    label = re.sub(r"\s*[\(（][^\)）]{0,40}[\)）]\s*$", "", raw).strip(" ,")
+    return label or raw, unit
+
+
+def _skip_ttx_field(name: str) -> bool:
+    n = norm(name)
+    if not n or n in SKIP_TTX_FIELDS:
+        return True
+    if n.startswith("им |") or n.startswith("им|"):
+        return True
+    return False
+
+
+def _ttx_value(raw: str, unit: str) -> str:
+    val = (raw or "").strip()
+    if not unit:
+        return val
+    if val.lower() in {"нет", "да"}:
+        return val
+    if val.lower().endswith(unit.lower()):
+        return val
+    return f"{val} {unit}".strip()
+
+
+def _dump_product(product: dict) -> str:
+    model = (product.get("model") or "").strip()
+    name = (product.get("name") or "").strip()
+    lines = [model] if model else []
+    if name and name != model:
+        lines.append(name)
+    params = product.get("params") or {}
+    for fname, raw in params.items():
+        if _skip_ttx_field(fname) or _is_empty(raw):
+            continue
+        label, unit = _ttx_label(fname)
+        lines.append(f"{label}: {_ttx_value(raw, unit)}")
+    return "\n".join(lines)
+
+
+def _answer_ttx(model_query: str) -> str:
+    q = (model_query or "").strip()
+    if not q:
+        return MSG_TTX_NEED_MODEL
+    syn = load_synonyms()
+    index = load_index()
+    products, matched_key = find_products(q, index, syn)
+    leftover = _strip_model_from_query(q, matched_key) if matched_key else norm(q)
+    for w in syn.stop_words:
+        leftover = re.sub(rf"(^|\s){re.escape(w)}(\s|$)", " ", leftover)
+    leftover = norm(leftover)
+    products, leftover = _filter_type_words(products, leftover)
+    if not products:
+        return MSG_NO_MODEL
+    if len(products) > MAX_TTX_PRODUCTS:
+        return _list_models(products, "Уточните модель:")
+    blocks = [_dump_product(p) for p in sorted(products, key=lambda x: x.get("model") or "")]
+    return "\n\n".join(blocks)
+
+
 def _filter_type_words(products: list[dict], leftover: str) -> tuple[list[dict], str]:
     """Keep SKUs whose name/category contains leftover type words (камера, холодильник)."""
     if not products or not leftover:
@@ -292,6 +367,9 @@ def answer_query(query: str) -> str:
     q = (query or "").strip()
     if not q:
         return MSG_NO_MODEL
+    ttx_model = _parse_ttx(q)
+    if ttx_model is not None:
+        return _answer_ttx(ttx_model)
     syn = load_synonyms()
     index = load_index()
     products, matched_key = find_products(q, index, syn)

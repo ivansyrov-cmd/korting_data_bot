@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Собрать локальный индекс из YML. Запросы к сайту отсюда не ходят."""
+"""Собрать локальный индекс из YML."""
 from __future__ import annotations
 
 import json
+import tempfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -10,6 +11,19 @@ from urllib.request import Request, urlopen
 from .paths import CATALOG_PATH, DATA_DIR, YML_URL
 
 USER_AGENT = "KortingSpecsBot/1.0"
+
+
+def _writable_dir() -> Path:
+    for folder in (DATA_DIR, Path("/tmp/korting"), Path(tempfile.gettempdir()) / "korting"):
+        try:
+            folder.mkdir(parents=True, exist_ok=True)
+            probe = folder / ".write_test"
+            probe.write_text("ok", encoding="utf-8")
+            probe.unlink()
+            return folder
+        except OSError:
+            continue
+    return Path(tempfile.gettempdir())
 
 
 def download_yml(dest: Path, url: str = YML_URL) -> Path:
@@ -65,28 +79,16 @@ def save_catalog(data: dict, path: Path = CATALOG_PATH) -> Path:
     return path
 
 
-def ensure_catalog(path: Path = CATALOG_PATH) -> Path:
-    """Если каталога нет на диске (типично для деплоя без папки data) — собрать из YML."""
-    if path.is_file() and path.stat().st_size > 0:
-        return path
-    print(f"каталог не найден ({path}), скачиваю YML…", flush=True)
-    refresh_from_url(path)
-    return path
-
-
-def load_catalog(path: Path = CATALOG_PATH) -> dict:
-    ensure_catalog(path)
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
 def refresh_from_file(yml_path: Path, catalog_path: Path = CATALOG_PATH) -> dict:
     data = parse_yml(yml_path)
     save_catalog(data, catalog_path)
     return data
 
 
-def refresh_from_url(catalog_path: Path = CATALOG_PATH, yml_path: Path | None = None) -> dict:
-    yml_path = yml_path or (DATA_DIR / "feed.yml")
+def refresh_from_url(catalog_path: Path | None = None, yml_path: Path | None = None) -> dict:
+    folder = _writable_dir()
+    catalog_path = catalog_path or (folder / "catalog.json")
+    yml_path = yml_path or (folder / "feed.yml")
     download_yml(yml_path)
     data = refresh_from_file(yml_path, catalog_path)
     try:
@@ -94,3 +96,26 @@ def refresh_from_url(catalog_path: Path = CATALOG_PATH, yml_path: Path | None = 
     except OSError:
         pass
     return data
+
+
+def ensure_catalog(path: Path = CATALOG_PATH) -> Path:
+    if path.is_file() and path.stat().st_size > 0:
+        return path
+    dest = path
+    try:
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        probe = dest.parent / ".write_test"
+        probe.write_text("ok", encoding="utf-8")
+        probe.unlink()
+    except OSError:
+        dest = _writable_dir() / "catalog.json"
+        if dest.is_file() and dest.stat().st_size > 0:
+            return dest
+    print(f"catalog missing at {path}, downloading YML to {dest}", flush=True)
+    refresh_from_url(dest)
+    return dest
+
+
+def load_catalog(path: Path = CATALOG_PATH) -> dict:
+    resolved = ensure_catalog(path)
+    return json.loads(resolved.read_text(encoding="utf-8"))

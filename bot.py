@@ -13,6 +13,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index
 from korting_bot.synonyms import load_synonyms
 
+APP_VERSION = "2026-09-08-catalog-v3"
 START_TEXT = (
     "Справка по характеристикам Korting.\n\n"
     "Напишите модель и свойство, например:\n"
@@ -55,8 +56,10 @@ def _run_telegram(token: str) -> int:
     from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 
     async def post_init(application: Application) -> None:
+        print(f"korting bot {APP_VERSION}", flush=True)
         load_synonyms()
         load_index()
+        print("catalog ready", flush=True)
 
     async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         if update.message:
@@ -85,6 +88,7 @@ def _run_telegram(token: str) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     args = argv if argv is not None else sys.argv[1:]
+    print(f"korting bot {APP_VERSION}", flush=True)
     token = _token()
     if token:
         return _run_telegram(token)

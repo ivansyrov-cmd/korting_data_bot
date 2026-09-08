@@ -13,6 +13,11 @@ MSG_NO_PARAM = "такой параметр не представлен в ба�
 MSG_NO_DATA = "нет данных"
 MSG_NO_MODEL = "модель не найдена в базе данных"
 
+LATIN = "QWERTYUIOPASDFGHJKLZXCVBNM"
+CYR_ON_LATIN = "ЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ"
+RU_TO_EN = str.maketrans(CYR_ON_LATIN + CYR_ON_LATIN.lower(), LATIN + LATIN.lower())
+EN_TO_RU = str.maketrans(LATIN + LATIN.lower(), CYR_ON_LATIN + CYR_ON_LATIN.lower())
+
 EMPTY_VALUES = {"", "-", "—", "–", "−", "n/a", "na", "нет данных"}
 
 
@@ -33,7 +38,22 @@ class ProductIndex:
     products: list[dict]
     by_full: dict[str, list[dict]] = field(default_factory=dict)
     by_family: dict[str, list[dict]] = field(default_factory=dict)
+    by_prefix: dict[str, list[dict]] = field(default_factory=dict)
     full_keys: list[str] = field(default_factory=list)
+    prefixes: list[str] = field(default_factory=list)
+
+
+def _model_prefix(model: str) -> str:
+    m = re.match(r"^([A-Za-z]{1,6})\b", (model or "").strip())
+    return alnum(m.group(1)) if m else ""
+
+
+def _layout_variants(text: str) -> list[str]:
+    out = []
+    for variant in (text, text.translate(RU_TO_EN), text.translate(EN_TO_RU)):
+        if variant and variant not in out:
+            out.append(variant)
+    return out
 
 
 @lru_cache(maxsize=1)
@@ -42,6 +62,7 @@ def load_index() -> ProductIndex:
     products = data["products"]
     by_full: dict[str, list[dict]] = {}
     by_family: dict[str, list[dict]] = {}
+    by_prefix: dict[str, list[dict]] = {}
     for p in products:
         full = alnum(p.get("model") or "")
         if not full:
@@ -50,8 +71,19 @@ def load_index() -> ProductIndex:
         fam = family_key(p.get("model") or "")
         if fam:
             by_family.setdefault(fam, []).append(p)
+        pref = _model_prefix(p.get("model") or "")
+        if pref:
+            by_prefix.setdefault(pref, []).append(p)
     keys = sorted(by_full.keys(), key=len, reverse=True)
-    return ProductIndex(products=products, by_full=by_full, by_family=by_family, full_keys=keys)
+    prefixes = sorted(by_prefix.keys(), key=len, reverse=True)
+    return ProductIndex(
+        products=products,
+        by_full=by_full,
+        by_family=by_family,
+        by_prefix=by_prefix,
+        full_keys=keys,
+        prefixes=prefixes,
+    )
 
 
 def _parse_hwd(value: str, which: str) -> str | None:
@@ -104,6 +136,8 @@ def _lookup_on_product(product: dict, canon: Canon) -> str:
         found_field = True
         val = params[fname]
         if _is_empty(val):
+            continue
+        if val.strip().lower() == "нет" and canon.unit:
             continue
         return _format_value(val, canon.unit, rule, fname)
 
@@ -187,17 +221,71 @@ def _find_category_family(query: str, syn: SynonymIndex, index: ProductIndex) ->
     return found, (hit.prefixes[0] + number if found else "")
 
 
+def _find_prefix(query: str, index: ProductIndex) -> tuple[list[dict], str]:
+    tokens = re.findall(r"[A-Za-zА-Яа-я]{2,6}", query)
+    for raw in tokens:
+        for variant in _layout_variants(raw):
+            pref = alnum(variant)
+            if pref in index.by_prefix:
+                return index.by_prefix[pref], pref
+    compact_variants = [alnum(v) for v in _layout_variants(query)]
+    for pref in index.prefixes:
+        if len(pref) < 2:
+            continue
+        for compact in compact_variants:
+            if compact == pref or compact.endswith(pref):
+                return index.by_prefix[pref], pref
+    return [], ""
+
+
 def find_products(query: str, index: ProductIndex, syn: SynonymIndex) -> tuple[list[dict], str]:
-    compact = alnum(query)
-    for key in index.full_keys:
-        if key and key in compact:
-            return index.by_full[key], key
-    # family: PREFIX+digits as substring, longest family keys first
-    fam_keys = sorted(index.by_family.keys(), key=len, reverse=True)
-    for key in fam_keys:
-        if len(key) >= 5 and key in compact:
-            return index.by_family[key], key
-    return _find_category_family(query, syn, index)
+    for variant in _layout_variants(query):
+        compact = alnum(variant)
+        for key in index.full_keys:
+            if key and key in compact:
+                return index.by_full[key], key
+        fam_keys = sorted(index.by_family.keys(), key=len, reverse=True)
+        for key in fam_keys:
+            if len(key) >= 5 and key in compact:
+                return index.by_family[key], key
+        found, key = _find_category_family(variant, syn, index)
+        if found:
+            return found, key
+    return _find_prefix(query, index)
+
+
+def _list_models(products: list[dict], hint: str = "") -> str:
+    names = sorted({p.get("model") or "" for p in products if p.get("model")})
+    head = hint or "Уточните модель:"
+    shown = names[:40]
+    extra = f"\n… ещё {len(names) - 40}" if len(names) > 40 else ""
+    return head + "\n" + "\n".join(shown) + extra
+
+
+def _product_type_text(product: dict) -> str:
+    return norm(f"{product.get('name') or ''} {product.get('category') or ''}")
+
+
+def _filter_type_words(products: list[dict], leftover: str) -> tuple[list[dict], str]:
+    """Keep SKUs whose name/category contains leftover type words (камера, холодильник)."""
+    if not products or not leftover:
+        return products, leftover
+    kept: list[str] = []
+    current = products
+    for tok in leftover.split():
+        if len(tok) < 4:
+            kept.append(tok)
+            continue
+        subset = [
+            p
+            for p in current
+            if re.search(rf"(^|\s){re.escape(tok)}(\s|$)", f" {_product_type_text(p)} ")
+        ]
+        if subset:
+            current = subset
+            continue
+        kept.append(tok)
+    return current, norm(" ".join(kept))
 
 
 def answer_query(query: str) -> str:
@@ -211,20 +299,21 @@ def answer_query(query: str) -> str:
     for w in syn.stop_words:
         leftover = re.sub(rf"(^|\s){re.escape(w)}(\s|$)", " ", leftover)
     leftover = norm(leftover)
+    products, leftover = _filter_type_words(products, leftover)
     canon = _find_canon(leftover, syn)
     if not canon and leftover:
         canon = _find_canon(q, syn)
     if not products:
         return MSG_NO_MODEL
     if not canon:
-        return MSG_NO_PARAM
+        return _list_models(products, "Уточните модель и характеристику:")
 
     lines = []
     for p in sorted(products, key=lambda x: x.get("model") or ""):
         val = _lookup_on_product(p, canon)
         lines.append(f"{p['model']} — {val}")
     if len(lines) == 1:
-        # одна модель: только значение, без повтора артикула? Пользователь не уточнял.
-        # Для внутренних удобнее оставить модель, особенно когда семейство.
         return lines[0]
+    if len(lines) > 40:
+        return "\n".join(lines[:40]) + f"\n… ещё {len(lines) - 40}, уточните номер модели"
     return "\n".join(lines)

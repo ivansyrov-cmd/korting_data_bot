@@ -13,7 +13,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-08-catalog-v3"
+APP_VERSION = "2026-09-08-prefix-v5"
 START_TEXT = (
     "Справка по характеристикам Korting.\n\n"
     "Напишите модель и свойство, например:\n"
@@ -71,7 +71,11 @@ def _run_telegram(token: str) -> int:
         text = (update.message.text or "").strip()
         if not text:
             return
-        await update.message.reply_text(answer_query(text))
+        reply = answer_query(text)
+        while reply:
+            chunk = reply[:4000]
+            reply = reply[4000:]
+            await update.message.reply_text(chunk)
 
     app = (
         Application.builder()

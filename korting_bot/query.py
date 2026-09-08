@@ -1,0 +1,230 @@
+# -*- coding: utf-8 -*-
+from __future__ import annotations
+
+import re
+from dataclasses import dataclass, field
+from functools import lru_cache
+
+from .catalog import load_catalog
+from .paths import CATALOG_PATH
+from .synonyms import Canon, SynonymIndex, alnum, load_synonyms, norm
+
+MSG_NO_PARAM = "такой параметр не представлен в базе данных"
+MSG_NO_DATA = "нет данных"
+MSG_NO_MODEL = "модель не найдена в базе данных"
+
+EMPTY_VALUES = {"", "-", "—", "–", "−", "n/a", "na", "нет данных"}
+
+
+def _is_empty(value: str | None) -> bool:
+    v = (value or "").strip()
+    return v.lower() in EMPTY_VALUES or v in EMPTY_VALUES
+
+
+def family_key(model: str) -> str:
+    m = re.match(r"^([A-Za-z]{1,6})\s+(\d+)", (model or "").strip())
+    if m:
+        return alnum(m.group(1) + m.group(2))
+    return alnum(model)
+
+
+@dataclass
+class ProductIndex:
+    products: list[dict]
+    by_full: dict[str, list[dict]] = field(default_factory=dict)
+    by_family: dict[str, list[dict]] = field(default_factory=dict)
+    full_keys: list[str] = field(default_factory=list)
+
+
+@lru_cache(maxsize=1)
+def load_index() -> ProductIndex:
+    data = load_catalog(CATALOG_PATH)
+    products = data["products"]
+    by_full: dict[str, list[dict]] = {}
+    by_family: dict[str, list[dict]] = {}
+    for p in products:
+        full = alnum(p.get("model") or "")
+        if not full:
+            continue
+        by_full.setdefault(full, []).append(p)
+        fam = family_key(p.get("model") or "")
+        if fam:
+            by_family.setdefault(fam, []).append(p)
+    keys = sorted(by_full.keys(), key=len, reverse=True)
+    return ProductIndex(products=products, by_full=by_full, by_family=by_family, full_keys=keys)
+
+
+def _parse_hwd(value: str, which: str) -> str | None:
+    parts = [p for p in re.split(r"[xх×X*\/]", (value or "").replace(" ", "")) if p]
+    if len(parts) < 3:
+        return None
+    idx = {"H": 0, "W": 1, "D": 2}[which]
+    return parts[idx] if idx < len(parts) else None
+
+
+def _format_value(raw: str, unit: str, rule: str, field_name: str) -> str:
+    raw = raw.strip()
+    if rule == "length_mixed_units":
+        try:
+            num = float(raw.replace(",", "."))
+        except ValueError:
+            return raw
+        name = (field_name or "").lower()
+        if "см" in name and num > 10:
+            meters = num / 100
+            text = str(int(meters)) if meters == int(meters) else str(round(meters, 2)).rstrip("0").rstrip(".")
+            return f"{text} м"
+        if unit:
+            return f"{raw} {unit}".strip()
+        return raw
+    if unit and not raw.lower().endswith(unit.lower()):
+        return f"{raw} {unit}".strip()
+    return raw
+
+
+def _lookup_on_product(product: dict, canon: Canon) -> str:
+    params = product.get("params") or {}
+    rule = canon.rule or "value"
+    axis = ""
+    if rule.startswith("parse_hwd:") or rule.startswith("direct_or_parse:"):
+        axis = rule.split(":")[-1]
+
+    if rule == "parse_hwd:" + axis and axis:
+        for fname in canon.fields:
+            if fname in params and not _is_empty(params[fname]):
+                parsed = _parse_hwd(params[fname], axis)
+                if parsed:
+                    return _format_value(parsed, canon.unit, "value", fname)
+        return MSG_NO_PARAM
+
+    found_field = False
+    for fname in canon.fields:
+        if fname not in params:
+            continue
+        found_field = True
+        val = params[fname]
+        if _is_empty(val):
+            continue
+        return _format_value(val, canon.unit, rule, fname)
+
+    if rule.startswith("direct_or_parse:") and axis:
+        for dim_name in (
+            "Габариты (ВхШхГ) (мм)",
+            "Габариты (ВxШхГ) (мм)",
+            "Габариты (ВxШxГ) (мм)",
+        ):
+            if dim_name in params and not _is_empty(params[dim_name]):
+                parsed = _parse_hwd(params[dim_name], axis)
+                if parsed:
+                    return _format_value(parsed, canon.unit or "мм", "value", dim_name)
+        return MSG_NO_PARAM if not found_field else MSG_NO_DATA
+
+    if not found_field:
+        return MSG_NO_PARAM
+    return MSG_NO_DATA
+
+
+def _find_canon(text: str, syn: SynonymIndex) -> Canon | None:
+    blob = norm(text)
+    if not blob:
+        return None
+    keys = sorted(syn.synonym_to_canon.keys(), key=len, reverse=True)
+    for key in keys:
+        if len(key) <= 2:
+            if re.search(rf"(^|\s){re.escape(key)}(\s|$)", blob):
+                return syn.synonym_to_canon[key]
+        elif key in blob:
+            return syn.synonym_to_canon[key]
+    return None
+
+
+def _strip_model_from_query(query: str, model_alnum: str) -> str:
+    compact = alnum(query)
+    idx = compact.find(model_alnum)
+    # Reconstruct leftover by removing matched alnum span from original letters/digits only.
+    leftover_chars = []
+    q_alnum_idx = 0
+    skip_until = idx + len(model_alnum) if idx >= 0 else -1
+    for ch in query:
+        is_al = ch.isalnum()
+        if is_al:
+            if idx >= 0 and q_alnum_idx >= idx and q_alnum_idx < skip_until:
+                q_alnum_idx += 1
+                continue
+            leftover_chars.append(ch)
+            q_alnum_idx += 1
+        else:
+            leftover_chars.append(ch)
+    return norm("".join(leftover_chars))
+
+
+def _find_category_family(query: str, syn: SynonymIndex, index: ProductIndex) -> tuple[list[dict], str]:
+    blob = norm(query)
+    nums = re.findall(r"\d{3,6}", query)
+    if not nums:
+        return [], ""
+    cats = sorted(syn.category_by_syn.keys(), key=len, reverse=True)
+    hit = None
+    for key in cats:
+        if len(key) < 2:
+            continue
+        if key in blob:
+            hit = syn.category_by_syn[key]
+            break
+    if not hit or not hit.prefixes:
+        return [], ""
+    number = nums[0]
+    found: list[dict] = []
+    seen = set()
+    for pref in hit.prefixes:
+        fam = pref + number
+        for p in index.by_family.get(fam, []):
+            mid = p.get("id")
+            if mid in seen:
+                continue
+            seen.add(mid)
+            found.append(p)
+    return found, (hit.prefixes[0] + number if found else "")
+
+
+def find_products(query: str, index: ProductIndex, syn: SynonymIndex) -> tuple[list[dict], str]:
+    compact = alnum(query)
+    for key in index.full_keys:
+        if key and key in compact:
+            return index.by_full[key], key
+    # family: PREFIX+digits as substring, longest family keys first
+    fam_keys = sorted(index.by_family.keys(), key=len, reverse=True)
+    for key in fam_keys:
+        if len(key) >= 5 and key in compact:
+            return index.by_family[key], key
+    return _find_category_family(query, syn, index)
+
+
+def answer_query(query: str) -> str:
+    q = (query or "").strip()
+    if not q:
+        return MSG_NO_MODEL
+    syn = load_synonyms()
+    index = load_index()
+    products, matched_key = find_products(q, index, syn)
+    leftover = _strip_model_from_query(q, matched_key) if matched_key else norm(q)
+    for w in syn.stop_words:
+        leftover = re.sub(rf"(^|\s){re.escape(w)}(\s|$)", " ", leftover)
+    leftover = norm(leftover)
+    canon = _find_canon(leftover, syn)
+    if not canon and leftover:
+        canon = _find_canon(q, syn)
+    if not products:
+        return MSG_NO_MODEL
+    if not canon:
+        return MSG_NO_PARAM
+
+    lines = []
+    for p in sorted(products, key=lambda x: x.get("model") or ""):
+        val = _lookup_on_product(p, canon)
+        lines.append(f"{p['model']} — {val}")
+    if len(lines) == 1:
+        # одна модель: только значение, без повтора артикула? Пользователь не уточнял.
+        # Для внутренних удобнее оставить модель, особенно когда семейство.
+        return lines[0]
+    return "\n".join(lines)

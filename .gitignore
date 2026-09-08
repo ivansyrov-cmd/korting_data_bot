@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.tmp/
+data/feed.yml
+data/*.xml
+*.xml
+.DS_Store
+Thumbs.db
+~$*

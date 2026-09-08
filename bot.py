@@ -15,7 +15,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-08-group-v8"
+APP_VERSION = "2026-09-08-link-v9"
 START_TEXT = (
     "Справка по характеристикам Korting.\n\n"
     "Одно свойство:\n"
@@ -126,13 +126,24 @@ def _run_telegram(token: str) -> int:
             return
         for chunk in _reply_chunks(text):
             parse_mode = "HTML" if "<b>" in chunk else None
-            await update.message.reply_text(chunk, parse_mode=parse_mode)
+            many_links = chunk.count("https://") > 1 or chunk.count("http://") > 1
+            await update.message.reply_text(
+                chunk,
+                parse_mode=parse_mode,
+                disable_web_page_preview=many_links,
+            )
 
     async def on_ttx(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         if not update.message:
             return
         model = " ".join(context.args or []).strip()
         await _reply(update, answer_query("ТТХ " + model if model else "ТТХ"))
+
+    async def on_link(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        if not update.message:
+            return
+        model = " ".join(context.args or []).strip()
+        await _reply(update, answer_query("ссылка " + model if model else "ссылка"))
 
     async def on_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         if not update.message:
@@ -157,6 +168,8 @@ def _run_telegram(token: str) -> int:
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", start))
     app.add_handler(CommandHandler("ttx", on_ttx))
+    app.add_handler(CommandHandler("link", on_link))
+    app.add_handler(CommandHandler("site", on_link))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, on_text))
     app.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
     return 0

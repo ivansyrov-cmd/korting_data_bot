@@ -14,8 +14,14 @@ MSG_NO_PARAM = "такой параметр не представлен в ба�
 MSG_NO_DATA = "нет данных"
 MSG_NO_MODEL = "модель не найдена в базе данных"
 MSG_TTX_NEED_MODEL = "Укажите модель: ТТХ OKB 792 CFN"
+MSG_LINK_NEED_MODEL = "Укажите модель: ссылка OKB 792 CFN"
 
 TTX_HEAD = re.compile(r"^(?:[/!])?(?:ттх|ttx)[\s:_\-]*", re.IGNORECASE)
+LINK_HEAD = re.compile(
+    r"^(?:[/!])?(?:ссылка|сайт|линк|link|url|site)[\s:_\-]*",
+    re.IGNORECASE,
+)
+LINK_WORDS = {"ссылка", "сайт", "линк", "link", "url", "site"}
 SKIP_TTX_FIELDS = {"видео", "привязка к цветам", "преимущества и особенности"}
 MAX_TTX_PRODUCTS = 8
 
@@ -279,6 +285,30 @@ def _parse_ttx(query: str) -> str | None:
     return (query or "")[m.end() :].strip()
 
 
+def _parse_link(query: str) -> str | None:
+    m = LINK_HEAD.match(query or "")
+    if not m:
+        return None
+    return (query or "")[m.end() :].strip()
+
+
+def _is_link_leftover(leftover: str) -> bool:
+    words = leftover.split()
+    return bool(words) and all(w in LINK_WORDS for w in words)
+
+
+def _resolve_products(q: str) -> tuple[list[dict], str]:
+    syn = load_synonyms()
+    index = load_index()
+    products, matched_key = find_products(q, index, syn)
+    leftover = _strip_model_from_query(q, matched_key) if matched_key else norm(q)
+    for w in syn.stop_words:
+        leftover = re.sub(rf"(^|\s){re.escape(w)}(\s|$)", " ", leftover)
+    leftover = norm(leftover)
+    products, leftover = _filter_type_words(products, leftover)
+    return products, leftover
+
+
 def _ttx_label(name: str) -> tuple[str, str]:
     raw = (name or "").strip()
     m = re.search(r"[\(（]([^\)）]+)[\)）]\s*$", raw)
@@ -330,20 +360,40 @@ def _answer_ttx(model_query: str) -> str:
     q = (model_query or "").strip()
     if not q:
         return MSG_TTX_NEED_MODEL
-    syn = load_synonyms()
-    index = load_index()
-    products, matched_key = find_products(q, index, syn)
-    leftover = _strip_model_from_query(q, matched_key) if matched_key else norm(q)
-    for w in syn.stop_words:
-        leftover = re.sub(rf"(^|\s){re.escape(w)}(\s|$)", " ", leftover)
-    leftover = norm(leftover)
-    products, leftover = _filter_type_words(products, leftover)
+    products, _leftover = _resolve_products(q)
     if not products:
         return MSG_NO_MODEL
     if len(products) > MAX_TTX_PRODUCTS:
         return _list_models(products, "Уточните модель:")
     blocks = [_dump_product(p) for p in sorted(products, key=lambda x: x.get("model") or "")]
     return "\n\n".join(blocks)
+
+
+def _link_line(product: dict) -> str:
+    model = (product.get("model") or "").strip() or "модель"
+    url = (product.get("url") or "").strip()
+    if not url:
+        return f"{model} — {MSG_NO_DATA}"
+    return f"{model} — {url}"
+
+
+def _format_links(products: list[dict]) -> str:
+    lines = [_link_line(p) for p in sorted(products, key=lambda x: x.get("model") or "")]
+    if len(lines) == 1:
+        return lines[0]
+    if len(lines) > 40:
+        return "\n".join(lines[:40]) + f"\n… ещё {len(lines) - 40}, уточните номер модели"
+    return "\n".join(lines)
+
+
+def _answer_link(model_query: str) -> str:
+    q = (model_query or "").strip()
+    if not q:
+        return MSG_LINK_NEED_MODEL
+    products, _leftover = _resolve_products(q)
+    if not products:
+        return MSG_NO_MODEL
+    return _format_links(products)
 
 
 def _filter_type_words(products: list[dict], leftover: str) -> tuple[list[dict], str]:
@@ -375,6 +425,9 @@ def answer_query(query: str) -> str:
     ttx_model = _parse_ttx(q)
     if ttx_model is not None:
         return _answer_ttx(ttx_model)
+    link_model = _parse_link(q)
+    if link_model is not None:
+        return _answer_link(link_model)
     syn = load_synonyms()
     index = load_index()
     products, matched_key = find_products(q, index, syn)
@@ -383,11 +436,13 @@ def answer_query(query: str) -> str:
         leftover = re.sub(rf"(^|\s){re.escape(w)}(\s|$)", " ", leftover)
     leftover = norm(leftover)
     products, leftover = _filter_type_words(products, leftover)
+    if not products:
+        return MSG_NO_MODEL
+    if _is_link_leftover(leftover):
+        return _format_links(products)
     canon = _find_canon(leftover, syn)
     if not canon and leftover:
         canon = _find_canon(q, syn)
-    if not products:
-        return MSG_NO_MODEL
     if not canon:
         return _list_models(products, "Уточните модель и характеристику:")
 

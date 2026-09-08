@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import html
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -14,7 +15,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-08-ttx-v7"
+APP_VERSION = "2026-09-08-group-v8"
 START_TEXT = (
     "Справка по характеристикам Korting.\n\n"
     "Одно свойство:\n"
@@ -22,7 +23,8 @@ START_TEXT = (
     "шнур OKB 792\n"
     "глубина KMI 720\n\n"
     "Все характеристики модели:\n"
-    "ТТХ OKB 792 CFN"
+    "ТТХ OKB 792 CFN\n\n"
+    "В группе: @имя_бота ТТХ OKB 792 CFN"
 )
 
 TOKEN_ENV_NAMES = ("TELEGRAM_BOT_TOKEN", "TELEGRAM_TOKEN", "BOT_TOKEN", "TG_TOKEN")
@@ -53,6 +55,38 @@ def _reply_chunks(text: str, limit: int = 4000) -> list[str]:
 
 def _plain(text: str) -> str:
     return html.unescape((text or "").replace("<b>", "").replace("</b>", ""))
+
+
+def _strip_bot_mention(text: str, username: str | None) -> str:
+    t = (text or "").strip()
+    if username:
+        t = re.sub(rf"@{re.escape(username)}\b", " ", t, flags=re.IGNORECASE)
+    else:
+        t = re.sub(r"^@\w+\s+", "", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def _is_group(update) -> bool:
+    chat = update.effective_chat
+    return bool(chat and chat.type in {"group", "supergroup"})
+
+
+def _addressed_to_bot(update, context, text: str) -> bool:
+    if not _is_group(update):
+        return True
+    username = (context.bot.username or "").lower()
+    if username and f"@{username}" in (text or "").lower():
+        return True
+    msg = update.message
+    if not msg:
+        return False
+    reply = msg.reply_to_message
+    if reply and reply.from_user and reply.from_user.id == context.bot.id:
+        return True
+    for entity in msg.entities or []:
+        if entity.type == "text_mention" and entity.user and entity.user.id == context.bot.id:
+            return True
+    return False
 
 
 def _run_cli(argv: list[str]) -> int:
@@ -106,7 +140,13 @@ def _run_telegram(token: str) -> int:
         text = (update.message.text or "").strip()
         if not text:
             return
-        await _reply(update, answer_query(text))
+        if not _addressed_to_bot(update, context, text):
+            return
+        query = _strip_bot_mention(text, context.bot.username)
+        if not query:
+            await _reply(update, START_TEXT)
+            return
+        await _reply(update, answer_query(query))
 
     app = (
         Application.builder()

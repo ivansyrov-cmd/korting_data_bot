@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
 
+import html
 import re
 from dataclasses import dataclass, field
 from functools import lru_cache
@@ -15,7 +16,7 @@ MSG_NO_MODEL = "модель не найдена в базе данных"
 MSG_TTX_NEED_MODEL = "Укажите модель: ТТХ OKB 792 CFN"
 
 TTX_HEAD = re.compile(r"^(?:[/!])?(?:ттх|ttx)[\s:_\-]*", re.IGNORECASE)
-SKIP_TTX_FIELDS = {"видео", "привязка к цветам"}
+SKIP_TTX_FIELDS = {"видео", "привязка к цветам", "преимущества и особенности"}
 MAX_TTX_PRODUCTS = 8
 
 LATIN = "QWERTYUIOPASDFGHJKLZXCVBNM"
@@ -292,6 +293,8 @@ def _skip_ttx_field(name: str) -> bool:
         return True
     if n.startswith("им |") or n.startswith("им|"):
         return True
+    if "преимущества" in n:
+        return True
     return False
 
 
@@ -317,7 +320,9 @@ def _dump_product(product: dict) -> str:
         if _skip_ttx_field(fname) or _is_empty(raw):
             continue
         label, unit = _ttx_label(fname)
-        lines.append(f"{label}: {_ttx_value(raw, unit)}")
+        safe_label = html.escape(label, quote=False)
+        safe_value = html.escape(_ttx_value(raw, unit), quote=False)
+        lines.append(f"<b>{safe_label}</b>: {safe_value}")
     return "\n".join(lines)
 
 

@@ -2,6 +2,7 @@
 """Telegram-бот и консольная справка по характеристикам."""
 from __future__ import annotations
 
+import html
 import os
 import sys
 from pathlib import Path
@@ -13,7 +14,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-08-ttx-v6"
+APP_VERSION = "2026-09-08-ttx-v7"
 START_TEXT = (
     "Справка по характеристикам Korting.\n\n"
     "Одно свойство:\n"
@@ -50,9 +51,13 @@ def _reply_chunks(text: str, limit: int = 4000) -> list[str]:
     return chunks
 
 
+def _plain(text: str) -> str:
+    return html.unescape((text or "").replace("<b>", "").replace("</b>", ""))
+
+
 def _run_cli(argv: list[str]) -> int:
     if args := argv:
-        print(answer_query(" ".join(args)))
+        print(_plain(answer_query(" ".join(args))))
         return 0
     print("Введите запрос (пустая строка — выход).")
     while True:
@@ -63,7 +68,7 @@ def _run_cli(argv: list[str]) -> int:
             return 0
         if not line:
             return 0
-        print(answer_query(line))
+        print(_plain(answer_query(line)))
         print()
     return 0
 
@@ -86,7 +91,8 @@ def _run_telegram(token: str) -> int:
         if not update.message:
             return
         for chunk in _reply_chunks(text):
-            await update.message.reply_text(chunk)
+            parse_mode = "HTML" if "<b>" in chunk else None
+            await update.message.reply_text(chunk, parse_mode=parse_mode)
 
     async def on_ttx(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         if not update.message:

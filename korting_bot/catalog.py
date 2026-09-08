@@ -65,7 +65,17 @@ def save_catalog(data: dict, path: Path = CATALOG_PATH) -> Path:
     return path
 
 
+def ensure_catalog(path: Path = CATALOG_PATH) -> Path:
+    """Если каталога нет на диске (типично для деплоя без папки data) — собрать из YML."""
+    if path.is_file() and path.stat().st_size > 0:
+        return path
+    print(f"каталог не найден ({path}), скачиваю YML…", flush=True)
+    refresh_from_url(path)
+    return path
+
+
 def load_catalog(path: Path = CATALOG_PATH) -> dict:
+    ensure_catalog(path)
     return json.loads(path.read_text(encoding="utf-8"))
 
 

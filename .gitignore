@@ -9,3 +9,5 @@ data/*.xml
 .DS_Store
 Thumbs.db
 ~$*
+.env
+

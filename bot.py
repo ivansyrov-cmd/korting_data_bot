@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index, needs_property, suggest_models, suggest_prefixes
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-09-help-v19"
+APP_VERSION = "2026-09-09-help-v20"
 START_TEXT = (
     "Привет! Я — гид по характеристикам продуктов KORTING. "
     "Я могу подсказать одну или несколько технических характеристик, "
@@ -50,7 +50,7 @@ START_TEXT = (
 TOKEN_ENV_NAMES = ("TELEGRAM_BOT_TOKEN", "TELEGRAM_TOKEN", "BOT_TOKEN", "TG_TOKEN")
 PENDING_TTL_SEC = 10 * 60
 MENU_PROMPTS = {
-    "spec": "Напишите модель, например: OKB 792 PFX",
+    "spec": "Напишите модель и характеристику, которую вы хотите узнать. Например: «компрессор KNFC 61868»",
     "spec_param": "Напишите характеристику, например: шнур",
     "ttx": "Напишите модель, например: OKB 792 CFN",
     "link": "Напишите модель, например: KSI 8259 F",

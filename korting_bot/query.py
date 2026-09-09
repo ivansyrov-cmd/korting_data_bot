@@ -16,7 +16,20 @@ MSG_NO_MODEL = "модель не найдена в базе данных"
 MSG_UNKNOWN_PARAM = (
     "я не понял какой параметр вы хотите узнать, попробуйте написать его название иначе"
 )
-MSG_TTX_NEED_MODEL = "Укажите модель: ТТХ OKB 792 CFN"
+MSG_REVERSE_NONE = "таких моделей не найдено"
+
+REVERSE_HINT = re.compile(
+    r"(в каких|у каких|какие модели|каких моделях|какие из|"
+    r"перечислите модели|перечисли модели|модели с\b|в каких моделях)",
+    re.IGNORECASE,
+)
+REVERSE_STOP = {
+    "в", "каких", "каком", "какие", "какая", "какой", "какую", "каким",
+    "моделях", "модели", "модель", "моделей",
+    "есть", "ли", "где", "из", "у", "с", "со", "для",
+    "серии", "линейке", "присутствует", "имеется", "имеют", "наличие",
+}
+INVERTER_ALIAS = {"мотор", "мотора", "мотором", "компрессор", "компрессора", "двигатель", "двигателя"}
 MSG_LINK_NEED_MODEL = "Укажите модель: ссылка OKB 792 CFN"
 
 TTX_HEAD = re.compile(r"^(?:[/!])?(?:ттх|ttx)[\s:_\-]*", re.IGNORECASE)
@@ -471,10 +484,164 @@ def _filter_type_words(products: list[dict], leftover: str) -> tuple[list[dict],
     return current, norm(" ".join(kept))
 
 
+def _find_category(query: str, syn: SynonymIndex):
+    blob = norm(query)
+    for key in sorted(syn.category_by_syn.keys(), key=len, reverse=True):
+        if len(key) < 4:
+            continue
+        if key in blob:
+            return syn.category_by_syn[key]
+        stem = key.rstrip("аяьыие")
+        if len(stem) >= 6 and stem in blob:
+            return syn.category_by_syn[key]
+    return None
+
+
+def _category_products(index: ProductIndex, cat) -> list[dict]:
+    words = [w for w in norm(cat.title).split() if len(w) >= 5]
+    generic = {"машины", "печи", "шкафы", "камеры", "поверхности", "техника"}
+    stems = [w for w in words if w not in generic] or words[:1]
+    found: list[dict] = []
+    seen: set[str] = set()
+    for p in index.products:
+        blob = _product_type_text(p)
+        if stems and not any(s in blob for s in stems):
+            continue
+        pid = str(p.get("id") or p.get("model") or "")
+        if pid in seen:
+            continue
+        seen.add(pid)
+        found.append(p)
+    if found:
+        return found
+    prefixes = set(cat.prefixes or [])
+    if not prefixes:
+        return []
+    for p in index.products:
+        pref = _model_prefix(p.get("model") or "")
+        if pref not in prefixes:
+            continue
+        pid = str(p.get("id") or "")
+        if pid in seen:
+            continue
+        seen.add(pid)
+        found.append(p)
+    return found
+
+
+def _strip_reverse_noise(query: str, syn: SynonymIndex, cat) -> str:
+    blob = norm(query)
+    for w in REVERSE_STOP:
+        blob = re.sub(rf"(^|\s){re.escape(w)}(\s|$)", " ", blob)
+    if cat:
+        stems = []
+        for s in list(cat.synonyms) + [cat.title]:
+            ns = norm(s)
+            if len(ns) >= 5:
+                stems.append(ns)
+            stem = ns.rstrip("аяьыие")
+            if len(stem) >= 6:
+                stems.append(stem)
+        for ns in sorted(set(stems), key=len, reverse=True):
+            blob = re.sub(rf"{re.escape(ns)}\w*", " ", blob)
+    return norm(blob)
+
+
+def _params_blob(product: dict) -> str:
+    parts = []
+    for k, v in (product.get("params") or {}).items():
+        if _skip_ttx_field(k):
+            continue
+        parts.append(f"{norm(k)} {norm(v or '')}")
+    return " ".join(parts)
+
+
+def _feature_hit_value(product: dict, leftover: str) -> str | None:
+    toks = leftover.split()
+    distinctive = [t for t in toks if len(t) >= 4]
+    if not distinctive:
+        return None
+    blob = _params_blob(product)
+    has_inv = any(t.startswith("инверт") for t in distinctive)
+    rest = [t for t in distinctive if not t.startswith("инверт") and t not in INVERTER_ALIAS]
+    if has_inv:
+        if "инверт" not in blob:
+            return None
+        if rest and not all(t in blob for t in rest):
+            return None
+        for _k, v in (product.get("params") or {}).items():
+            if _skip_ttx_field(_k):
+                continue
+            if "инверт" in norm(v or ""):
+                return (v or "").strip()
+        return "да"
+    if not all(t in blob for t in distinctive):
+        return None
+    for k, v in (product.get("params") or {}).items():
+        if _skip_ttx_field(k):
+            continue
+        nv = f"{norm(k)} {norm(v or '')}"
+        if all(t in nv for t in distinctive):
+            return (v or "").strip() or "да"
+    return "да"
+
+
+def _is_reverse_query(query: str, syn: SynonymIndex) -> bool:
+    blob = norm(query)
+    if REVERSE_HINT.search(blob):
+        return True
+    cat = _find_category(query, syn)
+    if not cat:
+        return False
+    if re.search(r"[A-Za-z]{2,6}\s*\d{3}", query):
+        return False
+    leftover = _strip_reverse_noise(query, syn, cat)
+    return bool(leftover)
+
+
+def _answer_reverse(query: str) -> str:
+    syn = load_synonyms()
+    index = load_index()
+    cat = _find_category(query, syn)
+    pool = _category_products(index, cat) if cat else list(index.products)
+    leftover = _strip_reverse_noise(query, syn, cat)
+    if leftover:
+        rows = []
+        for p in pool:
+            val = _feature_hit_value(p, leftover)
+            if not val:
+                continue
+            model = (p.get("model") or "").strip()
+            if not model:
+                continue
+            rows.append((model, val))
+        if not rows:
+            return MSG_REVERSE_NONE
+        rows.sort(key=lambda x: x[0])
+        uniq = []
+        seen = set()
+        for model, val in rows:
+            if model in seen:
+                continue
+            seen.add(model)
+            uniq.append(f"{model} — {val}")
+        head = f"Найдены модели, {len(uniq)} шт.:"
+        if cat:
+            head = f"Найдены модели ({cat.title}), {len(uniq)} шт.:"
+        shown = uniq[:40]
+        extra = f"\n… ещё {len(uniq) - 40}" if len(uniq) > 40 else ""
+        return head + "\n" + "\n".join(shown) + extra
+    if not pool:
+        return MSG_REVERSE_NONE
+    return _list_models(pool, "Уточните модель:")
+
+
 def needs_property(query: str) -> bool:
     """True if the text names a small set of SKUs and no spec/command."""
     q = (query or "").strip()
     if not q or _parse_ttx(q) is not None or _parse_link(q) is not None:
+        return False
+    if _is_reverse_query(q, load_synonyms()):
         return False
     products, leftover = _resolve_products(q)
     if leftover or not products:
@@ -493,6 +660,8 @@ def answer_query(query: str) -> str:
     if link_model is not None:
         return _answer_link(link_model)
     syn = load_synonyms()
+    if _is_reverse_query(q, syn):
+        return _answer_reverse(q)
     index = load_index()
     products, matched_key = find_products(q, index, syn)
     leftover = _strip_model_from_query(q, matched_key) if matched_key else norm(q)

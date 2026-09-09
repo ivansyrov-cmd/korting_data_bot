@@ -29,7 +29,29 @@ REVERSE_STOP = {
     "есть", "ли", "где", "из", "у", "с", "со", "для",
     "серии", "линейке", "присутствует", "имеется", "имеют", "наличие",
 }
-INVERTER_ALIAS = {"мотор", "мотора", "мотором", "компрессор", "компрессора", "двигатель", "двигателя"}
+INVERTER_ALIAS = {
+    "мотор", "мотора", "мотором", "моторы", "моторов",
+    "компрессор", "компрессора", "компрессором", "компрессоры",
+    "двигатель", "двигателя", "двигателем",
+}
+FEATURE_NOISE = {
+    "технология", "технологией", "технологии", "технологию", "технологий", "технологи",
+    "функция", "функцией", "функции", "функцию",
+    "опция", "опцией", "система", "системой",
+}
+WEAK_STEMS = ("подсвет", "освещ", "свет", "ламп", "технолог", "функц")
+FEATURE_ALIASES = (
+    ("ambilight", "ambiance", "ambience"),
+    (
+        "heatpump",
+        "тепловойнасос",
+        "тепловогонасоса",
+        "тепловымнасосом",
+        "тепловомунасосу",
+        "тепловыенасосы",
+        "тепловыхнасосов",
+    ),
+)
 MSG_LINK_NEED_MODEL = "Укажите модель: ссылка OKB 792 CFN"
 
 TTX_HEAD = re.compile(r"^(?:[/!])?(?:ттх|ttx)[\s:_\-]*", re.IGNORECASE)
@@ -498,20 +520,40 @@ def _find_category(query: str, syn: SynonymIndex):
 
 
 def _category_products(index: ProductIndex, cat) -> list[dict]:
-    words = [w for w in norm(cat.title).split() if len(w) >= 5]
-    generic = {"машины", "печи", "шкафы", "камеры", "поверхности", "техника"}
-    stems = [w for w in words if w not in generic] or words[:1]
+    title = norm(cat.title)
     found: list[dict] = []
     seen: set[str] = set()
+
+    def _add(p: dict) -> None:
+        pid = str(p.get("id") or p.get("model") or "")
+        if not pid or pid in seen:
+            return
+        seen.add(pid)
+        found.append(p)
+
+    if title:
+        for p in index.products:
+            if title in norm(p.get("category") or ""):
+                _add(p)
+        if found:
+            return found
+    words = [w for w in title.split() if len(w) >= 4]
+    generic = {"машины", "печи", "шкафы", "камеры", "поверхности", "техника"}
+    stems: list[str] = []
+    for w in words:
+        if w in generic:
+            continue
+        stems.append(w)
+        st = w.rstrip("аяьыие")
+        if len(st) >= 5 and st not in stems:
+            stems.append(st)
+    if not stems:
+        stems = words[:1]
     for p in index.products:
         blob = _product_type_text(p)
         if stems and not any(s in blob for s in stems):
             continue
-        pid = str(p.get("id") or p.get("model") or "")
-        if pid in seen:
-            continue
-        seen.add(pid)
-        found.append(p)
+        _add(p)
     if found:
         return found
     prefixes = set(cat.prefixes or [])
@@ -521,11 +563,7 @@ def _category_products(index: ProductIndex, cat) -> list[dict]:
         pref = _model_prefix(p.get("model") or "")
         if pref not in prefixes:
             continue
-        pid = str(p.get("id") or "")
-        if pid in seen:
-            continue
-        seen.add(pid)
-        found.append(p)
+        _add(p)
     return found
 
 
@@ -547,43 +585,146 @@ def _strip_reverse_noise(query: str, syn: SynonymIndex, cat) -> str:
     return norm(blob)
 
 
+def _compact_text(s: str) -> str:
+    return re.sub(r"[^a-zа-я0-9]+", "", norm(s))
+
+
+def _stem_token(tok: str) -> str:
+    t = norm(tok).replace("-", "")
+    for suf in (
+        "ами", "ями", "ого", "ему", "ыми", "ими",
+        "ой", "ей", "ом", "ем", "ах", "ях", "ую", "ая", "ое", "ие", "ые",
+        "ий", "ый", "ым", "им", "ов", "ев",
+    ):
+        if t.endswith(suf) and len(t) - len(suf) >= 4:
+            return t[:-len(suf)]
+    return t
+
+
 def _params_blob(product: dict) -> str:
     parts = []
     for k, v in (product.get("params") or {}).items():
-        if _skip_ttx_field(k):
+        if norm(k) in {"видео", "привязка к цветам"}:
             continue
-        parts.append(f"{norm(k)} {norm(v or '')}")
+        parts.append(f"{k} {v or ''}")
     return " ".join(parts)
 
 
+def _alias_hit(left_compact: str, blob_compact: str) -> bool:
+    for group in FEATURE_ALIASES:
+        if any(a in left_compact for a in group) and any(a in blob_compact for a in group):
+            return True
+    return False
+
+
+def _token_in_blob(tok: str, spaced: str, compact: str) -> bool:
+    st = _stem_token(tok)
+    if len(st) >= 3 and st in spaced:
+        return True
+    raw = norm(tok).replace("-", "")
+    if len(raw) >= 3 and (raw in spaced or raw in compact):
+        return True
+    return False
+
+
+def _is_weak_token(tok: str) -> bool:
+    st = _stem_token(tok)
+    return st.startswith(WEAK_STEMS)
+
+
+def _is_noise_token(tok: str) -> bool:
+    if tok in FEATURE_NOISE or tok in REVERSE_STOP:
+        return True
+    st = _stem_token(tok)
+    if st in FEATURE_NOISE:
+        return True
+    return st.startswith(("технолог", "функц", "опци"))
+
+
+def _token_in_alias_group(tok: str) -> bool:
+    tc = _compact_text(tok)
+    if len(tc) < 4:
+        return False
+    for group in FEATURE_ALIASES:
+        if any(a == tc or a in tc or tc in a for a in group):
+            return True
+    return False
+
+
+def _distinctive_tokens(leftover: str) -> list[str]:
+    return [t for t in leftover.split() if len(t) >= 3 and not _is_noise_token(t)]
+
+
+def _best_feature_value(product: dict, leftover: str, inverter: bool) -> str:
+    left_compact = _compact_text(leftover)
+    distinctive = _distinctive_tokens(leftover)
+    strong = [t for t in distinctive if not _is_weak_token(t)]
+    scored: list[tuple[int, int, int, str]] = []
+    for k, v in (product.get("params") or {}).items():
+        if norm(k) in {"видео", "привязка к цветам"}:
+            continue
+        val = (v or "").strip()
+        if not val:
+            continue
+        nv = norm(val)
+        nc = _compact_text(f"{k} {val}")
+        if inverter and "инверт" in nv:
+            rank = 0
+        elif _alias_hit(left_compact, nc):
+            rank = 0
+        elif strong and any(_token_in_blob(t, nv, nc) for t in strong):
+            rank = 1
+        elif any(_token_in_blob(t, nv, nc) for t in distinctive):
+            rank = 2
+        else:
+            continue
+        usp = "преимущества" in norm(k) or norm(k).startswith("им")
+        scored.append((1 if usp else 0, rank, len(val), val))
+    if not scored:
+        return "да"
+    scored.sort()
+    val = scored[0][3]
+    if len(val) > 90:
+        for part in re.split(r"[,;]", val):
+            pc = _compact_text(part)
+            if _alias_hit(left_compact, pc) or "инверт" in pc:
+                return part.strip()
+        return val[:90].rstrip() + "…"
+    return val
+
+
 def _feature_hit_value(product: dict, leftover: str) -> str | None:
-    toks = leftover.split()
-    distinctive = [t for t in toks if len(t) >= 4]
+    distinctive = _distinctive_tokens(leftover)
     if not distinctive:
         return None
-    blob = _params_blob(product)
-    has_inv = any(t.startswith("инверт") for t in distinctive)
-    rest = [t for t in distinctive if not t.startswith("инверт") and t not in INVERTER_ALIAS]
-    if has_inv:
-        if "инверт" not in blob:
-            return None
-        if rest and not all(t in blob for t in rest):
-            return None
-        for _k, v in (product.get("params") or {}).items():
-            if _skip_ttx_field(_k):
-                continue
-            if "инверт" in norm(v or ""):
-                return (v or "").strip()
-        return "да"
-    if not all(t in blob for t in distinctive):
+    raw = _params_blob(product)
+    if not raw.strip():
         return None
-    for k, v in (product.get("params") or {}).items():
-        if _skip_ttx_field(k):
+    spaced = norm(raw)
+    compact = _compact_text(raw)
+    left_compact = _compact_text(leftover)
+    has_inv = any(_stem_token(t).startswith("инверт") for t in distinctive)
+    rest = [
+        t for t in distinctive
+        if not _stem_token(t).startswith("инверт") and _stem_token(t) not in INVERTER_ALIAS
+    ]
+    if has_inv:
+        if "инверт" not in compact:
+            return None
+        if rest and not all(_token_in_blob(t, spaced, compact) for t in rest):
+            return None
+        return _best_feature_value(product, leftover, True)
+    alias_ok = _alias_hit(left_compact, compact)
+    failed = []
+    for t in distinctive:
+        if _token_in_blob(t, spaced, compact):
             continue
-        nv = f"{norm(k)} {norm(v or '')}"
-        if all(t in nv for t in distinctive):
-            return (v or "").strip() or "да"
-    return "да"
+        if alias_ok and (_is_weak_token(t) or _token_in_alias_group(t)):
+            continue
+        failed.append(t)
+    if failed:
+        return None
+    return _best_feature_value(product, leftover, False)
 
 
 def _is_reverse_query(query: str, syn: SynonymIndex) -> bool:

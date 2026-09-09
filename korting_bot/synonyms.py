@@ -68,6 +68,51 @@ def _row_syns(row: tuple, start: int, end: int) -> list[str]:
     return out
 
 
+def _plural_noun(word: str) -> str | None:
+    w = norm(word)
+    if len(w) < 4 or not re.search(r"[а-я]$", w):
+        return None
+    if w.endswith("ка"):
+        return w[:-2] + "ки"
+    if w.endswith("ца"):
+        return w[:-1] + "ы"
+    if w.endswith(("га", "ха", "жа", "ча", "ша", "ща")):
+        return w[:-1] + "и"
+    if w == "размер":
+        return "размеры"
+    if w == "габарит":
+        return "габариты"
+    return None
+
+
+def _syn_keys(phrase: str) -> list[str]:
+    key = norm(phrase)
+    if not key:
+        return []
+    keys = [key]
+    parts = key.split()
+    pl = _plural_noun(parts[-1])
+    if pl:
+        alt = pl if len(parts) == 1 else " ".join(parts[:-1] + [pl])
+        if alt not in keys:
+            keys.append(alt)
+        if pl not in keys:
+            keys.append(pl)
+        if parts[-1] not in keys:
+            keys.append(parts[-1])
+    if parts[-1] == "размеры":
+        alt = "размер" if len(parts) == 1 else " ".join(parts[:-1] + ["размер"])
+        if alt not in keys:
+            keys.append(alt)
+    return keys
+
+
+def _register_syn(syn_map: dict, phrase: str, canon: Canon) -> None:
+    for key in _syn_keys(phrase):
+        if key and key not in syn_map:
+            syn_map[key] = canon
+
+
 def _index_from_payload(payload: dict) -> SynonymIndex:
     canons: list[Canon] = []
     syn_map: dict[str, Canon] = {}
@@ -84,9 +129,7 @@ def _index_from_payload(payload: dict) -> SynonymIndex:
             continue
         canons.append(canon)
         for s in sorted(canon.synonyms, key=len, reverse=True):
-            key = norm(s)
-            if key and key not in syn_map:
-                syn_map[key] = canon
+            _register_syn(syn_map, s, canon)
     categories: list[Category] = []
     cat_map: dict[str, Category] = {}
     for item in payload.get("categories") or []:
@@ -141,9 +184,7 @@ def _load_from_xlsx(xlsx: Path) -> SynonymIndex:
         )
         canons.append(canon)
         for s in sorted(syns, key=len, reverse=True):
-            key = norm(s)
-            if key and key not in syn_map:
-                syn_map[key] = canon
+            _register_syn(syn_map, s, canon)
 
     categories: list[Category] = []
     cat_map: dict[str, Category] = {}

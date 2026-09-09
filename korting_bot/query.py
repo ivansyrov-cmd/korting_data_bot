@@ -13,6 +13,9 @@ from .synonyms import Canon, SynonymIndex, alnum, load_synonyms, norm
 MSG_NO_PARAM = "такой параметр не представлен в базе данных"
 MSG_NO_DATA = "нет данных"
 MSG_NO_MODEL = "модель не найдена в базе данных"
+MSG_UNKNOWN_PARAM = (
+    "я не понял какой параметр вы хотите узнать, попробуйте написать его название иначе"
+)
 MSG_TTX_NEED_MODEL = "Укажите модель: ТТХ OKB 792 CFN"
 MSG_LINK_NEED_MODEL = "Укажите модель: ссылка OKB 792 CFN"
 
@@ -176,10 +179,7 @@ def _find_canon(text: str, syn: SynonymIndex) -> Canon | None:
         return None
     keys = sorted(syn.synonym_to_canon.keys(), key=len, reverse=True)
     for key in keys:
-        if len(key) <= 2:
-            if re.search(rf"(^|\s){re.escape(key)}(\s|$)", blob):
-                return syn.synonym_to_canon[key]
-        elif key in blob:
+        if re.search(rf"(^|\s){re.escape(key)}(\s|$)", blob):
             return syn.synonym_to_canon[key]
     return None
 
@@ -505,9 +505,9 @@ def answer_query(query: str) -> str:
     if _is_link_leftover(leftover):
         return _format_links(products)
     canon = _find_canon(leftover, syn)
-    if not canon and leftover:
-        canon = _find_canon(q, syn)
     if not canon:
+        if leftover:
+            return MSG_UNKNOWN_PARAM
         return _list_models(products, "Уточните модель и характеристику:")
 
     lines = []

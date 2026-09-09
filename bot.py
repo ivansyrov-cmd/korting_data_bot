@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index, suggest_models, suggest_prefixes
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-09-suggest-v13"
+APP_VERSION = "2026-09-09-suggest-v14"
 START_TEXT = (
     "Привет! Я — гид по характеристикам продуктов KORTING. "
     "Я могу подсказать одну или несколько технических характеристик, "
@@ -47,6 +47,7 @@ MENU_PROMPTS = {
     "spec": "Напишите характеристику и модель, например: шнур OKB 792 PFX",
     "ttx": "Напишите модель, например: OKB 792 CFN",
     "link": "Напишите модель, например: KSI 8259 F",
+    "find": "Напишите начало модели, например: OK или OKB 79",
 }
 
 _PENDING: dict[tuple[int, int], tuple[str, float]] = {}
@@ -146,7 +147,7 @@ def _menu_keyboard():
             [InlineKeyboardButton("Характеристика", callback_data="menu:spec")],
             [InlineKeyboardButton("Список всех ТТХ модели", callback_data="menu:ttx")],
             [InlineKeyboardButton("Ссылка на сайт", callback_data="menu:link")],
-            [InlineKeyboardButton("Найти модель", switch_inline_query_current_chat="")],
+            [InlineKeyboardButton("Найти модель", callback_data="menu:find")],
         ]
     )
 

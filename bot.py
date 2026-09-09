@@ -13,10 +13,10 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from korting_bot.query import answer_query, load_index
+from korting_bot.query import answer_query, load_index, suggest_models, suggest_prefixes
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-09-menu-v12"
+APP_VERSION = "2026-09-09-suggest-v13"
 START_TEXT = (
     "Привет! Я — гид по характеристикам продуктов KORTING. "
     "Я могу подсказать одну или несколько технических характеристик, "
@@ -32,7 +32,8 @@ START_TEXT = (
     "3. <b>Получить ссылку на сайт:</b> слово «ссылка», либо «сайт» + «модель».\n\n"
     "Я удобен тем, что могу выгрузить характеристику даже без точного указания её наименования. "
     "Так «шнур» может быть «кабель», а «ссылка» может быть «сайт». "
-    "Если не указать точное наименование модели, то я выгружу сразу несколько полей, ссылок, таблиц ттх.\n\n"
+    "Если не указать точное наименование модели, то я выгружу сразу несколько полей, ссылок, таблиц ттх. "
+    "Можно ввести начало артикула — например OK или OKB 79 — и я покажу подходящие модели.\n\n"
     "Итак, поехали!\n"
     "Команды для меня:\n"
     "1. Характеристика и модель\n"
@@ -145,6 +146,7 @@ def _menu_keyboard():
             [InlineKeyboardButton("Характеристика", callback_data="menu:spec")],
             [InlineKeyboardButton("Список всех ТТХ модели", callback_data="menu:ttx")],
             [InlineKeyboardButton("Ссылка на сайт", callback_data="menu:link")],
+            [InlineKeyboardButton("Найти модель", switch_inline_query_current_chat="")],
         ]
     )
 
@@ -181,8 +183,16 @@ def _run_cli(argv: list[str]) -> int:
 
 
 def _run_telegram(token: str) -> int:
-    from telegram import BotCommand, Update
-    from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes, MessageHandler, filters
+    from telegram import BotCommand, InlineQueryResultArticle, InputTextMessageContent, Update
+    from telegram.ext import (
+        Application,
+        CallbackQueryHandler,
+        CommandHandler,
+        ContextTypes,
+        InlineQueryHandler,
+        MessageHandler,
+        filters,
+    )
 
     async def post_init(application: Application) -> None:
         print(f"korting bot {APP_VERSION}", flush=True)
@@ -272,6 +282,38 @@ def _run_telegram(token: str) -> int:
             query = _apply_menu_mode(mode, query)
         await _reply(update, answer_query(query))
 
+    async def on_inline(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        iq = update.inline_query
+        if not iq:
+            return
+        q = (iq.query or "").strip()
+        results: list[InlineQueryResultArticle] = []
+        if len(re.sub(r"[^0-9A-Za-zА-Яа-я]", "", q)) < 2:
+            for pref, n in suggest_prefixes(40):
+                results.append(
+                    InlineQueryResultArticle(
+                        id=f"p:{pref}",
+                        title=pref,
+                        description=f"{n} моделей",
+                        input_message_content=InputTextMessageContent(pref),
+                    )
+                )
+        else:
+            for p in suggest_models(q, limit=50):
+                model = (p.get("model") or "").strip()
+                if not model:
+                    continue
+                pid = str(p.get("id") or model)[:64]
+                results.append(
+                    InlineQueryResultArticle(
+                        id=pid,
+                        title=model,
+                        description=(p.get("name") or p.get("category") or "")[:80],
+                        input_message_content=InputTextMessageContent(model),
+                    )
+                )
+        await iq.answer(results, cache_time=5, is_personal=False)
+
     app = (
         Application.builder()
         .token(token)
@@ -284,6 +326,7 @@ def _run_telegram(token: str) -> int:
     app.add_handler(CommandHandler("link", on_link))
     app.add_handler(CommandHandler("site", on_link))
     app.add_handler(CallbackQueryHandler(on_menu, pattern=r"^menu:"))
+    app.add_handler(InlineQueryHandler(on_inline))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, on_text))
     app.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
     return 0

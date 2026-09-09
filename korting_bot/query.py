@@ -250,6 +250,52 @@ def _find_prefix(query: str, index: ProductIndex) -> tuple[list[dict], str]:
     return [], ""
 
 
+def _model_fragments(query: str) -> list[str]:
+    frags: list[str] = []
+    for variant in _layout_variants(query):
+        for m in re.finditer(
+            r"[A-Za-zА-Яа-я]{2,8}(?:[\s\-]?\d+[A-Za-zА-Яа-я0-9]*)?",
+            variant,
+        ):
+            frag = alnum(m.group(0))
+            if 2 <= len(frag) <= 24 and frag not in frags:
+                frags.append(frag)
+    return frags
+
+
+def _suggest_from_index(query: str, index: ProductIndex, limit: int = 50) -> tuple[list[dict], str]:
+    for frag in sorted(_model_fragments(query), key=len, reverse=True):
+        hits: list[dict] = []
+        seen: set[str] = set()
+        for p in index.products:
+            full = alnum(p.get("model") or "")
+            if not full.startswith(frag):
+                continue
+            pid = str(p.get("id") or full)
+            if pid in seen:
+                continue
+            seen.add(pid)
+            hits.append(p)
+        if hits:
+            hits.sort(key=lambda p: p.get("model") or "")
+            if limit:
+                hits = hits[:limit]
+            return hits, frag
+    return [], ""
+
+
+def suggest_models(query: str, limit: int = 50) -> list[dict]:
+    hits, _frag = _suggest_from_index(query, load_index(), limit=limit)
+    return hits
+
+
+def suggest_prefixes(limit: int = 50) -> list[tuple[str, int]]:
+    index = load_index()
+    rows = [(pref, len(index.by_prefix.get(pref) or [])) for pref in index.prefixes]
+    rows.sort(key=lambda x: (-x[1], x[0]))
+    return rows[:limit]
+
+
 def find_products(query: str, index: ProductIndex, syn: SynonymIndex) -> tuple[list[dict], str]:
     for variant in _layout_variants(query):
         compact = alnum(variant)
@@ -263,7 +309,14 @@ def find_products(query: str, index: ProductIndex, syn: SynonymIndex) -> tuple[l
         found, key = _find_category_family(variant, syn, index)
         if found:
             return found, key
-    return _find_prefix(query, index)
+    found, key = _find_prefix(query, index)
+    if found:
+        if re.search(r"\d", query):
+            partial, pkey = _suggest_from_index(query, index, limit=0)
+            if partial and pkey and len(pkey) > len(key):
+                return partial, pkey
+        return found, key
+    return _suggest_from_index(query, index, limit=0)
 
 
 def _list_models(products: list[dict], hint: str = "") -> str:

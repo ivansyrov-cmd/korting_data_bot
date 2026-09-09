@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index, needs_property, suggest_models, suggest_prefixes
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-09-help-v20"
+APP_VERSION = "2026-09-09-help-v21"
 START_TEXT = (
     "Привет! Я — гид по характеристикам продуктов KORTING. "
     "Я могу подсказать одну или несколько технических характеристик, "
@@ -52,9 +52,9 @@ PENDING_TTL_SEC = 10 * 60
 MENU_PROMPTS = {
     "spec": "Напишите модель и характеристику, которую вы хотите узнать. Например: «компрессор KNFC 61868»",
     "spec_param": "Напишите характеристику, например: шнур",
-    "ttx": "Напишите модель, например: OKB 792 CFN",
-    "link": "Напишите модель, например: KSI 8259 F",
-    "find": "Напишите начало модели, например: OK или OKB 79",
+    "ttx": "Напишите модель, например: «OKB 792 CFN». Пришлю полный список всех характеристик.",
+    "link": "Напишите модель, например: «KSI 8259 F». Пришлю ссылку модели на сайте.",
+    "find": "Напишите начальное название модели, например: «OK» или «OKB 79». Выдам список из 40 моделей. Больше ТГ мне не даст написать.",
 }
 
 _PENDING: dict[tuple[int, int], tuple[str, float, str]] = {}

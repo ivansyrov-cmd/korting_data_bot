@@ -13,21 +13,22 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from korting_bot.query import answer_query, load_index, suggest_models, suggest_prefixes
+from korting_bot.query import answer_query, load_index, needs_property, suggest_models, suggest_prefixes
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-09-suggest-v14"
+APP_VERSION = "2026-09-09-model-first-v15"
 START_TEXT = (
     "Привет! Я — гид по характеристикам продуктов KORTING. "
     "Я могу подсказать одну или несколько технических характеристик, "
     "дать прямую ссылку на сайт или выгрузить списком все характеристики продукта. "
     "Я работаю очень просто:\n\n"
     "1. <b>Узнать конкретную характеристику продукта</b>: "
-    "«шнур OKB 792 PFX», «компрессор KNFF 80307 SI X». "
+    "сначала модель, потом параметр — «OKB 792 PFX шнур» "
+    "или наоборот «шнур OKB 792 PFX». "
+    "Можно двумя сообщениями: сначала модель, затем характеристику. "
     "Текст можно вписать максимально близкий к характеристике: "
-    "«длина шнура OKB 792 PFX», «тип компрессора KNFF 80307 SI X». "
-    "Если я не могу найти, то попробуй более близкий по смыслу, например "
-    "«кабель OKB 792 PFX».\n\n"
+    "«длина шнура», «тип компрессора». "
+    "Если я не могу найти, то попробуй более близкий по смыслу, например «кабель».\n\n"
     "2. <b>Все характеристики модели одним списком:</b> «ттх и модель».\n\n"
     "3. <b>Получить ссылку на сайт:</b> слово «ссылка», либо «сайт» + «модель».\n\n"
     "Я удобен тем, что могу выгрузить характеристику даже без точного указания её наименования. "
@@ -44,13 +45,14 @@ START_TEXT = (
 TOKEN_ENV_NAMES = ("TELEGRAM_BOT_TOKEN", "TELEGRAM_TOKEN", "BOT_TOKEN", "TG_TOKEN")
 PENDING_TTL_SEC = 10 * 60
 MENU_PROMPTS = {
-    "spec": "Напишите характеристику и модель, например: шнур OKB 792 PFX",
+    "spec": "Напишите модель, например: OKB 792 PFX",
+    "spec_param": "Напишите характеристику, например: шнур",
     "ttx": "Напишите модель, например: OKB 792 CFN",
     "link": "Напишите модель, например: KSI 8259 F",
     "find": "Напишите начало модели, например: OK или OKB 79",
 }
 
-_PENDING: dict[tuple[int, int], tuple[str, float]] = {}
+_PENDING: dict[tuple[int, int], tuple[str, float, str]] = {}
 
 
 def _token() -> str:
@@ -120,23 +122,23 @@ def _pending_key(update) -> tuple[int, int] | None:
     return (chat.id, user.id)
 
 
-def _set_pending(update, mode: str) -> None:
+def _set_pending(update, mode: str, extra: str = "") -> None:
     key = _pending_key(update)
     if key:
-        _PENDING[key] = (mode, time.time())
+        _PENDING[key] = (mode, time.time(), extra)
 
 
-def _pop_pending(update) -> str | None:
+def _pop_pending(update) -> tuple[str, str] | None:
     key = _pending_key(update)
     if not key:
         return None
     item = _PENDING.pop(key, None)
     if not item:
         return None
-    mode, started = item
+    mode, started, extra = item
     if time.time() - started > PENDING_TTL_SEC:
         return None
-    return mode
+    return mode, extra
 
 
 def _menu_keyboard():
@@ -272,15 +274,22 @@ def _run_telegram(token: str) -> int:
         text = (update.message.text or "").strip()
         if not text:
             return
-        mode = _pop_pending(update)
+        pending = _pop_pending(update)
+        mode, extra = pending if pending else (None, "")
         if not mode and not _addressed_to_bot(update, context, text):
             return
         query = _strip_bot_mention(text, context.bot.username)
         if not query:
             await start(update, context)
             return
-        if mode:
+        if mode == "spec_param":
+            query = f"{query} {extra}".strip()
+        elif mode:
             query = _apply_menu_mode(mode, query)
+        if mode != "spec_param" and needs_property(query):
+            _set_pending(update, "spec_param", query)
+            await update.message.reply_text(MENU_PROMPTS["spec_param"])
+            return
         await _reply(update, answer_query(query))
 
     async def on_inline(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

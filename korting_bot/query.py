@@ -471,6 +471,17 @@ def _filter_type_words(products: list[dict], leftover: str) -> tuple[list[dict],
     return current, norm(" ".join(kept))
 
 
+def needs_property(query: str) -> bool:
+    """True if the text names a small set of SKUs and no spec/command."""
+    q = (query or "").strip()
+    if not q or _parse_ttx(q) is not None or _parse_link(q) is not None:
+        return False
+    products, leftover = _resolve_products(q)
+    if leftover or not products:
+        return False
+    return 1 <= len(products) <= MAX_TTX_PRODUCTS
+
+
 def answer_query(query: str) -> str:
     q = (query or "").strip()
     if not q:

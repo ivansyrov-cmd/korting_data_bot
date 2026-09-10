@@ -3,9 +3,10 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
 
-from .paths import CHANGELOG_PAGE
+from .paths import CHANGELOG_PAGE, CHANGELOG_PAGE_XLSX, CHANGELOG_XLSX
 
 PAGE = """<!DOCTYPE html>
 <html lang="ru">
@@ -37,8 +38,31 @@ PAGE = """<!DOCTYPE html>
       padding: 28px 20px 24px;
     }
     header .wrap, main, .empty { max-width: 980px; margin: 0 auto; }
+    .header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
     header h1 { margin: 0 0 6px; font-size: 24px; font-weight: 650; letter-spacing: .02em; }
     header p { margin: 0; color: #cfc8c0; font-size: 14px; }
+    .excel-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font: 600 14px/1.2 inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .excel-btn.on { display: inline-flex; }
+    .excel-btn:hover { filter: brightness(1.08); }
     .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -113,9 +137,12 @@ PAGE = """<!DOCTYPE html>
 </head>
 <body>
   <header>
-    <div class="wrap">
-      <h1>KORTING · изменения ТТХ</h1>
-      <p id="dates">Сверка появится после обновления таблицы на Диске</p>
+    <div class="wrap header-row">
+      <div>
+        <h1>KORTING · изменения ТТХ</h1>
+        <p id="dates">Сверка появится после обновления таблицы на Диске</p>
+      </div>
+      <a class="excel-btn" id="excel-btn" href="izmeneniya_ttx.xlsx" download="izmeneniya_ttx.xlsx">Скачать Excel</a>
     </div>
   </header>
   <section class="stats" id="stats" hidden>
@@ -239,6 +266,7 @@ PAGE = """<!DOCTYPE html>
       $("empty").hidden = true;
       $("stats").hidden = false;
       $("toolbar").hidden = false;
+      $("excel-btn").classList.add("on");
       $("n-changed").textContent = (data.changed || []).length;
       $("n-added").textContent = (data.added || []).length;
       $("n-removed").textContent = (data.removed || []).length;
@@ -275,4 +303,6 @@ def render_changelog_page(payload: dict | None, path: Path = CHANGELOG_PAGE) -> 
     raw = raw.replace("<", "\\u003c").replace(">", "\\u003e")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(PAGE.replace("__CHANGELOG_JSON__", raw), encoding="utf-8")
+    if CHANGELOG_XLSX.is_file() and CHANGELOG_XLSX.stat().st_size > 0:
+        shutil.copyfile(CHANGELOG_XLSX, CHANGELOG_PAGE_XLSX)
     return path

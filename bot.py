@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index, needs_property, suggest_models, suggest_prefixes
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-10-xlsx-v22"
+APP_VERSION = "2026-09-10-net-v23"
 START_TEXT = (
     "Привет! Я — гид по характеристикам продуктов KORTING. "
     "Я могу подсказать одну или несколько технических характеристик, "
@@ -329,10 +329,26 @@ def _run_telegram(token: str) -> int:
                 )
         await iq.answer(results, cache_time=5, is_personal=False)
 
+    async def on_error(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        from telegram.error import NetworkError, TimedOut
+
+        err = context.error
+        if isinstance(err, (NetworkError, TimedOut)):
+            print(f"telegram network: {type(err).__name__}: {err}", flush=True)
+            return
+        print(f"telegram error: {err}", flush=True)
+
     app = (
         Application.builder()
         .token(token)
         .post_init(post_init)
+        .connect_timeout(20)
+        .read_timeout(30)
+        .write_timeout(30)
+        .pool_timeout(10)
+        .get_updates_connect_timeout(20)
+        .get_updates_read_timeout(40)
+        .get_updates_pool_timeout(10)
         .build()
     )
     app.add_handler(CommandHandler("start", start))
@@ -343,7 +359,13 @@ def _run_telegram(token: str) -> int:
     app.add_handler(CallbackQueryHandler(on_menu, pattern=r"^menu:"))
     app.add_handler(InlineQueryHandler(on_inline))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, on_text))
-    app.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
+    app.add_error_handler(on_error)
+    app.run_polling(
+        allowed_updates=Update.ALL_TYPES,
+        drop_pending_updates=True,
+        timeout=20,
+        bootstrap_retries=-1,
+    )
     return 0
 
 

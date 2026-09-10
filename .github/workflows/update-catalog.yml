@@ -26,6 +26,9 @@ jobs:
           if [ -f data/changelog.json ]; then
             git add data/changelog.json data/changelog.txt data/changelog.xlsx
           fi
+          if [ -f docs/index.html ]; then
+            git add docs/index.html
+          fi
           git diff --cached --quiet && echo "нет изменений" && exit 0
           git commit -m "Обновление каталога с Яндекс.Диска"
           git push

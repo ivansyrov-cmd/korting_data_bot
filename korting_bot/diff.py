@@ -256,12 +256,15 @@ def save_xlsx(report: Changelog, path: Path = CHANGELOG_XLSX) -> Path:
 
 
 def save_changelog(report: Changelog) -> dict[str, Path]:
+    from .changelog_page import render_changelog_page
+
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     payload = _to_json(report)
     CHANGELOG_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     CHANGELOG_TXT.write_text(format_changelog(report), encoding="utf-8")
     save_xlsx(report)
-    return {"json": CHANGELOG_JSON, "txt": CHANGELOG_TXT, "xlsx": CHANGELOG_XLSX}
+    page = render_changelog_page(payload)
+    return {"json": CHANGELOG_JSON, "txt": CHANGELOG_TXT, "xlsx": CHANGELOG_XLSX, "page": page}
 
 
 def load_changelog(path: Path = CHANGELOG_JSON) -> Changelog | None:

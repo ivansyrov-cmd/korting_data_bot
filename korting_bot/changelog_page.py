@@ -6,7 +6,7 @@ import json
 import shutil
 from pathlib import Path
 
-from .paths import CHANGELOG_PAGE, CHANGELOG_PAGE_ROOT, CHANGELOG_PAGE_XLSX, CHANGELOG_XLSX
+from .paths import CHANGELOG_PAGE, CHANGELOG_PAGE_XLSX, CHANGELOG_XLSX
 
 PAGE = """<!DOCTYPE html>
 <html lang="ru">
@@ -290,22 +290,6 @@ PAGE = """<!DOCTYPE html>
 """
 
 
-ROOT_REDIRECT = """<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=KORTING_DATA_CHANGES/">
-  <link rel="canonical" href="KORTING_DATA_CHANGES/">
-  <title>KORTING — изменения ТТХ</title>
-  <script>location.replace("KORTING_DATA_CHANGES/");</script>
-</head>
-<body>
-  <p><a href="KORTING_DATA_CHANGES/">KORTING_DATA_CHANGES</a></p>
-</body>
-</html>
-"""
-
-
 def render_changelog_page(payload: dict | None, path: Path = CHANGELOG_PAGE) -> Path:
     data = payload or {
         "old_date": "",
@@ -319,8 +303,6 @@ def render_changelog_page(payload: dict | None, path: Path = CHANGELOG_PAGE) -> 
     raw = raw.replace("<", "\\u003c").replace(">", "\\u003e")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(PAGE.replace("__CHANGELOG_JSON__", raw), encoding="utf-8")
-    CHANGELOG_PAGE_ROOT.parent.mkdir(parents=True, exist_ok=True)
-    CHANGELOG_PAGE_ROOT.write_text(ROOT_REDIRECT, encoding="utf-8")
     if CHANGELOG_XLSX.is_file() and CHANGELOG_XLSX.stat().st_size > 0:
         shutil.copyfile(CHANGELOG_XLSX, CHANGELOG_PAGE_XLSX)
     return path

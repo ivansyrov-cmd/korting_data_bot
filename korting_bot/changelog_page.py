@@ -92,7 +92,9 @@ PAGE = """<!DOCTYPE html>
       margin-right: auto;
     }
     .card h2 { margin: 0 0 4px; font-size: 18px; }
-    .card .cat { color: var(--muted); font-size: 13px; margin-bottom: 10px; }
+    .card h2 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--accent); }
+    .card .cat { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+    .card .prod-link { display: inline-block; font-size: 13px; margin: 0 0 10px; color: var(--accent); word-break: break-all; }
     table { width: 100%; border-collapse: collapse; font-size: 14px; }
     th, td { text-align: left; padding: 8px 6px; vertical-align: top; border-top: 1px solid var(--line); }
     th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
@@ -153,7 +155,7 @@ PAGE = """<!DOCTYPE html>
       let rows = data[tab] || [];
       if (q) {
         rows = rows.filter((m) => {
-          const blob = [m.model, m.name, m.category, ...(m.fields || []).map((f) => [f.name, f.old, f.new].join(" "))].join(" ").toLowerCase();
+          const blob = [m.model, m.name, m.category, m.url, ...(m.fields || []).map((f) => [f.name, f.old, f.new].join(" "))].join(" ").toLowerCase();
           return blob.includes(q);
         });
       }
@@ -168,17 +170,35 @@ PAGE = """<!DOCTYPE html>
         const card = document.createElement("div");
         card.className = "card";
         const h = document.createElement("h2");
-        h.textContent = m.model || "без модели";
+        if (m.url) {
+          const a = document.createElement("a");
+          a.href = m.url;
+          a.textContent = m.model || "без модели";
+          a.target = "_blank";
+          a.rel = "noopener";
+          h.appendChild(a);
+        } else {
+          h.textContent = m.model || "без модели";
+        }
         card.appendChild(h);
         const cat = document.createElement("div");
         cat.className = "cat";
         cat.textContent = [m.category, m.name].filter(Boolean).join(" · ");
         if (cat.textContent) card.appendChild(cat);
+        if (m.url) {
+          const link = document.createElement("a");
+          link.className = "prod-link";
+          link.href = m.url;
+          link.textContent = m.url;
+          link.target = "_blank";
+          link.rel = "noopener";
+          card.appendChild(link);
+        }
         if (tab === "changed" && m.fields && m.fields.length) {
           const table = document.createElement("table");
-          table.innerHTML = "<thead><tr><th>Параметр</th><th>Было</th><th>Стало</th></tr></thead>";
+          table.innerHTML = "<thead><tr><th>Параметр</th><th>Было</th><th>Стало</th><th>Ссылка</th></tr></thead>";
           const tb = document.createElement("tbody");
-          for (const f of m.fields) {
+          m.fields.forEach((f, i) => {
             const tr = document.createElement("tr");
             tr.appendChild(cell(label(f.name)));
             const o = cell(f.old);
@@ -187,8 +207,20 @@ PAGE = """<!DOCTYPE html>
             n.className = "new";
             tr.appendChild(o);
             tr.appendChild(n);
+            const urlCell = document.createElement("td");
+            if (i === 0 && m.url) {
+              const a = document.createElement("a");
+              a.href = m.url;
+              a.textContent = "korting.ru";
+              a.target = "_blank";
+              a.rel = "noopener";
+              urlCell.appendChild(a);
+            } else {
+              urlCell.textContent = i === 0 ? "—" : "";
+            }
+            tr.appendChild(urlCell);
             tb.appendChild(tr);
-          }
+          });
           table.appendChild(tb);
           card.appendChild(table);
         } else if (tab === "added") {

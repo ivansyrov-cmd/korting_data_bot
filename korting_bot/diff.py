@@ -3,12 +3,14 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 
 from openpyxl import Workbook
 
+from .catalog import SKIP_PARAM_NAMES, SKIP_PARAM_PREFIXES
 from .paths import CHANGELOG_JSON, CHANGELOG_TXT, CHANGELOG_XLSX, DATA_DIR
 from .synonyms import alnum, norm
 
@@ -16,6 +18,19 @@ MSG_NO_CHANGELOG = (
     "сверки изменений пока нет. Она появится после обновления таблицы на Диске."
 )
 MSG_MODEL_UNCHANGED = "в последней сверке у этой модели характеристики не менялись"
+# Классификаторы у TYPE_DEVICE и служебные поля — не ТТХ.
+SKIP_CHANGELOG_FIELDS = {
+    "наименование",
+    "категория",
+    "тип",
+    "тип продукта",
+    "тип прибора",
+    "тип панели",
+    "тип вытяжки",
+    "дополнительный цвет",
+    "основные характеристики",
+    "дополнительные характеристики",
+}
 
 
 @dataclass
@@ -30,6 +45,7 @@ class ModelChange:
     model: str
     name: str = ""
     category: str = ""
+    url: str = ""
     fields: list[FieldChange] = field(default_factory=list)
 
 
@@ -60,19 +76,23 @@ def _index(products: list[dict]) -> dict[str, dict]:
     return out
 
 
-def _params(product: dict) -> dict[str, str]:
-    from .query import _is_empty, _skip_ttx_field
+def _is_changelog_field(name: str) -> bool:
+    from .query import _skip_ttx_field
 
-    raw = dict(product.get("params") or {})
-    name = (product.get("name") or "").strip()
-    cat = (product.get("category") or "").strip()
-    if name:
-        raw["Наименование"] = name
-    if cat:
-        raw["Категория"] = cat
+    if _skip_ttx_field(name):
+        return False
+    n = norm(name)
+    if n in SKIP_CHANGELOG_FIELDS or n in SKIP_PARAM_NAMES:
+        return False
+    return not any(n.startswith(p) for p in SKIP_PARAM_PREFIXES)
+
+
+def _params(product: dict) -> dict[str, str]:
+    from .query import _is_empty
+
     clean = {}
-    for key, val in raw.items():
-        if _skip_ttx_field(key):
+    for key, val in dict(product.get("params") or {}).items():
+        if not _is_changelog_field(key):
             continue
         text = (val or "").strip()
         if _is_empty(text):
@@ -88,8 +108,20 @@ def _label(name: str) -> str:
     return label or name
 
 
+def _canon_val(text: str) -> str:
+    t = norm(text)
+    t = t.replace("×", "x").replace("х", "x")
+    t = re.sub(r"\s*x\s*", "x", t)
+    t = re.sub(r"\s+", " ", t)
+    return t
+
+
 def _same(a: str, b: str) -> bool:
-    return norm(a) == norm(b)
+    if _canon_val(a) == _canon_val(b):
+        return True
+    left = {p.strip() for p in _canon_val(a).split("|") if p.strip()}
+    right = {p.strip() for p in _canon_val(b).split("|") if p.strip()}
+    return bool(left) and left == right
 
 
 def diff_catalogs(old: dict | None, new: dict | None) -> Changelog:
@@ -105,12 +137,22 @@ def diff_catalogs(old: dict | None, new: dict | None) -> Changelog:
     for model in sorted(set(new_map) - set(old_map)):
         p = new_map[model]
         report.added.append(
-            ModelChange(model=model, name=p.get("name") or "", category=p.get("category") or "")
+            ModelChange(
+                model=model,
+                name=p.get("name") or "",
+                category=p.get("category") or "",
+                url=p.get("url") or "",
+            )
         )
     for model in sorted(set(old_map) - set(new_map)):
         p = old_map[model]
         report.removed.append(
-            ModelChange(model=model, name=p.get("name") or "", category=p.get("category") or "")
+            ModelChange(
+                model=model,
+                name=p.get("name") or "",
+                category=p.get("category") or "",
+                url=p.get("url") or "",
+            )
         )
     for model in sorted(set(old_map) & set(new_map)):
         before = _params(old_map[model])
@@ -129,6 +171,7 @@ def diff_catalogs(old: dict | None, new: dict | None) -> Changelog:
                     model=model,
                     name=p.get("name") or "",
                     category=p.get("category") or "",
+                    url=p.get("url") or old_map[model].get("url") or "",
                     fields=fields,
                 )
             )
@@ -168,6 +211,8 @@ def format_changelog(report: Changelog, model_query: str = "") -> str:
     lines.append("")
     for m in changed:
         lines.append(m.model)
+        if m.url:
+            lines.append(m.url)
         for item in m.fields:
             lines.append("• " + _field_line(item))
         lines.append("")
@@ -190,6 +235,7 @@ def _to_json(report: Changelog) -> dict:
             "model": m.model,
             "name": m.name,
             "category": m.category,
+            "url": m.url,
             "fields": [{"name": f.name, "old": f.old, "new": f.new} for f in m.fields],
         }
 
@@ -218,6 +264,7 @@ def _from_json(data: dict) -> Changelog:
                     model=row.get("model") or "",
                     name=row.get("name") or "",
                     category=row.get("category") or "",
+                    url=row.get("url") or "",
                     fields=fields,
                 )
             )
@@ -237,7 +284,7 @@ def save_xlsx(report: Changelog, path: Path = CHANGELOG_XLSX) -> Path:
     wb = Workbook()
     ws = wb.active
     ws.title = "Изменения"
-    ws.append(["Модель", "Категория", "Тип", "Параметр", "Было", "Стало"])
+    ws.append(["Модель", "Ссылка", "Категория", "Тип", "Параметр", "Было", "Стало"])
     for m in report.changed:
         for item in m.fields:
             kind = "изменено"
@@ -245,11 +292,11 @@ def save_xlsx(report: Changelog, path: Path = CHANGELOG_XLSX) -> Path:
                 kind = "параметр удалён"
             elif item.new and not item.old:
                 kind = "появился параметр"
-            ws.append([m.model, m.category, kind, _label(item.name), item.old, item.new])
+            ws.append([m.model, m.url, m.category, kind, _label(item.name), item.old, item.new])
     for m in report.added:
-        ws.append([m.model, m.category, "новая модель", "", "", ""])
+        ws.append([m.model, m.url, m.category, "новая модель", "", "", ""])
     for m in report.removed:
-        ws.append([m.model, m.category, "нет в выгрузке", "", "", ""])
+        ws.append([m.model, m.url, m.category, "нет в выгрузке", "", "", ""])
     path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(path)
     return path

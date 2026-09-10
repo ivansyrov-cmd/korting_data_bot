@@ -112,6 +112,17 @@ SKIP_PARAM_PREFIXES = (
     "не выгружать",
     "номер фото",
 )
+# Колонка D в выгрузке Bitrix: «Модель [MODEL]».
+MODEL_COLUMN_INDEX = 3
+IDENTITY_PARAM_NAMES = {
+    "id элемента",
+    "ean",
+    "код из 1с",
+    "модель",
+    "наименование элемента",
+    "url страницы детального просмотра",
+}
+TRAILING_CMS_NAMES = {"наличие"}
 
 
 def _writable_dir() -> Path:
@@ -215,6 +226,32 @@ def _skip_param(name: str) -> bool:
     return any(n.startswith(p) for p in SKIP_PARAM_PREFIXES)
 
 
+def _type_device_index(header_row) -> int | None:
+    """Первая колонка блока ТТХ: Тип [TYPE_DIVICE] / TYPE_DEVICE."""
+    for i, h in enumerate(header_row or ()):
+        u = str(h or "").upper()
+        if "TYPE_DIVICE" in u or "TYPE_DEVICE" in u:
+            return i
+    return None
+
+
+def _is_trailing_cms(raw_header: str, name: str) -> bool:
+    u = str(raw_header or "").upper()
+    if any(token in u for token in ("IE_PREVIEW_TEXT", "IE_DETAIL_TEXT", "IE_DETAIL_PAGE_URL", "ICAT_")):
+        return True
+    return _norm_name(name) in TRAILING_CMS_NAMES
+
+
+def _model_from_row(header_row, row) -> str:
+    """Модель только из столбца D, не из поздних дублей «Модель»."""
+    if header_row is None or len(row) <= MODEL_COLUMN_INDEX or len(header_row) <= MODEL_COLUMN_INDEX:
+        return ""
+    head = _norm_name(_header_name(header_row[MODEL_COLUMN_INDEX]))
+    if "модель" not in head:
+        return ""
+    return _clean_text(row[MODEL_COLUMN_INDEX])
+
+
 def _product_url(raw: str) -> str:
     url = _clean_text(raw).split("?")[0]
     if not url:
@@ -239,16 +276,30 @@ def parse_xlsx(path: Path, source: str = FEED_URL, feed_date: str = "") -> dict:
             if not header_row:
                 continue
             headers = [_header_name(h) for h in header_row]
+            type_idx = _type_device_index(header_row)
             for row in rows:
                 values: dict[str, str] = {}
+                param_names: list[str] = []
                 for i, key in enumerate(headers):
                     if not key or i >= len(row):
                         continue
                     val = _clean_text(row[i])
                     if not val or key in values:
                         continue
+                    ident = _norm_name(key) in IDENTITY_PARAM_NAMES
+                    if type_idx is not None:
+                        if i < type_idx:
+                            if ident:
+                                values[key] = val
+                            continue
+                        if _is_trailing_cms(header_row[i], key) or _skip_param(key):
+                            continue
+                    elif not ident and _skip_param(key):
+                        continue
                     values[key] = val
-                model = values.get("Модель") or ""
+                    if not ident:
+                        param_names.append(key)
+                model = _model_from_row(header_row, row) or values.get("Модель") or ""
                 if not model:
                     continue
                 pid = values.get("ID элемента") or model
@@ -257,8 +308,9 @@ def parse_xlsx(path: Path, source: str = FEED_URL, feed_date: str = "") -> dict:
                     continue
                 seen.add(uniq)
                 params = {}
-                for key, val in values.items():
-                    if _skip_param(key) or _is_enum_ids(val):
+                for key in param_names:
+                    val = values.get(key) or ""
+                    if not val or _skip_param(key) or _is_enum_ids(val):
                         continue
                     params[key] = val
                 products.append({

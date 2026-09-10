@@ -24,7 +24,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/catalog.json
           if [ -f data/changelog.json ]; then
-            git add data/changelog.json data/changelog.txt data/changelog.xlsx
+            git add data/changelog.json data/changelog.txt
+            git add -f data/changelog.xlsx
           fi
           if [ -f docs/index.html ]; then
             git add docs/index.html

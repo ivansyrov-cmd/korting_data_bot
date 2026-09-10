@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index, needs_property, suggest_models, suggest_prefixes
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-10-ttx-v25"
+APP_VERSION = "2026-09-10-changes-v26"
 START_TEXT = (
     "Привет! Я — гид по характеристикам продуктов KORTING. "
     "Я могу подсказать одну или несколько технических характеристик, "
@@ -218,8 +218,11 @@ def _run_telegram(token: str) -> int:
                 BotCommand("changes", "Изменения ТТХ"),
             ]
         )
+        from korting_bot.diff import load_changelog
+
         load_synonyms()
         load_index()
+        load_changelog()
         print("catalog ready", flush=True)
 
     async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -245,24 +248,22 @@ def _run_telegram(token: str) -> int:
             )
 
     async def _send_changes(message, model: str = "") -> None:
-        from korting_bot.diff import MSG_NO_CHANGELOG, answer_changes
-        from korting_bot.paths import CHANGELOG_XLSX
+        from korting_bot.diff import MSG_NO_CHANGELOG, answer_changes, ensure_changelog_xlsx, load_changelog
 
         text = answer_changes(model)
         for chunk in _reply_chunks(text):
             await message.reply_text(chunk)
-        if (
-            not model
-            and text != MSG_NO_CHANGELOG
-            and CHANGELOG_XLSX.is_file()
-            and CHANGELOG_XLSX.stat().st_size > 0
-        ):
-            with CHANGELOG_XLSX.open("rb") as fh:
-                await message.reply_document(
-                    document=fh,
-                    filename="izmeneniya_ttx.xlsx",
-                    caption="Выгрузка сверки ТТХ",
-                )
+        if model or text == MSG_NO_CHANGELOG:
+            return
+        xlsx = ensure_changelog_xlsx(load_changelog())
+        if xlsx is None or not xlsx.is_file() or xlsx.stat().st_size == 0:
+            return
+        with xlsx.open("rb") as fh:
+            await message.reply_document(
+                document=fh,
+                filename="izmeneniya_ttx.xlsx",
+                caption="Выгрузка сверки ТТХ",
+            )
 
     async def on_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         query = update.callback_query

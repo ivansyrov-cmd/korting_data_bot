@@ -27,6 +27,9 @@ jobs:
             git add data/changelog.json data/changelog.txt
             git add -f data/changelog.xlsx
           fi
+          if [ -f korting_bot/changelog.json ]; then
+            git add korting_bot/changelog.json
+          fi
           if [ -f docs/index.html ]; then
             git add docs/index.html
           fi

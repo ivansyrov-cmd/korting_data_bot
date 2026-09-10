@@ -11,7 +11,7 @@ from pathlib import Path
 from openpyxl import Workbook
 
 from .catalog import SKIP_PARAM_NAMES, SKIP_PARAM_PREFIXES
-from .paths import CHANGELOG_JSON, CHANGELOG_TXT, CHANGELOG_XLSX, DATA_DIR
+from .paths import BUNDLED_CHANGELOG, CHANGELOG_JSON, CHANGELOG_TXT, CHANGELOG_XLSX, DATA_DIR
 from .synonyms import alnum, norm
 
 MSG_NO_CHANGELOG = (
@@ -306,23 +306,65 @@ def save_changelog(report: Changelog) -> dict[str, Path]:
     from .changelog_page import render_changelog_page
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    payload = _to_json(report)
-    CHANGELOG_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    payload = json.dumps(_to_json(report), ensure_ascii=False, indent=2)
+    CHANGELOG_JSON.write_text(payload, encoding="utf-8")
     CHANGELOG_TXT.write_text(format_changelog(report), encoding="utf-8")
-    save_xlsx(report)
-    page = render_changelog_page(payload)
-    return {"json": CHANGELOG_JSON, "txt": CHANGELOG_TXT, "xlsx": CHANGELOG_XLSX, "page": page}
-
-
-def load_changelog(path: Path = CHANGELOG_JSON) -> Changelog | None:
-    if not path.is_file() or path.stat().st_size == 0:
-        return None
     try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
+        BUNDLED_CHANGELOG.write_text(payload, encoding="utf-8")
+    except OSError as exc:
+        print(f"bundled changelog skip: {exc}", flush=True)
+    xlsx = ensure_changelog_xlsx(report)
+    page = render_changelog_page(_to_json(report))
+    return {"json": CHANGELOG_JSON, "txt": CHANGELOG_TXT, "xlsx": xlsx, "page": page, "bundled": BUNDLED_CHANGELOG}
+
+
+def _changelog_paths(explicit: Path | None = None) -> list[Path]:
+    from .catalog import _writable_dir
+
+    paths = []
+    for p in (
+        explicit,
+        CHANGELOG_JSON,
+        BUNDLED_CHANGELOG,
+        Path("/tmp/korting") / "changelog.json",
+        _writable_dir() / "changelog.json",
+    ):
+        if p is not None and p not in paths:
+            paths.append(p)
+    return paths
+
+
+def load_changelog(path: Path | None = None) -> Changelog | None:
+    for candidate in _changelog_paths(path):
+        if not candidate.is_file() or candidate.stat().st_size == 0:
+            continue
+        try:
+            data = json.loads(candidate.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        report = _from_json(data)
+        print(
+            f"changelog loaded {candidate} changed={len(report.changed)} "
+            f"added={len(report.added)} removed={len(report.removed)}",
+            flush=True,
+        )
+        return report
+    print("changelog not found", flush=True)
+    return None
+
+
+def ensure_changelog_xlsx(report: Changelog | None = None) -> Path | None:
+    from .catalog import _writable_dir
+
+    report = report or load_changelog()
+    if report is None:
         return None
-    report = _from_json(data)
-    return report
+    for dest in (CHANGELOG_XLSX, _writable_dir() / "changelog.xlsx"):
+        try:
+            return save_xlsx(report, dest)
+        except OSError:
+            continue
+    return None
 
 
 def answer_changes(query: str = "") -> str:

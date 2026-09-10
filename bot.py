@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
 from korting_bot.query import answer_query, load_index, needs_property, suggest_models, suggest_prefixes
 from korting_bot.synonyms import load_synonyms
 
-APP_VERSION = "2026-09-10-net-v23"
+APP_VERSION = "2026-09-10-changelog-v24"
 START_TEXT = (
     "Привет! Я — гид по характеристикам продуктов KORTING. "
     "Я могу подсказать одну или несколько технических характеристик, "
@@ -36,6 +36,9 @@ START_TEXT = (
     "и выдать список.</b> "
     "Например: «ретро духовки», «инвертор холодильники», "
     "«вертикальные стиральные», «сушильная машина heat pump».\n\n"
+    "5. <b>Посмотреть изменения ТТХ:</b> «изменения» — сводка последней сверки, "
+    "«изменения OKB 792 PFX» — только эта модель. "
+    "Полный список можно получить файлом Excel.\n\n"
     "Я удобен тем, что могу выгрузить характеристику даже без точного указания её наименования. "
     "Так «шнур» может быть «кабель», а «ссылка» может быть «сайт». "
     "Если не указать точное наименование модели, то я выгружу сразу несколько полей, ссылок, таблиц ттх.\n\n"
@@ -44,7 +47,8 @@ START_TEXT = (
     "1. Характеристика и модель. Пример: «шнур OKB 792 PFX»\n"
     "2. ТТХ и модель. Пример: «ттх HG 6235 CTN»\n"
     "3. Ссылка и модель. Пример: «ссылка HGG 9835 CTN»\n"
-    "4. Схожий параметр и модель. Пример: «инверторные стиральные»"
+    "4. Схожий параметр и модель. Пример: «инверторные стиральные»\n"
+    "5. Изменения ТТХ. Пример: «изменения» или «изменения OKB 792 PFX»"
 )
 
 TOKEN_ENV_NAMES = ("TELEGRAM_BOT_TOKEN", "TELEGRAM_TOKEN", "BOT_TOKEN", "TG_TOKEN")
@@ -155,6 +159,7 @@ def _menu_keyboard():
             [InlineKeyboardButton("Список всех ТТХ модели", callback_data="menu:ttx")],
             [InlineKeyboardButton("Ссылка на сайт", callback_data="menu:link")],
             [InlineKeyboardButton("Найти модель", callback_data="menu:find")],
+            [InlineKeyboardButton("Изменения ТТХ", callback_data="menu:changes")],
         ]
     )
 
@@ -210,6 +215,7 @@ def _run_telegram(token: str) -> int:
                 BotCommand("help", "Как пользоваться"),
                 BotCommand("ttx", "Список всех ТТХ модели"),
                 BotCommand("link", "Ссылка на сайт"),
+                BotCommand("changes", "Изменения ТТХ"),
             ]
         )
         load_synonyms()
@@ -238,12 +244,36 @@ def _run_telegram(token: str) -> int:
                 disable_web_page_preview=many_links,
             )
 
+    async def _send_changes(message, model: str = "") -> None:
+        from korting_bot.diff import MSG_NO_CHANGELOG, answer_changes
+        from korting_bot.paths import CHANGELOG_XLSX
+
+        text = answer_changes(model)
+        for chunk in _reply_chunks(text):
+            await message.reply_text(chunk)
+        if (
+            not model
+            and text != MSG_NO_CHANGELOG
+            and CHANGELOG_XLSX.is_file()
+            and CHANGELOG_XLSX.stat().st_size > 0
+        ):
+            with CHANGELOG_XLSX.open("rb") as fh:
+                await message.reply_document(
+                    document=fh,
+                    filename="izmeneniya_ttx.xlsx",
+                    caption="Выгрузка сверки ТТХ",
+                )
+
     async def on_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         query = update.callback_query
         if not query or not query.data:
             return
         await query.answer()
         mode = query.data.split(":", 1)[-1]
+        if mode == "changes":
+            if query.message:
+                await _send_changes(query.message)
+            return
         prompt = MENU_PROMPTS.get(mode)
         if not prompt:
             return
@@ -273,6 +303,13 @@ def _run_telegram(token: str) -> int:
         _pop_pending(update)
         await _reply(update, answer_query("ссылка " + model))
 
+    async def on_changes(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        if not update.message:
+            return
+        _pop_pending(update)
+        model = " ".join(context.args or []).strip()
+        await _send_changes(update.message, model)
+
     async def on_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         if not update.message:
             return
@@ -294,6 +331,9 @@ def _run_telegram(token: str) -> int:
         if mode != "spec_param" and needs_property(query):
             _set_pending(update, "spec_param", query)
             await update.message.reply_text(MENU_PROMPTS["spec_param"])
+            return
+        if re.match(r"^(?:[/!])?(?:изменения|changelog|сверка|changes)\s*$", query, re.I):
+            await _send_changes(update.message)
             return
         await _reply(update, answer_query(query))
 
@@ -356,6 +396,7 @@ def _run_telegram(token: str) -> int:
     app.add_handler(CommandHandler("ttx", on_ttx))
     app.add_handler(CommandHandler("link", on_link))
     app.add_handler(CommandHandler("site", on_link))
+    app.add_handler(CommandHandler("changes", on_changes))
     app.add_handler(CallbackQueryHandler(on_menu, pattern=r"^menu:"))
     app.add_handler(InlineQueryHandler(on_inline))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, on_text))

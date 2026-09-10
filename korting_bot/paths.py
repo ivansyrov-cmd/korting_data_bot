@@ -4,6 +4,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 CATALOG_PATH = DATA_DIR / "catalog.json"
+CHANGELOG_JSON = DATA_DIR / "changelog.json"
+CHANGELOG_TXT = DATA_DIR / "changelog.txt"
+CHANGELOG_XLSX = DATA_DIR / "changelog.xlsx"
 SYNONYMS_PATH = ROOT / "Синонимы_YML.xlsx"
 FEED_URL = "https://disk.yandex.ru/d/FBceQbtZGwLxTg"
 SITE_BASE = "https://korting.ru"

@@ -59,6 +59,10 @@ LINK_HEAD = re.compile(
     r"^(?:[/!])?(?:ссылка|сайт|линк|link|url|site)[\s:_\-]*",
     re.IGNORECASE,
 )
+CHANGE_HEAD = re.compile(
+    r"^(?:[/!])?(?:изменения|changelog|сверка|changes)[\s:_\-]*",
+    re.IGNORECASE,
+)
 LINK_WORDS = {"ссылка", "сайт", "линк", "link", "url", "site"}
 SKIP_TTX_FIELDS = {
     "видео",
@@ -384,6 +388,13 @@ def _parse_ttx(query: str) -> str | None:
 
 def _parse_link(query: str) -> str | None:
     m = LINK_HEAD.match(query or "")
+    if not m:
+        return None
+    return (query or "")[m.end() :].strip()
+
+
+def _parse_changes(query: str) -> str | None:
+    m = CHANGE_HEAD.match(query or "")
     if not m:
         return None
     return (query or "")[m.end() :].strip()
@@ -789,7 +800,7 @@ def _answer_reverse(query: str) -> str:
 def needs_property(query: str) -> bool:
     """True if the text names a small set of SKUs and no spec/command."""
     q = (query or "").strip()
-    if not q or _parse_ttx(q) is not None or _parse_link(q) is not None:
+    if not q or _parse_ttx(q) is not None or _parse_link(q) is not None or _parse_changes(q) is not None:
         return False
     if _is_reverse_query(q, load_synonyms()):
         return False
@@ -809,6 +820,11 @@ def answer_query(query: str) -> str:
     link_model = _parse_link(q)
     if link_model is not None:
         return _answer_link(link_model)
+    change_q = _parse_changes(q)
+    if change_q is not None:
+        from .diff import answer_changes
+
+        return answer_changes(change_q)
     syn = load_synonyms()
     if _is_reverse_query(q, syn):
         return _answer_reverse(q)

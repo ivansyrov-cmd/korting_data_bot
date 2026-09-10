@@ -1,14 +1,4 @@
-# -*- coding: utf-8 -*-
-"""Статическая страница сверки ТТХ для GitHub Pages."""
-from __future__ import annotations
-
-import json
-import shutil
-from pathlib import Path
-
-from .paths import CHANGELOG_PAGE, CHANGELOG_PAGE_ROOT, CHANGELOG_PAGE_XLSX, CHANGELOG_XLSX
-
-PAGE = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -161,7 +151,7 @@ PAGE = """<!DOCTYPE html>
   <main id="list"></main>
   <p class="empty" id="empty">Сверки изменений пока нет. Когда таблица на Яндекс.Диске обновится, здесь появится сравнение: модель, параметр, было → стало.</p>
   <footer id="foot"></footer>
-  <script id="data" type="application/json">__CHANGELOG_JSON__</script>
+  <script id="data" type="application/json">{"old_date": "2026-09-02 12:45:56", "new_date": "2026-09-10 09:55:30", "generated": "2026-09-10 13:45", "changed": [{"model": "KDCI 4559", "name": "Компактная посудомоечная машина KDCI 4559", "category": "Посудомоечные машины", "url": "https://korting.ru/catalog/posudomoechnye-mashiny/kompaktnaya-posudomoechnaya-mashina-kdci-4559/", "fields": [{"name": "Ширина (см)", "old": "60", "new": "55"}]}, {"model": "KDI 60877", "name": "Посудомоечная машина KDI 60877", "category": "Посудомоечные машины", "url": "https://korting.ru/catalog/posudomoechnye-mashiny/posudomoechnaya-mashina-kdi-60877/", "fields": [{"name": "Энергопотребление (кВт/ч)", "old": "0.849", "new": "0.9"}]}, {"model": "KHI 6393 N", "name": "Полновстраиваемая вытяжка KHI 6393 N", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-n/", "fields": [{"name": "Производительность (м³/ч)", "old": "550", "new": "650"}]}, {"model": "KHI 6393 W", "name": "Полновстраиваемая вытяжка KHI 6393 W", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-w/", "fields": [{"name": "Производительность (м³/ч)", "old": "550", "new": "650"}]}, {"model": "KHI 6393 X", "name": "Полновстраиваемая вытяжка KHI 6393 X", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-x/", "fields": [{"name": "Производительность (м³/ч)", "old": "550", "new": "650"}]}, {"model": "KHI 6788 GGR", "name": "Полновстраиваемая вытяжка KHI 6788 GGR", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6788-ggr/", "fields": [{"name": "Производительность (м³/ч)", "old": "550", "new": "650"}]}, {"model": "KHI 6788 GN", "name": "Полновстраиваемая вытяжка KHI 6788 GN", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6788-gn/", "fields": [{"name": "Производительность (м³/ч)", "old": "550", "new": "650"}]}, {"model": "KHP 6280 N", "name": "Вытяжка с выдвижным экраном KHP 6280 N", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6280-n/", "fields": [{"name": "Производительность (м³/ч)", "old": "550", "new": "650"}]}, {"model": "KHP 6280 W", "name": "Вытяжка с выдвижным экраном KHP 6280 W", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6280-w/", "fields": [{"name": "Производительность (м³/ч)", "old": "550", "new": "650"}]}, {"model": "KHP 6280 X", "name": "Вытяжка с выдвижным экраном KHP 6280 X", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6280-x/", "fields": [{"name": "Производительность (м³/ч)", "old": "550", "new": "650"}]}, {"model": "KHP 6704 GN", "name": "Вытяжка с выдвижным экраном KHP 6704 GN", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6704-gn/", "fields": [{"name": "Производительность (м³/ч)", "old": "550", "new": "650"}]}, {"model": "KHP 6704 GW", "name": "Вытяжка с выдвижным экраном KHP 6704 GW", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6704-gw/", "fields": [{"name": "Производительность (м³/ч)", "old": "550", "new": "650"}]}, {"model": "KHP 6900 DGN", "name": "Вытяжка с выдвижным экраном KHP 6900 DGN", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6900-dgn/", "fields": [{"name": "Производительность (м³/ч)", "old": "750", "new": "900"}]}, {"model": "KHP 6900 DGW", "name": "Вытяжка с выдвижным экраном KHP 6900 DGW", "category": "Вытяжки", "url": "https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6900-dgw/", "fields": [{"name": "Производительность (м³/ч)", "old": "750", "new": "900"}]}, {"model": "KNFS 91797 GN", "name": "Холодильник Side-By-Side KNFS 91797 GN", "category": "Холодильники", "url": "https://korting.ru/catalog/kholodilniki/kholodilnik-side-by-side-knfs-91797-gn/", "fields": [{"name": "Полка для бутылок", "old": "Да, металл", "new": "Нет"}]}, {"model": "KNFS 91797 GW", "name": "Холодильник Side-By-Side KNFS 91797 GW", "category": "Холодильники", "url": "https://korting.ru/catalog/kholodilniki/kholodilnik-side-by-side-knfs-91797-gw/", "fields": [{"name": "Полка для бутылок", "old": "Да, металл", "new": "Нет"}]}, {"model": "KNFS 91797 X", "name": "Холодильник Side-By-Side KNFS 91797 X", "category": "Холодильники", "url": "https://korting.ru/catalog/kholodilniki/kholodilnik-side-by-side-knfs-91797-x/", "fields": [{"name": "Полка для бутылок", "old": "Да, металл", "new": "Нет"}]}, {"model": "KWMI 14V87", "name": "Стиральная машина KWMI 14V87", "category": "Стиральные машины", "url": "https://korting.ru/catalog/stiralnye-mashiny/stiralnaya-mashina-kwmi-14v87/", "fields": [{"name": "Масса прибора (кг)", "old": "66.2", "new": "66.3"}]}], "added": [], "removed": []}</script>
   <script>
     const data = JSON.parse(document.getElementById("data").textContent);
     const has = (data.changed && data.changed.length) || (data.added && data.added.length) || (data.removed && data.removed.length);
@@ -287,40 +277,3 @@ PAGE = """<!DOCTYPE html>
   </script>
 </body>
 </html>
-"""
-
-
-ROOT_REDIRECT = """<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=KORTING_DATA_CHANGES/">
-  <link rel="canonical" href="KORTING_DATA_CHANGES/">
-  <title>KORTING — изменения ТТХ</title>
-  <script>location.replace("KORTING_DATA_CHANGES/");</script>
-</head>
-<body>
-  <p><a href="KORTING_DATA_CHANGES/">KORTING_DATA_CHANGES</a></p>
-</body>
-</html>
-"""
-
-
-def render_changelog_page(payload: dict | None, path: Path = CHANGELOG_PAGE) -> Path:
-    data = payload or {
-        "old_date": "",
-        "new_date": "",
-        "generated": "",
-        "changed": [],
-        "added": [],
-        "removed": [],
-    }
-    raw = json.dumps(data, ensure_ascii=False)
-    raw = raw.replace("<", "\\u003c").replace(">", "\\u003e")
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(PAGE.replace("__CHANGELOG_JSON__", raw), encoding="utf-8")
-    CHANGELOG_PAGE_ROOT.parent.mkdir(parents=True, exist_ok=True)
-    CHANGELOG_PAGE_ROOT.write_text(ROOT_REDIRECT, encoding="utf-8")
-    if CHANGELOG_XLSX.is_file() and CHANGELOG_XLSX.stat().st_size > 0:
-        shutil.copyfile(CHANGELOG_XLSX, CHANGELOG_PAGE_XLSX)
-    return path

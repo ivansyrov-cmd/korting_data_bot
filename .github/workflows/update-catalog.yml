@@ -30,11 +30,8 @@ jobs:
           if [ -f korting_bot/changelog.json ]; then
             git add korting_bot/changelog.json
           fi
-          if [ -f docs/index.html ]; then
-            git add docs/index.html
-          fi
-          if [ -f docs/izmeneniya_ttx.xlsx ]; then
-            git add docs/izmeneniya_ttx.xlsx
+          if [ -d docs ]; then
+            git add docs
           fi
           git diff --cached --quiet && echo "нет изменений" && exit 0
           git commit -m "Обновление каталога с Яндекс.Диска"

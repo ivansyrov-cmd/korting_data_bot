@@ -24,5 +24,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/catalog.json
           git diff --cached --quiet && echo "нет изменений" && exit 0
-          git commit -m "Обновление каталога из YML"
+          git commit -m "Обновление каталога с Яндекс.Диска"
           git push

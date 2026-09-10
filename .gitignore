@@ -5,6 +5,7 @@ venv/
 .tmp/
 data/feed.yml
 data/*.xml
+data/*.xlsx
 *.xml
 .DS_Store
 Thumbs.db

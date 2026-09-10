@@ -60,7 +60,16 @@ LINK_HEAD = re.compile(
     re.IGNORECASE,
 )
 LINK_WORDS = {"ссылка", "сайт", "линк", "link", "url", "site"}
-SKIP_TTX_FIELDS = {"видео", "привязка к цветам", "преимущества и особенности"}
+SKIP_TTX_FIELDS = {
+    "видео",
+    "привязка к цветам",
+    "преимущества и особенности",
+    "наличие",
+    "цена для фильтра",
+    "новинка",
+    "популярный",
+    "спецпредложение",
+}
 MAX_TTX_PRODUCTS = 8
 
 LATIN = "QWERTYUIOPASDFGHJKLZXCVBNM"

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Обновить catalog.json из YML. Для запросов не используется."""
+"""Обновить catalog.json из выгрузки на Яндекс.Диске."""
 from __future__ import annotations
 
 import argparse

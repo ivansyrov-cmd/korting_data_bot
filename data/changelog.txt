@@ -1,75 +1,2667 @@
 Изменения ТТХ
-Было: 2026-09-02 12:45:56 → стало: 2026-09-10 09:55:30
-Моделей с изменёнными ТТХ: 18, новых: 0, нет в выгрузке: 0
+Было: 2026-09-10 09:55:30 → стало: 2026-09-10 21:00:18
+Моделей с изменёнными ТТХ: 398, новых: 0, нет в выгрузке: 0
 
-KDCI 4559
-https://korting.ru/catalog/posudomoechnye-mashiny/kompaktnaya-posudomoechnaya-mashina-kdci-4559/
-• Ширина: было 60, стало 55
+DSK 150
+https://korting.ru/catalog/aksessuary/soedinitel-dlya-stiralnoy-i-sushilnoy-mashiny-dsk-150/
+• Вес: было 5000, сейчас нет данных
+• Высота: было 110, сейчас нет данных
+• Длина: было 700, сейчас нет данных
+• Количество: было 99.0000, сейчас нет данных
+• Ширина: было 680, сейчас нет данных
 
-KDI 60877
-https://korting.ru/catalog/posudomoechnye-mashiny/posudomoechnaya-mashina-kdi-60877/
-• Энергопотребление: было 0.849, стало 0.9
+DSK 155
+https://korting.ru/catalog/aksessuary/soedinitel-dlya-stiralnoy-i-sushilnoy-mashiny-dsk-155/
+• Вес: было 1510, сейчас нет данных
+• Высота: было 110, сейчас нет данных
+• Длина: было 680, сейчас нет данных
+• Ширина: было 700, сейчас нет данных
 
-KHI 6393 N
-https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-n/
-• Производительность: было 550, стало 650
+DSK 250
+https://korting.ru/catalog/aksessuary/soedinitel-dlya-stiralnoy-i-sushilnoy-mashiny-dsk-250/
+• Вес: было 3720, сейчас нет данных
+• Высота: было 140, сейчас нет данных
+• Длина: было 620, сейчас нет данных
+• Количество: было 746.0000, сейчас нет данных
+• Ширина: было 640, сейчас нет данных
 
-KHI 6393 W
-https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-w/
-• Производительность: было 550, стало 650
+DSK 250 N
+https://korting.ru/catalog/aksessuary/soedinitel-dlya-stiralnoy-i-sushilnoy-mashiny-dsk-250-n/
+• Вес: было 3720, сейчас нет данных
+• Высота: было 140, сейчас нет данных
+• Длина: было 620, сейчас нет данных
+• Ширина: было 640, сейчас нет данных
 
-KHI 6393 X
-https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-x/
-• Производительность: было 550, стало 650
+DSK 260
+https://korting.ru/catalog/aksessuary/soedinitel-dlya-stiralnoy-i-sushilnoy-mashiny-dsk-260/
+• Вес: было 1350, сейчас нет данных
+• Высота: было 140, сейчас нет данных
+• Длина: было 635, сейчас нет данных
+• Ширина: было 145, сейчас нет данных
 
-KHI 6788 GGR
-https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6788-ggr/
-• Производительность: было 550, стало 650
+DSK 350
+https://korting.ru/catalog/aksessuary/soedinitel-dlya-stiralnoy-i-sushilnoy-mashiny-dsk-350/
+• Вес: было 5200, сейчас нет данных
+• Высота: было 115, сейчас нет данных
+• Длина: было 635, сейчас нет данных
+• Ширина: было 665, сейчас нет данных
 
-KHI 6788 GN
-https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6788-gn/
-• Производительность: было 550, стало 650
+DSK 350 An
+https://korting.ru/catalog/aksessuary/soedinitel-dlya-stiralnoy-i-sushilnoy-mashiny-dsk-350-an/
+• Вес: было 5200, сейчас нет данных
+• Высота: было 115, сейчас нет данных
+• Длина: было 635, сейчас нет данных
+• Ширина: было 665, сейчас нет данных
 
-KHP 6280 N
-https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6280-n/
-• Производительность: было 550, стало 650
+DSK 355 GR
+https://korting.ru/catalog/aksessuary/soedinitel-dlya-stiralnoy-i-sushilnoy-mashiny-dsk-355-gr/
+• Вес: было 1440, сейчас нет данных
+• Высота: было 100, сейчас нет данных
+• Длина: было 575, сейчас нет данных
+• Ширина: было 665, сейчас нет данных
 
-KHP 6280 W
-https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6280-w/
-• Производительность: было 550, стало 650
+DSK 450
+https://korting.ru/catalog/aksessuary/soedinitel-dlya-stiralnoy-i-sushilnoy-mashiny-dsk-450/
+• Вес: было 3600, сейчас нет данных
+• Высота: было 80, сейчас нет данных
+• Длина: было 580, сейчас нет данных
+• Ширина: было 615, сейчас нет данных
 
-KHP 6280 X
-https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6280-x/
-• Производительность: было 550, стало 650
+DSK 455
+https://korting.ru/catalog/aksessuary/soedinitel-universalnyy-dlya-stiralnoy-i-sushilnoy-mashiny-dsk-455/
+• Вес: было 1450, сейчас нет данных
+• Высота: было 35, сейчас нет данных
+• Длина: было 615, сейчас нет данных
+• Ширина: было 585, сейчас нет данных
 
-KHP 6704 GN
-https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6704-gn/
-• Производительность: было 550, стало 650
+K 1031 TR
+https://korting.ru/catalog/aksessuary/protiven-iz-chuguna-s-vysokimi-stenkami-korting-k-1031-tr/
+• Вес: было 4900, сейчас нет данных
+• Высота: было 120, сейчас нет данных
+• Длина: было 260, сейчас нет данных
+• Количество: было 88.0000, сейчас нет данных
+• Ширина: было 300, сейчас нет данных
 
-KHP 6704 GW
-https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6704-gw/
-• Производительность: было 550, стало 650
+K 1122
+https://korting.ru/catalog/aksessuary/kompaktnaya-chugunnaya-skovoroda-korting-k-1122/
+• Вес: было 1700, сейчас нет данных
+• Высота: было 55, сейчас нет данных
+• Длина: было 260, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+• Ширина: было 275, сейчас нет данных
 
-KHP 6900 DGN
-https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6900-dgn/
-• Производительность: было 750, стало 900
+K 1128
+https://korting.ru/catalog/aksessuary/chugunnaya-skovoroda-vok-korting-k-1128/
+• Вес: было 3987, сейчас нет данных
+• Высота: было 100, сейчас нет данных
+• Длина: было 295, сейчас нет данных
+• Количество: было 168.0000, сейчас нет данных
+• Ширина: было 370, сейчас нет данных
 
-KHP 6900 DGW
-https://korting.ru/catalog/vytyazhki/vytyazhka-s-vydvizhnym-ekranom-khp-6900-dgw/
-• Производительность: было 750, стало 900
+K 1133
+https://korting.ru/catalog/aksessuary/chugunnaya-skovoroda-gril-korting-k-1133/
+• Вес: было 2787, сейчас нет данных
+• Высота: было 425, сейчас нет данных
+• Длина: было 35, сейчас нет данных
+• Количество: было 98.0000, сейчас нет данных
+• Ширина: было 205, сейчас нет данных
 
-KNFS 91797 GN
-https://korting.ru/catalog/kholodilniki/kholodilnik-side-by-side-knfs-91797-gn/
-• Полка для бутылок: было Да, металл, стало Нет
+K 1142
+https://korting.ru/catalog/aksessuary/gril-iz-chuguna-dlya-induktsionnykh-poverkhnostey-korting-k-1142/
+• Вес: было 4000, сейчас нет данных
+• Высота: было 425, сейчас нет данных
+• Длина: было 35, сейчас нет данных
+• Количество: было 161.0000, сейчас нет данных
+• Ширина: было 205, сейчас нет данных
 
-KNFS 91797 GW
-https://korting.ru/catalog/kholodilniki/kholodilnik-side-by-side-knfs-91797-gw/
-• Полка для бутылок: было Да, металл, стало Нет
+K 1224 R
+https://korting.ru/catalog/aksessuary/chugunnaya-kastryulya-s-kryshkoy-korting-k-1224-r/
+• Вес: было 4760, сейчас нет данных
+• Высота: было 120, сейчас нет данных
+• Длина: было 260, сейчас нет данных
+• Количество: было 160.0000, сейчас нет данных
+• Ширина: было 300, сейчас нет данных
 
-KNFS 91797 X
-https://korting.ru/catalog/kholodilniki/kholodilnik-side-by-side-knfs-91797-x/
-• Полка для бутылок: было Да, металл, стало Нет
+K 1226
+https://korting.ru/catalog/aksessuary/chugunnaya-kastryulya-s-kryshkoy-korting-k-1226/
+• Вес: было 5087, сейчас нет данных
+• Высота: было 365, сейчас нет данных
+• Длина: было 90, сейчас нет данных
+• Количество: было 203.0000, сейчас нет данных
+• Ширина: было 270, сейчас нет данных
 
-KWMI 14V87
-https://korting.ru/catalog/stiralnye-mashiny/stiralnaya-mashina-kwmi-14v87/
-• Масса прибора: было 66.2, стало 66.3
+K 1228 R
+https://korting.ru/catalog/aksessuary/chugunnaya-skovoroda-s-kryshkoy-korting-k-1228-r/
+• Вес: было 3500, сейчас нет данных
+• Высота: было 370, сейчас нет данных
+• Длина: было 85, сейчас нет данных
+• Количество: было 1.0000, сейчас нет данных
+• Ширина: было 370, сейчас нет данных
+
+K 1322 X
+https://korting.ru/catalog/aksessuary/nabor-posudy-dlya-prigotovleniya-spagetti-korting-k-1322-x/
+• Вес: было 0, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+
+K 2422 X
+https://korting.ru/catalog/aksessuary/nabor-posudy-iz-chetyrekh-predmetov-korting-k-2422-x/
+• Вес: было 0, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+
+KACM 2002 Andante
+https://korting.ru/catalog/kofemashiny/kofemashina-kacm-2002-andante/
+• Вес: было 9880, сейчас нет данных
+• Высота: было 385, сейчас нет данных
+• Длина: было 520, сейчас нет данных
+• Ширина: было 240, сейчас нет данных
+
+KACM 2003 Andante
+https://korting.ru/catalog/kofemashiny/kofemashina-kacm-2003-andante/
+• Вес: было 9880, сейчас нет данных
+• Высота: было 385, сейчас нет данных
+• Длина: было 520, сейчас нет данных
+• Ширина: было 240, сейчас нет данных
+
+KACM 2004 Adagio
+https://korting.ru/catalog/kofemashiny/kofemashina-kasm-2004-adagio/
+• Вес: было 12510, сейчас нет данных
+• Высота: было 405, сейчас нет данных
+• Длина: было 492, сейчас нет данных
+• Ширина: было 354, сейчас нет данных
+
+KACM 2005 Diva
+https://korting.ru/catalog/kofemashiny/kofemashina-kasm-2005-diva/
+• Вес: было 12510, сейчас нет данных
+• Высота: было 405, сейчас нет данных
+• Длина: было 492, сейчас нет данных
+• Ширина: было 354, сейчас нет данных
+
+KACM 2009 Presto
+https://korting.ru/catalog/kofemashiny/kofemashina-kacm-2009-presto/
+• Вес: было 12820, сейчас нет данных
+• Высота: было 450, сейчас нет данных
+• Длина: было 462, сейчас нет данных
+• Ширина: было 367, сейчас нет данных
+
+KACM 2026 B Fagotti
+https://korting.ru/catalog/kofemashiny/kofemashina-kacm-2026-b-fagotti/
+• Вес: было 12500, сейчас нет данных
+• Высота: было 396, сейчас нет данных
+• Длина: было 492, сейчас нет данных
+• Ширина: было 354, сейчас нет данных
+
+KACM 2026 N Fagotti
+https://korting.ru/catalog/kofemashiny/kofemashina-kacm-2026-n-fagotti/
+• Вес: было 12500, сейчас нет данных
+• Высота: было 396, сейчас нет данных
+• Длина: было 492, сейчас нет данных
+• Ширина: было 354, сейчас нет данных
+
+KACM 2026 W Fagotti
+https://korting.ru/catalog/kofemashiny/kofemashina-kacm-2026-w-fagotti/
+• Вес: было 12500, сейчас нет данных
+• Высота: было 396, сейчас нет данных
+• Длина: было 492, сейчас нет данных
+• Ширина: было 354, сейчас нет данных
+
+KACM 2028 Gr Tamburino
+https://korting.ru/catalog/kofemashiny/kofemashina-kacm-2028-gr-tamburino/
+• Вес: было 10910, сейчас нет данных
+• Высота: было 460, сейчас нет данных
+• Длина: было 506, сейчас нет данных
+• Ширина: было 250, сейчас нет данных
+
+KACM 2028 N Tamburino
+https://korting.ru/catalog/kofemashiny/kofemashina-kacm-2028-n-tamburino/
+• Вес: было 10910, сейчас нет данных
+• Высота: было 460, сейчас нет данных
+• Длина: было 506, сейчас нет данных
+• Ширина: было 250, сейчас нет данных
+
+KACM 2028 W Tamburino
+https://korting.ru/catalog/kofemashiny/kofemashina-kacm-2028-w-tamburino/
+• Вес: было 10910, сейчас нет данных
+• Высота: было 460, сейчас нет данных
+• Длина: было 506, сейчас нет данных
+• Ширина: было 250, сейчас нет данных
+
+KBS 1001
+https://korting.ru/catalog/vesy-napolnye/vesy-napolnye-kbs-1001/
+• Вес: было 2000, сейчас нет данных
+• Высота: было 290, сейчас нет данных
+• Длина: было 220, сейчас нет данных
+• Ширина: было 350, сейчас нет данных
+
+KCG 0030-PR1
+https://korting.ru/catalog/kofemolki/besprovodnaya-kofemolka-kcg-0030-pr1/
+• Вес: было 560, сейчас нет данных
+• Высота: было 85, сейчас нет данных
+• Длина: было 203, сейчас нет данных
+• Ширина: было 85, сейчас нет данных
+
+KCM 1001 EX
+https://korting.ru/catalog/kofevarki/otdelnostoyashchaya-kofevarka-kcm-1001-ex/
+• Вес: было 3720, сейчас нет данных
+• Высота: было 365, сейчас нет данных
+• Длина: было 200, сейчас нет данных
+• Ширина: было 350, сейчас нет данных
+
+KCM 1002 EN
+https://korting.ru/catalog/kofevarki/otdelnostoyashchaya-kofevarka-kcm-1002-en/
+• Вес: было 3720, сейчас нет данных
+• Высота: было 365, сейчас нет данных
+• Длина: было 200, сейчас нет данных
+• Ширина: было 350, сейчас нет данных
+
+KCM 1003 EW
+https://korting.ru/catalog/kofevarki/otdelnostoyashchaya-kofevarka-kcm-1003-ew/
+• Вес: было 3720, сейчас нет данных
+• Высота: было 365, сейчас нет данных
+• Длина: было 200, сейчас нет данных
+• Ширина: было 350, сейчас нет данных
+
+KCM 1004 ER
+https://korting.ru/catalog/kofevarki/otdelnostoyashchaya-kofevarka-kcm-1004-er/
+• Вес: было 3720, сейчас нет данных
+• Высота: было 365, сейчас нет данных
+• Длина: было 200, сейчас нет данных
+• Ширина: было 350, сейчас нет данных
+
+KCM 1005 T Arte
+https://korting.ru/catalog/kofevarki/otdelnostoyashchaya-kofevarka-kcm-1005-t-arte/
+• Вес: было 5080, сейчас нет данных
+• Высота: было 366, сейчас нет данных
+• Длина: было 350, сейчас нет данных
+• Ширина: было 258, сейчас нет данных
+
+KCM 1006 T Adore
+https://korting.ru/catalog/kofevarki/otdelnostoyashchaya-kofevarka-kcm-1006-t-adore/
+• Вес: было 5080, сейчас нет данных
+• Высота: было 366, сейчас нет данных
+• Длина: было 350, сейчас нет данных
+• Ширина: было 258, сейчас нет данных
+
+KCM 1007 T Amore
+https://korting.ru/catalog/kofevarki/otdelnostoyashchaya-kofevarka-kcm-1007-t-amore/
+• Вес: было 5080, сейчас нет данных
+• Высота: было 366, сейчас нет данных
+• Длина: было 350, сейчас нет данных
+• Ширина: было 258, сейчас нет данных
+
+KCM 1013 SA Bravo
+https://korting.ru/catalog/kofeyniye-stantsii/kofeynaya-stantsiya-kcm-1013-sa-bravo/
+• Вес: было 10740, сейчас нет данных
+• Высота: было 470, сейчас нет данных
+• Длина: было 410, сейчас нет данных
+• Ширина: было 395, сейчас нет данных
+
+KCM 1014 SA Ottimo
+https://korting.ru/catalog/kofeyniye-stantsii/kofeynaya-stantsiya-kcm-1014-sa-ottimo/
+• Вес: было 7320, сейчас нет данных
+• Высота: было 370, сейчас нет данных
+• Длина: было 400, сейчас нет данных
+• Ширина: было 400, сейчас нет данных
+
+KCM 1015 N Ottimo
+https://korting.ru/catalog/kofeyniye-stantsii/kofeynaya-stantsiya-kcm-1015-n-ottimo/
+• Вес: было 7320, сейчас нет данных
+• Высота: было 370, сейчас нет данных
+• Длина: было 400, сейчас нет данных
+• Ширина: было 400, сейчас нет данных
+
+KCM 9200 BG
+https://korting.ru/catalog/kofemashiny/vstraivaemaya-kofemashina-kcm-9200-bg/
+• Вес: было 27600, сейчас нет данных
+• Высота: было 535, сейчас нет данных
+• Длина: было 510, сейчас нет данных
+• Ширина: было 650, сейчас нет данных
+
+KCM 9830 BCG
+https://korting.ru/catalog/kofemashiny/vstraivaemaya-kofemashina-kcm-9830-bcg/
+• Вес: было 24740, сейчас нет данных
+• Высота: было 480, сейчас нет данных
+• Длина: было 535, сейчас нет данных
+• Ширина: было 665, сейчас нет данных
+
+KCM 9830 WCG
+https://korting.ru/catalog/kofemashiny/vstraivaemaya-kofemashina-kcm-9830-wcg/
+• Вес: было 25000, сейчас нет данных
+• Высота: было 480, сейчас нет данных
+• Длина: было 535, сейчас нет данных
+• Ширина: было 665, сейчас нет данных
+
+KD 60HP109
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60hp109/
+• В упаковке Вес: было 55100, сейчас нет данных
+• В упаковке Высота: было 881, сейчас нет данных
+• В упаковке Длина: было 668, сейчас нет данных
+• В упаковке Ширина: было 641, сейчас нет данных
+
+KD 60HP109 N
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60hp109-n/
+• В упаковке Вес: было 55100, сейчас нет данных
+• В упаковке Высота: было 881, сейчас нет данных
+• В упаковке Длина: было 668, сейчас нет данных
+• В упаковке Ширина: было 641, сейчас нет данных
+
+KD 60HP83
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60hp83/
+• В упаковке Вес: было 44500, сейчас нет данных
+• В упаковке Высота: было 880, сейчас нет данных
+• В упаковке Длина: было 620, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+KD 60HPG83
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60hpg83/
+• В упаковке Вес: было 46500, сейчас нет данных
+• В упаковке Высота: было 880, сейчас нет данных
+• В упаковке Длина: было 620, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+KD 60HPT8
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60hpt8/
+• В упаковке Вес: было 53500, сейчас нет данных
+• В упаковке Высота: было 870, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 690, сейчас нет данных
+
+KD 60IHP83 GR
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60ihp83-gr/
+• В упаковке Вес: было 48000, сейчас нет данных
+• В упаковке Высота: было 890, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 675, сейчас нет данных
+
+KD 60L97
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60l97/
+• В упаковке Вес: было 41500, сейчас нет данных
+• В упаковке Высота: было 881, сейчас нет данных
+• В упаковке Длина: было 668, сейчас нет данных
+• В упаковке Ширина: было 641, сейчас нет данных
+
+KD 60L97 S
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60l97-s/
+• В упаковке Вес: было 41500, сейчас нет данных
+• В упаковке Высота: было 881, сейчас нет данных
+• В упаковке Длина: было 668, сейчас нет данных
+• В упаковке Ширина: было 641, сейчас нет данных
+
+KD 60T8
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60t8/
+• В упаковке Вес: было 44380, сейчас нет данных
+• В упаковке Высота: было 880, сейчас нет данных
+• В упаковке Длина: было 660, сейчас нет данных
+• В упаковке Ширина: было 680, сейчас нет данных
+
+KD 60T81
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60t81/
+• В упаковке Вес: было 44000, сейчас нет данных
+• В упаковке Высота: было 880, сейчас нет данных
+• В упаковке Длина: было 660, сейчас нет данных
+• В упаковке Ширина: было 680, сейчас нет данных
+
+KD 69 IHP
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-69-ihp/
+• В упаковке Вес: было 58000, сейчас нет данных
+• В упаковке Высота: было 870, сейчас нет данных
+• В упаковке Длина: было 640, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+KD 69 IHPM
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-69-ihpm/
+• В упаковке Вес: было 53000, сейчас нет данных
+• В упаковке Высота: было 890, сейчас нет данных
+• В упаковке Длина: было 640, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+KD 69IHP10
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-69ihp10/
+• В упаковке Вес: было 59300, сейчас нет данных
+• В упаковке Высота: было 970, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 720, сейчас нет данных
+
+KD 69IHP10 An
+https://korting.ru/catalog/sushilnye-mashiny/model-sushilnaya-mashina-kd-69ihp10-an/
+• В упаковке Вес: было 59000, сейчас нет данных
+• В упаковке Высота: было 970, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 720, сейчас нет данных
+
+KFP 0201 Diva
+https://korting.ru/catalog/kukhonnye-kombayny/kukhonnyy-kombayn-kfp-0201-diva/
+• Вес: было 5000, сейчас нет данных
+• Высота: было 355, сейчас нет данных
+• Длина: было 462, сейчас нет данных
+• Ширина: было 240, сейчас нет данных
+
+KFP 0202 Gourmet
+https://korting.ru/catalog/kukhonnye-kombayny/kukhonnyy-kombayn-kfp-0202-gourmet/
+• Вес: было 5000, сейчас нет данных
+• Высота: было 355, сейчас нет данных
+• Длина: было 462, сейчас нет данных
+• Ширина: было 240, сейчас нет данных
+
+KFP 0203 W 135
+https://korting.ru/catalog/kukhonnye-kombayny/kukhonnyy-kombayn-kfp-0203-w-135/
+• Вес: было 5000, сейчас нет данных
+• Высота: было 355, сейчас нет данных
+• Длина: было 462, сейчас нет данных
+• Ширина: было 240, сейчас нет данных
+
+KFP 0204 W
+https://korting.ru/catalog/kukhonnye-kombayny/besprovodnoy-izmelchitel-kfp-0204-w/
+• Вес: было 1700, сейчас нет данных
+• Высота: было 195, сейчас нет данных
+• Длина: было 263, сейчас нет данных
+• Ширина: было 197, сейчас нет данных
+
+KFW 501 SL GN
+https://korting.ru/catalog/vinnye-shkafy/vstraivaemyy-vinnyy-shkaf-kfw-501-sl-gn/
+• Вес: было 30000, сейчас нет данных
+• Высота: было 520, сейчас нет данных
+• Длина: было 650, сейчас нет данных
+• Ширина: было 650, сейчас нет данных
+
+KFW 501 SL GXN
+https://korting.ru/catalog/vinnye-shkafy/vstraivaemyy-vinnyy-shkaf-kfw-501-sl-gxn/
+• Вес: было 30000, сейчас нет данных
+• Высота: было 520, сейчас нет данных
+• Длина: было 650, сейчас нет данных
+• Ширина: было 650, сейчас нет данных
+
+KFW 604 DB GN
+https://korting.ru/catalog/vinnye-shkafy/vstraivaemyy-vinnyy-shkaf-kfw-604-db-gn/
+• Вес: было 38200, сейчас нет данных
+• Высота: было 650, сейчас нет данных
+• Длина: было 650, сейчас нет данных
+• Ширина: было 655, сейчас нет данных
+
+KFW 604 DB GXN
+https://korting.ru/catalog/vinnye-shkafy/vstraivaemyy-vinnyy-shkaf-kfw-604-db-gxn/
+• Вес: было 38550, сейчас нет данных
+• Высота: было 650, сейчас нет данных
+• Длина: было 650, сейчас нет данных
+• Ширина: было 655, сейчас нет данных
+
+KFW 803 DB GN
+https://korting.ru/catalog/vinnye-shkafy/vstraivaemyy-vinnyy-shkaf-kfw-803-db-gn/
+• Вес: было 48210, сейчас нет данных
+• Высота: было 880, сейчас нет данных
+• Длина: было 625, сейчас нет данных
+• Ширина: было 655, сейчас нет данных
+
+KGP 0406
+https://korting.ru/catalog/grili/gril-kgp-0406/
+• Вес: было 5240, сейчас нет данных
+• Высота: было 365, сейчас нет данных
+• Длина: было 395, сейчас нет данных
+• Ширина: было 180, сейчас нет данных
+
+KGPA 0401 T
+https://korting.ru/catalog/grili/gril-kgpa-0401-t/
+• Вес: было 6390, сейчас нет данных
+• Высота: было 220, сейчас нет данных
+• Длина: было 415, сейчас нет данных
+• Ширина: было 375, сейчас нет данных
+
+KGPA 0402 TW
+https://korting.ru/catalog/grili/gril-kgpa-0402-tw/
+• Вес: было 6690, сейчас нет данных
+• Высота: было 215, сейчас нет данных
+• Длина: было 415, сейчас нет данных
+• Ширина: было 375, сейчас нет данных
+
+KGPA 0403 W Infinity
+https://korting.ru/catalog/grili/gril-kgpa-0403-w-infinity/
+• Вес: было 6890, сейчас нет данных
+• Высота: было 365, сейчас нет данных
+• Длина: было 395, сейчас нет данных
+• Ширина: было 185, сейчас нет данных
+
+KGPA 0404 W
+https://korting.ru/catalog/grili/gril-kgpa-0404-w/
+• Вес: было 6560, сейчас нет данных
+• Высота: было 365, сейчас нет данных
+• Длина: было 395, сейчас нет данных
+• Ширина: было 180, сейчас нет данных
+
+KGPA 0405 W
+https://korting.ru/catalog/grili/gril-kgpa-0405-w/
+• Вес: было 7070, сейчас нет данных
+• Высота: было 365, сейчас нет данных
+• Длина: было 395, сейчас нет данных
+• Ширина: было 185, сейчас нет данных
+
+KKM 0101 M Infinity
+https://korting.ru/catalog/kuhonnye-mashiny/kukhonnaya-mashina-kkm-0101-m-infinity/
+• Вес: было 9990, сейчас нет данных
+• Высота: было 475, сейчас нет данных
+• Длина: было 413, сейчас нет данных
+• Ширина: было 267, сейчас нет данных
+
+KKM 0102 MB 135
+https://korting.ru/catalog/kuhonnye-mashiny/kukhonnaya-mashina-kkm-0102-mb-135/
+• Вес: было 9740, сейчас нет данных
+• Высота: было 400, сейчас нет данных
+• Длина: было 625, сейчас нет данных
+• Ширина: было 266, сейчас нет данных
+
+KKM 0103 Diva
+https://korting.ru/catalog/kuhonnye-mashiny/kukhonnaya-mashina-kkm-0103-diva/
+• Вес: было 7090, сейчас нет данных
+• Высота: было 410, сейчас нет данных
+• Длина: было 468, сейчас нет данных
+• Ширина: было 290, сейчас нет данных
+
+KKM 0104 Gourmet
+https://korting.ru/catalog/kuhonnye-mashiny/kukhonnaya-mashina-kkm-0104-gourmet/
+• Вес: было 7090, сейчас нет данных
+• Высота: было 410, сейчас нет данных
+• Длина: было 468, сейчас нет данных
+• Ширина: было 290, сейчас нет данных
+
+KKM 0105 Polar
+https://korting.ru/catalog/kuhonnye-mashiny/kukhonnaya-mashina-kkm-0105-polar/
+• Вес: было 12440, сейчас нет данных
+• Высота: было 392, сейчас нет данных
+• Длина: было 682, сейчас нет данных
+• Ширина: было 300, сейчас нет данных
+
+KKM 0106 Gourmet
+https://korting.ru/catalog/kuhonnye-mashiny/kukhonnaya-mashina-kkm-0106-gourmet/
+• Вес: было 12440, сейчас нет данных
+• Высота: было 392, сейчас нет данных
+• Длина: было 682, сейчас нет данных
+• Ширина: было 300, сейчас нет данных
+
+KKM 0107 MB N
+https://korting.ru/catalog/kuhonnye-mashiny/kukhonnaya-mashina-kkm-0107-mb-n/
+• Вес: было 9460, сейчас нет данных
+• Высота: было 376, сейчас нет данных
+• Длина: было 403, сейчас нет данных
+• Ширина: было 265, сейчас нет данных
+
+KKM 0108 MB S
+https://korting.ru/catalog/kuhonnye-mashiny/kukhonnaya-mashina-kkm-0108-mb-s/
+• Вес: было 9460, сейчас нет данных
+• Высота: было 376, сейчас нет данных
+• Длина: было 403, сейчас нет данных
+• Ширина: было 265, сейчас нет данных
+
+KKS 0101
+https://korting.ru/catalog/vesy-kukhonnye/vesy-kukhonnye-kks-0101/
+• Вес: было 780, сейчас нет данных
+• Высота: было 217, сейчас нет данных
+• Длина: было 107, сейчас нет данных
+• Ширина: было 217, сейчас нет данных
+
+KKS 0102
+https://korting.ru/catalog/vesy-kukhonnye/vesy-kukhonnye-kks-0102/
+• Вес: было 360, сейчас нет данных
+• Высота: было 138, сейчас нет данных
+• Длина: было 180, сейчас нет данных
+• Ширина: было 370, сейчас нет данных
+
+KMI 1082 RC
+https://korting.ru/catalog/mikrovolnovye-pechi/mikrovolnovaya-pech-s-funktsiey-dukhovogo-shkafa-kmi-1082-rc/
+• Коллекция: было 1889, сейчас нет данных
+
+KMI 1082 RI
+https://korting.ru/catalog/mikrovolnovye-pechi/mikrovolnovaya-pech-s-funktsiey-dukhovogo-shkafa-kmi-1082-ri/
+• Коллекция: было 1889, сейчас нет данных
+
+KMI 1082 RN
+https://korting.ru/catalog/mikrovolnovye-pechi/mikrovolnovaya-pech-s-funktsiey-dukhovogo-shkafa-kmi-1082-rn/
+• Коллекция: было 1889, сейчас нет данных
+
+KNFR 1837 N
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-knfr-1837-n/
+• Вес: было 74000, сейчас нет данных
+• Высота: было 1916, сейчас нет данных
+• Длина: было 728, сейчас нет данных
+• Ширина: было 664, сейчас нет данных
+
+KNFR 1837 X
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-knfr-1837-x/
+• Вес: было 74000, сейчас нет данных
+• Высота: было 1916, сейчас нет данных
+• Длина: было 728, сейчас нет данных
+• Ширина: было 664, сейчас нет данных
+
+KNFR 1896 W
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-knfr-1896-w/
+• Вес: было 68000, сейчас нет данных
+• Высота: было 1900, сейчас нет данных
+• Длина: было 685, сейчас нет данных
+• Ширина: было 655, сейчас нет данных
+
+KSFI 1078
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-ksfi-1078/
+• Вес: было 33500, сейчас нет данных
+• Высота: было 920, сейчас нет данных
+• Длина: было 580, сейчас нет данных
+• Ширина: было 580, сейчас нет данных
+
+KSFI 1795
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-ksfi-1795/
+• Вес: было 71000, сейчас нет данных
+• Высота: было 1880, сейчас нет данных
+• Длина: было 585, сейчас нет данных
+• Ширина: было 580, сейчас нет данных
+
+KSFI 1833 NF
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-ksfi-1833-nf/
+• Вес: было 63000, сейчас нет данных
+• Высота: было 1834, сейчас нет данных
+• Длина: было 577, сейчас нет данных
+• Ширина: было 584, сейчас нет данных
+
+KSFI 1955
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-ksfi-1955/
+• Вес: было 97500, сейчас нет данных
+• Высота: было 2000, сейчас нет данных
+• Длина: было 720, сейчас нет данных
+• Ширина: было 590, сейчас нет данных
+
+KSFI 1997
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-ksfi-1997/
+• Вес: было 93500, сейчас нет данных
+• Высота: было 2000, сейчас нет данных
+• Длина: было 720, сейчас нет данных
+• Ширина: было 590, сейчас нет данных
+
+KSI 8189 F
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-ksi-8189-f/
+• Вес: было 37000, сейчас нет данных
+• Высота: было 883, сейчас нет данных
+• Длина: было 586, сейчас нет данных
+• Ширина: было 659, сейчас нет данных
+
+KSI 8217 F
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-ksi-8217-f/
+• Вес: было 31150, сейчас нет данных
+• Высота: было 880, сейчас нет данных
+• Длина: было 615, сейчас нет данных
+• Ширина: было 565, сейчас нет данных
+
+KSI 8258 F
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-ksi-8258-f/
+• Вес: было 0, сейчас нет данных
+
+KSI 8259 F
+https://korting.ru/catalog/morozilnye-kamery/morozilnaya-kamera-ksi-8259-f/
+• Вес: было 38000, сейчас нет данных
+• Высота: было 880, сейчас нет данных
+• Длина: было 600, сейчас нет данных
+• Ширина: было 635, сейчас нет данных
+
+KSP 60
+https://korting.ru/catalog/aksessuary/kamen-dlya-pitstsy-i-vypechki-korting-ksp-60/
+• Вес: было 2500, сейчас нет данных
+• Высота: было 50, сейчас нет данных
+• Длина: было 350, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+• Ширина: было 370, сейчас нет данных
+
+KW 601 GN
+https://korting.ru/catalog/yashchiki-dlya-podogreva/yashchik-dlya-podogreva-kw-601-gn/
+• Вес: было 19000, сейчас нет данных
+• Длина: было 675, сейчас нет данных
+• Ширина: было 710, сейчас нет данных
+
+KW 601 GW
+https://korting.ru/catalog/yashchiki-dlya-podogreva/yashchik-dlya-podogreva-kw-601-gw/
+• Вес: было 19000, сейчас нет данных
+• Длина: было 710, сейчас нет данных
+• Ширина: было 675, сейчас нет данных
+
+KWD 601296
+https://korting.ru/catalog/stiralno-sushilnye-mashiny-kolonni/stiralno-sushilnaya-mashina-kwd-601296/
+• Вес: было 113000, сейчас нет данных
+• Высота: было 1340, сейчас нет данных
+• Длина: было 885, сейчас нет данных
+• Ширина: было 650, сейчас нет данных
+
+KWK 0901 G
+https://korting.ru/catalog/chayniki/steklyannyy-chaynik-kwk-0901-g/
+• Вес: было 1370, сейчас нет данных
+• Высота: было 247, сейчас нет данных
+• Длина: было 220, сейчас нет данных
+• Ширина: было 178, сейчас нет данных
+
+KWK 0902 G
+https://korting.ru/catalog/chayniki/steklyannyy-chaynik-kwk-0902-g/
+• Вес: было 1370, сейчас нет данных
+• Высота: было 247, сейчас нет данных
+• Длина: было 220, сейчас нет данных
+• Ширина: было 178, сейчас нет данных
+
+KWK 0903 G
+https://korting.ru/catalog/chayniki/steklyannyy-chaynik-kwk-0903-g/
+• Вес: было 1370, сейчас нет данных
+• Высота: было 247, сейчас нет данных
+• Длина: было 220, сейчас нет данных
+• Ширина: было 178, сейчас нет данных
+
+KWK 0904 Infinity
+https://korting.ru/catalog/chayniki/stalnoy-chaynik-kwk-0904-infinity/
+• Вес: было 1330, сейчас нет данных
+• Высота: было 258, сейчас нет данных
+• Длина: было 215, сейчас нет данных
+• Ширина: было 175, сейчас нет данных
+
+KWK 0905 Polar
+https://korting.ru/catalog/chayniki/stalnoy-chaynik-kwk-0905-polar/
+• Вес: было 1230, сейчас нет данных
+• Высота: было 255, сейчас нет данных
+• Длина: было 215, сейчас нет данных
+• Ширина: было 175, сейчас нет данных
+
+KWK 0906 Gourmet
+https://korting.ru/catalog/chayniki/stalnoy-chaynik-kwk-0906-gourmet/
+• Вес: было 1230, сейчас нет данных
+• Высота: было 255, сейчас нет данных
+• Длина: было 215, сейчас нет данных
+• Ширина: было 175, сейчас нет данных
+
+KWK 0907 G
+https://korting.ru/catalog/chayniki/steklyannyy-chaynik-kwk-0907-g/
+• Вес: было 1600, сейчас нет данных
+• Высота: было 268, сейчас нет данных
+• Длина: было 225, сейчас нет данных
+• Ширина: было 192, сейчас нет данных
+
+KWK 0908 G
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0908-g/
+• Вес: было 2000, сейчас нет данных
+• Высота: было 268, сейчас нет данных
+• Длина: было 225, сейчас нет данных
+• Ширина: было 192, сейчас нет данных
+
+KWK 0909 G
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0909-g/
+• Вес: было 2000, сейчас нет данных
+• Высота: было 268, сейчас нет данных
+• Длина: было 225, сейчас нет данных
+• Ширина: было 192, сейчас нет данных
+
+KWK 0910 G
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0910-g/
+• Вес: было 3000, сейчас нет данных
+• Высота: было 268, сейчас нет данных
+• Длина: было 225, сейчас нет данных
+• Ширина: было 192, сейчас нет данных
+
+KWK 0911 G
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0911-g/
+• Вес: было 2500, сейчас нет данных
+• Высота: было 268, сейчас нет данных
+• Длина: было 225, сейчас нет данных
+• Ширина: было 192, сейчас нет данных
+
+KWK 0912 G
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0912-g/
+• Вес: было 2500, сейчас нет данных
+• Высота: было 268, сейчас нет данных
+• Длина: было 225, сейчас нет данных
+• Ширина: было 192, сейчас нет данных
+
+KWK 0913 S
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0913-s/
+• Вес: было 2500, сейчас нет данных
+• Высота: было 268, сейчас нет данных
+• Длина: было 225, сейчас нет данных
+• Ширина: было 192, сейчас нет данных
+
+KWK 0915 S
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0915-s/
+• Вес: было 2500, сейчас нет данных
+• Высота: было 268, сейчас нет данных
+• Длина: было 225, сейчас нет данных
+• Ширина: было 192, сейчас нет данных
+
+OEG 1052 CRC
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-oeg-1052-crc/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OEG 1052 CRI
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-oeg-1052-cri/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OEG 1052 CRN
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-oeg-1052-crn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OEG 771 CFN
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-oeg-771-cfn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OEG 771 CFX
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-oeg-771-cfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OGG 1052 CRC
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-1052-crc/
+• В упаковке Вес: было 46500, сейчас нет данных
+• В упаковке Высота: было 655, сейчас нет данных
+• В упаковке Длина: было 705, сейчас нет данных
+• В упаковке Ширина: было 665, сейчас нет данных
+
+OGG 1052 CRI
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-1052-cri/
+• В упаковке Вес: было 46500, сейчас нет данных
+• В упаковке Высота: было 655, сейчас нет данных
+• В упаковке Длина: было 705, сейчас нет данных
+• В упаковке Ширина: было 665, сейчас нет данных
+
+OGG 1052 CRN
+https://korting.ru/catalog/dukhovye-shkafy/ogg-1052-crn/
+• В упаковке Вес: было 46500, сейчас нет данных
+• В упаковке Высота: было 655, сейчас нет данных
+• В упаковке Длина: было 705, сейчас нет данных
+• В упаковке Ширина: было 665, сейчас нет данных
+
+OGG 1052 CRR
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-1052-crr/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OGG 540 CFX
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-540-cfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OGG 5409 CSX PRO
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-5409-csx-pro/
+• В упаковке Вес: было 65500, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 705, сейчас нет данных
+• В упаковке Ширина: было 980, сейчас нет данных
+
+OGG 541 CFX
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-541-cfx/
+• В упаковке Вес: было 40300, сейчас нет данных
+• В упаковке Высота: было 640, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OGG 741 CRB
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-741-crb/
+• В упаковке Вес: было 43000, сейчас нет данных
+• В упаковке Высота: было 640, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OGG 741 CRN
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-741-crn/
+• В упаковке Вес: было 43000, сейчас нет данных
+• В упаковке Высота: было 640, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OGG 741 JX
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-741-jx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OGG 741 RI
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-741-ri/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OGG 741 RN
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-741-rn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OGG 742 CRSI
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-742-crsi/
+• В упаковке Вес: было 43000, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OGG 742 CRSN
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-742-crsn/
+• В упаковке Вес: было 43000, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OGG 742 CSX PRO
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-742-csx-pro/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OGG 771 CFN
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-771-cfn/
+• В упаковке Вес: было 40300, сейчас нет данных
+• В упаковке Высота: было 640, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OGG 771 CFW
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-771-cfw/
+• В упаковке Вес: было 40300, сейчас нет данных
+• В упаковке Высота: было 640, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OGG 771 CFX
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-771-cfx/
+• В упаковке Вес: было 42100, сейчас нет данных
+• В упаковке Высота: было 640, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OGG 772 CFN
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-772-cfn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OGG 772 CFW
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-772-cfw/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OGG 772 CFX
+https://korting.ru/catalog/dukhovye-shkafy/gazovyy-dukhovoy-shkaf-ogg-772-cfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 10809 CRI
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-10809-cri/
+• В упаковке Вес: было 58000, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 980, сейчас нет данных
+
+OKB 10809 CRN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-10809-crn/
+• В упаковке Вес: было 58000, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 980, сейчас нет данных
+
+OKB 1082 CRA
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1082-cra/
+• В упаковке Вес: было 42000, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 1082 CRC
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1082-crc/
+• В упаковке Вес: было 42000, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 1082 CRI
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1082-cri/
+• В упаковке Вес: было 42000, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 1082 CRN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1082-crn/
+• В упаковке Вес: было 42000, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 1082 CRR
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1082-crr/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 1131 CSGBr
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1131-csgbr/
+• В упаковке Вес: было 34400, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 655, сейчас нет данных
+• В упаковке Ширина: было 630, сейчас нет данных
+
+OKB 1131 CSGGr
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1131-csggr/
+• В упаковке Вес: было 34400, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 655, сейчас нет данных
+• В упаковке Ширина: было 630, сейчас нет данных
+
+OKB 1131 CSGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1131-csgn/
+• В упаковке Вес: было 34400, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 655, сейчас нет данных
+• В упаковке Ширина: было 630, сейчас нет данных
+
+OKB 1131 CSGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1131-csgw/
+• В упаковке Вес: было 34400, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 655, сейчас нет данных
+• В упаковке Ширина: было 630, сейчас нет данных
+
+OKB 1310 GNBX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1310-gnbx/
+• В упаковке Вес: было 35110, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 732, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 1310 GSCW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1310-gscw/
+• В упаковке Вес: было 34950, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 732, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 1321 GNBX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1321-gnbx/
+• В упаковке Вес: было 38970, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 732, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 1321 GSCW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1321-gscw/
+• В упаковке Вес: было 38820, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 732, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 1331 GBXGr
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1331-gbxgr/
+• В упаковке Вес: было 39860, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1331 GNBX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1331-gnbx/
+• В упаковке Вес: было 39860, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1331 S GBXGr
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1331-s-gbxgr/
+• В упаковке Вес: было 40000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1331 S GNBX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1331-s-gnbx/
+• В упаковке Вес: было 40000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1340 GBXGr MW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-s-funktsiey-svch-okb-1340-gbxgr-mw/
+• В упаковке Вес: было 49815, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 1340 GNBX MW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-s-funktsiey-svch-okb-1340-gnbx-mw/
+• В упаковке Вес: было 49860, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1350 GNBX Steam
+https://korting.ru/catalog/dukhovye-shkafy/dukhovoy-shkaf-s-funktsiey-para-okb-1350-gnbx-steam/
+• В упаковке Вес: было 41790, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1350 S GNBX Steam
+https://korting.ru/catalog/dukhovye-shkafy/dukhovoy-shkaf-s-funktsiey-para-okb-1350-s-gnbx-steam/
+• В упаковке Вес: было 42200, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1351 GSCW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1351-gscw/
+• В упаковке Вес: было 39860, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1351 S GSCW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1351-s-gscw/
+• В упаковке Вес: было 40000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1360 CSGW MW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-s-funktsiey-svch-okb-1360-csgw-mw/
+• В упаковке Вес: было 50250, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1421 CN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1421-cn/
+• В упаковке Вес: было 35000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 720, сейчас нет данных
+• В упаковке Ширина: было 655, сейчас нет данных
+
+OKB 1471 CGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1471-cgn/
+• В упаковке Вес: было 40250, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 725, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 1471 CX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1471-cx/
+• В упаковке Вес: было 40400, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 730, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 1631 CGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1631-cgn/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 1650 GN Steam
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1650-gn-steam/
+• В упаковке Вес: было 45930, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 655, сейчас нет данных
+• В упаковке Ширина: было 720, сейчас нет данных
+
+OKB 1680 GN MW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1680-gn-mw/
+• В упаковке Вес: было 49960, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 725, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 2820 EN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-2820-en/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 675, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 2820 EX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-2820-ex/
+• В упаковке Вес: было 28000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 675, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 3221 AGN STEAM MW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-3221-agn-steam-mw/
+• В упаковке Вес: было 43150, сейчас нет данных
+• В упаковке Высота: было 575, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 750, сейчас нет данных
+
+OKB 3230 GN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-3230-gn/
+• В упаковке Вес: было 33310, сейчас нет данных
+• В упаковке Высота: было 540, сейчас нет данных
+• В упаковке Длина: было 670, сейчас нет данных
+• В упаковке Ширина: было 700, сейчас нет данных
+
+OKB 3250 GBXGr MW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-s-funktsiey-svch-okb-3250-gbxgr-mw/
+• В упаковке Вес: было 43780, сейчас нет данных
+• В упаковке Высота: было 540, сейчас нет данных
+• В упаковке Длина: было 665, сейчас нет данных
+• В упаковке Ширина: было 720, сейчас нет данных
+
+OKB 3250 GNBX MW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-s-funktsiey-svch-okb-3250-gnbx-mw/
+• В упаковке Вес: было 43560, сейчас нет данных
+• В упаковке Высота: было 550, сейчас нет данных
+• В упаковке Длина: было 705, сейчас нет данных
+• В упаковке Ширина: было 665, сейчас нет данных
+
+OKB 3260 CSGW MW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-s-funktsiey-svch-okb-3260-csgw-mw/
+• В упаковке Вес: было 43900, сейчас нет данных
+• В упаковке Высота: было 550, сейчас нет данных
+• В упаковке Длина: было 705, сейчас нет данных
+• В упаковке Ширина: было 665, сейчас нет данных
+
+OKB 3450 GBXGr Steam
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-c-funktsiey-para-okb-3450-gbxgr-steam/
+• В упаковке Вес: было 37640, сейчас нет данных
+• В упаковке Высота: было 550, сейчас нет данных
+• В упаковке Длина: было 665, сейчас нет данных
+• В упаковке Ширина: было 705, сейчас нет данных
+
+OKB 3450 GNBX Steam
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-c-funktsiey-para-okb-3450-gnbx-steam/
+• В упаковке Вес: было 37180, сейчас нет данных
+• В упаковке Высота: было 550, сейчас нет данных
+• В упаковке Длина: было 665, сейчас нет данных
+• В упаковке Ширина: было 705, сейчас нет данных
+
+OKB 370 CMB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-370-cmb/
+• В упаковке Вес: было 29488, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 640, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 370 CMW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-370-cmw/
+• В упаковке Вес: было 29394, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 640, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 370 CMX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-370-cmx/
+• В упаковке Вес: было 31500, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 640, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 3810 FGGr
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-3810-fggr/
+• В упаковке Вес: было 28000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 3810 FGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-3810-fgn/
+• В упаковке Вес: было 28000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 3821 EN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-3821-en/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 3821 EW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-3821-ew/
+• В упаковке Вес: было 28200, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 440 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-440-cfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 450 CMX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-450-cmx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 4504 CX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4504-cx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 4591 GN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4591-gn/
+• В упаковке Вес: было 26000, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 485, сейчас нет данных
+
+OKB 460 RB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-460-rb/
+• В упаковке Вес: было 37800, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 460 RN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-460-rn/
+• В упаковке Вес: было 38200, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 4604 CGRN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4604-cgrn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 4604 CRC
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4604-crc/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 4604 CRI
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4604-cri/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 4604 CRN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4604-crn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 461 CRB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-461-crb/
+• В упаковке Вес: было 32900, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 461 CRGB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-461-crgb/
+• В упаковке Вес: было 32900, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 461 CRGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-461-crgn/
+• В упаковке Вес: было 32900, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 461 CRSI
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-461-crsi/
+• В упаковке Вес: было 32900, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 4630 CMX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4630-cmx/
+• В упаковке Вес: было 28600, сейчас нет данных
+• В упаковке Высота: было 655, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 500, сейчас нет данных
+
+OKB 470 CMGB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-470-cmgb/
+• В упаковке Вес: было 37000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 630, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 470 CMW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-470-cmw/
+• В упаковке Вес: было 37000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 630, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 470 CMX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-470-cmx/
+• В упаковке Вес: было 37000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 630, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 4701 CNRB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4701-cnrb/
+• В упаковке Вес: было 36300, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 660, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 4701 CNRN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4701-cnrn/
+• В упаковке Вес: было 36350, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 660, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 4701 CNRW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4701-cnrw/
+• В упаковке Вес: было 36300, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 660, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 471 CGRI
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-471-cgri/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 471 CGRN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-471-cgrn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 471 CNRC
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-471-cnrc/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 471 CNRI
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-471-cnri/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 471 CNRN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-471-cnrn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 480 CEN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-480-cen/
+• В упаковке Вес: было 34900, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 480 CEX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-480-cex/
+• В упаковке Вес: было 34900, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 481 CRB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-481-crb/
+• В упаковке Вес: было 41700, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 481 CRC
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-481-crc/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 481 CRCN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-481-crcn/
+• В упаковке Вес: было 38400, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 481 CRN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-481-crn/
+• В упаковке Вес: было 41700, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 481 CRSI
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-481-crsi/
+• В упаковке Вес: было 38000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 690, сейчас нет данных
+
+OKB 481 CRSK
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-481-crsk/
+• В упаковке Вес: было 38000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 690, сейчас нет данных
+
+OKB 481 CRSN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-481-crsn/
+• В упаковке Вес: было 38200, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 482 CRSB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-482-crsb/
+• В упаковке Вес: было 39500, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 482 CRSC
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-482-crsc/
+• В упаковке Вес: было 39500, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 482 CRSI
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-482-crsi/
+• В упаковке Вес: было 39500, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 482 CRSN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-482-crsn/
+• В упаковке Вес: было 39500, сейчас нет данных
+• В упаковке Высота: было 650, сейчас нет данных
+• В упаковке Длина: было 690, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 491 CRGB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-491-crgb/
+• В упаковке Вес: было 35800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 491 CRGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-491-crgw/
+• В упаковке Вес: было 35800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 4911 CRGB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4911-crgb/
+• В упаковке Вес: было 36700, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 690, сейчас нет данных
+
+OKB 4911 CRGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4911-crgw/
+• В упаковке Вес: было 36700, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 690, сейчас нет данных
+
+OKB 4941 CRB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4941-crb/
+• В упаковке Вес: было 30000, сейчас нет данных
+• В упаковке Высота: было 655, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 500, сейчас нет данных
+
+OKB 4941 CRN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-4941-crn/
+• В упаковке Вес: было 29800, сейчас нет данных
+• В упаковке Высота: было 655, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 500, сейчас нет данных
+
+OKB 51041 CEGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-51041-cegn/
+• В упаковке Вес: было 37500, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 51041 CEGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-51041-cegw/
+• В упаковке Вес: было 34500, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 5111 CFGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-5111-cfgn/
+• В упаковке Вес: было 30000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 5189 SX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-5189-sx/
+• В упаковке Вес: было 54150, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 945, сейчас нет данных
+• В упаковке Ширина: было 760, сейчас нет данных
+
+OKB 550 C
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-550-cmx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 550 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-550-cfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 551 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-551-cfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 552 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-552-cfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 552 MX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-552-mx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 560 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-560-cfx/
+• В упаковке Вес: было 39500, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 561 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-561-cfx/
+• В упаковке Вес: было 41600, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 5704 CN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-5704-cn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 5704 CW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-5704-cw/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 5704 CX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-5704-cx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 571 CSGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-571-csgn/
+• В упаковке Вес: было 33000, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 5809 CSX PRO
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-5809-csx-pro/
+• В упаковке Вес: было 60500, сейчас нет данных
+• В упаковке Высота: было 655, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 850, сейчас нет данных
+
+OKB 582 CSX PRO
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-582-csx-pro/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 5820 FGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-5820-fgn/
+• В упаковке Вес: было 28000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 5820 FGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-5820-fgw/
+• В упаковке Вес: было 28000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 591 CSGB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-591-csgb/
+• В упаковке Вес: было 37600, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 660, сейчас нет данных
+• В упаковке Ширина: было 700, сейчас нет данных
+
+OKB 591 CSGM
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-591-csgm/
+• В упаковке Вес: было 37700, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 690, сейчас нет данных
+
+OKB 591 CSGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-591-csgn/
+• В упаковке Вес: было 37700, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 690, сейчас нет данных
+
+OKB 591 CSGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-591-csgw/
+• В упаковке Вес: было 37800, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 660, сейчас нет данных
+• В упаковке Ширина: было 700, сейчас нет данных
+
+OKB 592 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-592-cfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 6061 CPGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-6061-cpgn/
+• В упаковке Вес: было 36620, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 693, сейчас нет данных
+
+OKB 6071 CBX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-6071-cbx/
+• В упаковке Вес: было 36850, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 660, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 6071 CN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-6071-cn/
+• В упаковке Вес: было 36100, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 660, сейчас нет данных
+• В упаковке Ширина: было 650, сейчас нет данных
+
+OKB 61031 QGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-61031-qgn/
+• В упаковке Вес: было 35000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 61061 SQGGr
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-61061-sqggr/
+• В упаковке Вес: было 35000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 61061 SQGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-61061-sqgn/
+• В упаковке Вес: было 35000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 61061 SQGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-61061-sqgw/
+• В упаковке Вес: было 35000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 645, сейчас нет данных
+• В упаковке Ширина: было 670, сейчас нет данных
+
+OKB 670 EN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-670-en/
+• В упаковке Вес: было 32600, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 6820 EN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-6820-en/
+• В упаковке Вес: было 28000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 675, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 6820 EX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-6820-ex/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 6821 CEN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-6821-cen/
+• В упаковке Вес: было 28600, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 6821 CEW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-6821-cew/
+• В упаковке Вес: было 28600, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 691 CSC
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-691-csc/
+• В упаковке Вес: было 30800, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 495, сейчас нет данных
+
+OKB 691 CSGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-691-csgw/
+• В упаковке Вес: было 31320, сейчас нет данных
+• В упаковке Высота: было 645, сейчас нет данных
+• В упаковке Длина: было 635, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 691 CSX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-691-csx/
+• В упаковке Вес: было 30810, сейчас нет данных
+• В упаковке Высота: было 645, сейчас нет данных
+• В упаковке Длина: было 635, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 691 CSXN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-691-csxn/
+• В упаковке Вес: было 30820, сейчас нет данных
+• В упаковке Высота: было 645, сейчас нет данных
+• В упаковке Длина: было 635, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 692 EN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-692-en/
+• В упаковке Вес: было 33500, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 7129 SGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-7129-sgn/
+• В упаковке Вес: было 59600, сейчас нет данных
+• В упаковке Высота: было 700, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 980, сейчас нет данных
+
+OKB 7129 SGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-7129-sgw/
+• В упаковке Вес: было 59800, сейчас нет данных
+• В упаковке Высота: было 700, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 980, сейчас нет данных
+
+OKB 752 CFN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-752-cfn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 752 CFW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-752-cfw/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 752 CMX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-752-cmx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 760 FN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-760-fn/
+• В упаковке Вес: было 38000, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 760 FW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-760-fw/
+• В упаковке Вес: было 38200, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 760 FX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-760-fx/
+• В упаковке Вес: было 38300, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 762 CMN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-762-cmn/
+• В упаковке Вес: было 34100, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 762 CMX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-762-cmx/
+• В упаковке Вес: было 34100, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 770 CEX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-770-cex/
+• В упаковке Вес: было 34400, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 770 CFGB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-770-cfgb/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 770 CFN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-770-cfn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 770 CFW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-770-cfw/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 770 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-770-cfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 771 CFGB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-771-cfgb/
+• В упаковке Вес: было 37000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 630, сейчас нет данных
+
+OKB 771 CFN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-771-cfn/
+• В упаковке Вес: было 37000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 630, сейчас нет данных
+
+OKB 771 CFW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-771-cfw/
+• В упаковке Вес: было 37000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 630, сейчас нет данных
+
+OKB 771 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-771-cfx/
+• В упаковке Вес: было 37000, сейчас нет данных
+• В упаковке Высота: было 670, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 630, сейчас нет данных
+
+OKB 7809 CSGN PRO
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-7809-csgn-pro/
+• В упаковке Вес: было 56000, сейчас нет данных
+• В упаковке Высота: было 700, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 980, сейчас нет данных
+
+OKB 7809 CSGW PRO
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-7809-csgw-pro/
+• В упаковке Вес: было 56000, сейчас нет данных
+• В упаковке Высота: было 700, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 980, сейчас нет данных
+
+OKB 781 CEN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-781-cen/
+• В упаковке Вес: было 34900, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 781 CEW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-781-cew/
+• В упаковке Вес: было 34900, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 781 CEX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-781-cex/
+• В упаковке Вес: было 34900, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 790 CMX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-790-cmx/
+• В упаковке Вес: было 36200, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 791 CEB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-791-ceb/
+• В упаковке Вес: было 35800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 791 CEN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-791-cen/
+• В упаковке Вес: было 35800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 791 CEW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-791-cew/
+• В упаковке Вес: было 35800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 792 CFN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-792-cfn/
+• В упаковке Вес: было 41700, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 792 CFW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-792-cfw/
+• В упаковке Вес: было 41700, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 792 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-792-cfx/
+• В упаковке Вес: было 40000, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 792 PFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-792-pfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 793 CMGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-793-cmgw/
+• В упаковке Вес: было 38800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 793 CMX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-793-cmx/
+• В упаковке Вес: было 38900, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 7931 CMX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-7931-cmx/
+• В упаковке Вес: было 29500, сейчас нет данных
+• В упаковке Высота: было 655, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 500, сейчас нет данных
+
+OKB 7951 CMB
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-7951-cmb/
+• В упаковке Вес: было 29375, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 495, сейчас нет данных
+
+OKB 7951 CMN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-7951-cmn/
+• В упаковке Вес: было 29300, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 495, сейчас нет данных
+
+OKB 7951 CMW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-7951-cmw/
+• В упаковке Вес: было 30000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 495, сейчас нет данных
+
+OKB 8101 N STEAM
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-c-funktsiey-para-okb-8101-n-steam/
+• В упаковке Вес: было 47500, сейчас нет данных
+• В упаковке Высота: было 700, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 8481 ESN PYRO
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8481-esn-pyro/
+• В упаковке Вес: было 35400, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 675, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 8731 CPGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8731-cpgn/
+• В упаковке Вес: было 37500, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 693, сейчас нет данных
+
+OKB 8731 CPGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8731-cpgw/
+• В упаковке Вес: было 37500, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 693, сейчас нет данных
+
+OKB 892 CEN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-892-cen/
+• В упаковке Вес: было 35800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 892 CEW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-892-cew/
+• В упаковке Вес: было 35800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 892 PEN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-s-pirolizom-okb-892-pen/
+• В упаковке Вес: было 42000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 8921 ESN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8921-esn/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 675, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 8921 ESX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8921-esx/
+• В упаковке Вес: было 30000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 8931 CESN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8931-cesn/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 675, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 8931 CESW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8931-cesw/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 8931 CESX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8931-cesx/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 8951 EN ST
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8951-en-st/
+• В упаковке Вес: было 30800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 8951 EX ST
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8951-ex-st/
+• В упаковке Вес: было 30400, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 8972 EN ST
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8972-en-st/
+• В упаковке Вес: было 30800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 8972 EW ST
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-8972-ew-st/
+• В упаковке Вес: было 30800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 9101 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9101-cfx/
+• В упаковке Вес: было 39000, сейчас нет данных
+• В упаковке Высота: было 642, сейчас нет данных
+• В упаковке Длина: было 693, сейчас нет данных
+• В упаковке Ширина: было 639, сейчас нет данных
+
+OKB 9102 CSGB PRO
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9102-csgb-pro/
+• В упаковке Вес: было 42000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 9102 CSGN PRO
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9102-csgn-pro/
+• В упаковке Вес: было 42000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 9102 CSGW PRO
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9102-csgw-pro/
+• В упаковке Вес: было 42000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 9102 CSX PRO
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9102-csx-pro/
+• В упаковке Вес: было 42000, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 700, сейчас нет данных
+• В упаковке Ширина: было 660, сейчас нет данных
+
+OKB 9112 CJN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9112-cjn/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 9112 CJW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9112-cjw/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 9113 CFX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9113-cfx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 9123 CMGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9123-cmgn/
+• В упаковке Вес: было 39000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 9123 CMGW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9123-cmgw/
+• В упаковке Вес: было 38900, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 9133 CEN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9133-cen/
+• В упаковке Вес: было 35800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 9133 CEW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9133-cew/
+• В упаковке Вес: было 35800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 9261 CPGN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9261-cpgn/
+• В упаковке Вес: было 38130, сейчас нет данных
+• В упаковке Высота: было 665, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 693, сейчас нет данных
+
+OKB 97001 GN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-97001-gn/
+• В упаковке Вес: было 35000, сейчас нет данных
+• В упаковке Высота: было 700, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 980, сейчас нет данных
+
+OKB 97001 GW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-97001-gw/
+• В упаковке Вес: было 35000, сейчас нет данных
+• В упаковке Высота: было 700, сейчас нет данных
+• В упаковке Длина: было 650, сейчас нет данных
+• В упаковке Ширина: было 980, сейчас нет данных
+
+OKB 993 CMX
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-993-cmx/
+• В упаковке Вес: было 0, сейчас нет данных
+
+OKB 9951 CESN
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9951-cesn/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 9951 CESW
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9951-cesw/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 9982 EN ST
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9982-en-st/
+• В упаковке Вес: было 33700, сейчас нет данных
+• В упаковке Высота: было 660, сейчас нет данных
+• В упаковке Длина: было 675, сейчас нет данных
+• В упаковке Ширина: было 620, сейчас нет данных
+
+OKB 9982 EW ST
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9982-ew-st/
+• В упаковке Вес: было 30800, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+OKB 9982 EX ST
+https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-9982-ex-st/
+• В упаковке Вес: было 31000, сейчас нет данных
+• В упаковке Высота: было 691, сейчас нет данных
+• В упаковке Длина: было 680, сейчас нет данных
+• В упаковке Ширина: было 635, сейчас нет данных
+
+PSS 38
+https://korting.ru/catalog/aksessuary/kamen-dlya-pitstsy-i-vypechki-korting-pss-38/
+• Вес: было 4080, сейчас нет данных
+• Высота: было 66, сейчас нет данных
+• Длина: было 330, сейчас нет данных
+• Количество: было 89.0000, сейчас нет данных
+• Ширина: было 410, сейчас нет данных
+
+Воздушный HEPA фильтр Korting KIT KAP 800 N/S/W HEPA
+https://korting.ru/catalog/aksessuary/vozdushnyy-hepa-filtr-korting-kit-kap-800-n-s-w-hepa/
+• Вес: было 600, сейчас нет данных
+• Высота: было 30, сейчас нет данных
+• Длина: было 400, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+• Ширина: было 290, сейчас нет данных
+
+Воздушный HEPA фильтр Korting KIT KAP 900 G/N HEPA
+https://korting.ru/catalog/aksessuary/vozdushnyy-hepa-filtr-korting-kit-kap-900-g-n-hepa/
+• Вес: было 500, сейчас нет данных
+• Высота: было 40, сейчас нет данных
+• Длина: было 400, сейчас нет данных
+• Количество: было 63.0000, сейчас нет данных
+• Ширина: было 300, сейчас нет данных
+
+Воздушный антибактериальный фильтр Korting KIT KAP 800 N/S/W Antibacteria
+https://korting.ru/catalog/aksessuary/vozdushnyy-antibakterialnyy-filtr-korting-kit-kap-800-n-s-w-antibacteria/
+• Вес: было 500, сейчас нет данных
+• Высота: было 20, сейчас нет данных
+• Длина: было 400, сейчас нет данных
+• Количество: было 75.0000, сейчас нет данных
+• Ширина: было 290, сейчас нет данных
+
+Воздушный антибактериальный фильтр Korting KIT KAP 900 G/N Antibacteria
+https://korting.ru/catalog/aksessuary/vozdushnyy-antibakterialnyy-filtr-korting-kit-kap-900-g-n-antibacteria/
+• Вес: было 500, сейчас нет данных
+• Высота: было 25, сейчас нет данных
+• Длина: было 400, сейчас нет данных
+• Количество: было 118.0000, сейчас нет данных
+• Ширина: было 300, сейчас нет данных
+
+Воздушный угольный фильтр Korting KIT KAP 800 N/S/W Carbo
+https://korting.ru/catalog/aksessuary/vozdushnyy-ugolnyy-filtr-korting-kit-kap-800-n-s-w-carbo/
+• Вес: было 500, сейчас нет данных
+• Высота: было 20, сейчас нет данных
+• Длина: было 400, сейчас нет данных
+• Количество: было 2.0000, сейчас нет данных
+• Ширина: было 290, сейчас нет данных
+
+Воздушный угольный фильтр Korting KIT KAP 900 G/N Carbo
+https://korting.ru/catalog/aksessuary/vozdushnyy-ugolnyy-filtr-korting-kit-kap-900-g-n-carbo/
+• Вес: было 500, сейчас нет данных
+• Высота: было 25, сейчас нет данных
+• Длина: было 400, сейчас нет данных
+• Количество: было 101.0000, сейчас нет данных
+• Ширина: было 300, сейчас нет данных
+
+Комплект моющих средств для посудомоечной машины Korting DW KIT 301 C
+https://korting.ru/catalog/aksessuary/komplekt-moyushchikh-sredstv-dlya-posudomoechnoy-mashiny-korting-dw-kit-301-c/
+• Вес: было 1700, сейчас нет данных
+• Высота: было 158, сейчас нет данных
+• Длина: было 145, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+• Ширина: было 160, сейчас нет данных
+
+Комплект средств для ухода за посудомоечной машиной Korting DW KIT 201 C
+https://korting.ru/catalog/aksessuary/komplekt-sredstv-dlya-ukhoda-za-posudomoechnoy-mashinoy-korting-dw-kit-201-c/
+• Вес: было 385, сейчас нет данных
+• Высота: было 145, сейчас нет данных
+• Длина: было 54, сейчас нет данных
+• Количество: было 2046.0000, сейчас нет данных
+• Ширина: было 154, сейчас нет данных
+
+Спрей для очистки микроволновых печей Korting K 17
+https://korting.ru/catalog/aksessuary/sprey-dlya-ochistki-mikrovolnovykh-pechey-korting-k-17/
+• Вес: было 330, сейчас нет данных
+• Высота: было 190, сейчас нет данных
+• Длина: было 100, сейчас нет данных
+• Количество: было 5.0000, сейчас нет данных
+• Ширина: было 250, сейчас нет данных
+
+Спрей для очистки стекла и твердых поверхностей Korting K 11
+https://korting.ru/catalog/aksessuary/sprey-dlya-ochistki-stekla-i-tverdykh-poverkhnostey-korting-k-11/
+• Вес: было 330, сейчас нет данных
+• Высота: было 190, сейчас нет данных
+• Длина: было 100, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+• Ширина: было 250, сейчас нет данных
+
+Средство для очистки духовых шкафов и грилей Korting K 05
+https://korting.ru/catalog/aksessuary/sredstvo-dlya-ochistki-dukhovykh-shkafov-i-griley-korting-k-05/
+• Вес: было 330, сейчас нет данных
+• Высота: было 190, сейчас нет данных
+• Длина: было 170, сейчас нет данных
+• Количество: было 14.0000, сейчас нет данных
+• Ширина: было 215, сейчас нет данных
+
+Средство для очистки и защиты нержавеющей стали Korting K 03
+https://korting.ru/catalog/aksessuary/sredstvo-dlya-ochistki-i-zashchity-nerzhaveyushchey-stali-korting-k-03/
+• Вес: было 330, сейчас нет данных
+• Высота: было 190, сейчас нет данных
+• Длина: было 170, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+• Ширина: было 215, сейчас нет данных
+
+Средство для очистки и защиты стеклокерамических поверхностей Korting K 01
+https://korting.ru/catalog/aksessuary/sredstvo-dlya-ochistki-i-zashchity-steklokeramicheskikh-poverkhnostey-korting-k-01/
+• Вес: было 330, сейчас нет данных
+• Высота: было 190, сейчас нет данных
+• Длина: было 170, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+• Ширина: было 215, сейчас нет данных
+
+Таблетки для посудомоечной машины Korting DW KIT 025
+https://korting.ru/catalog/aksessuary/tabletki-dlya-posudomoechnoy-mashiny-korting-dw-kit-025/
+• Вес: было 450, сейчас нет данных
+• Высота: было 150, сейчас нет данных
+• Длина: было 60, сейчас нет данных
+• Количество: было 1653.0000, сейчас нет данных
+• Ширина: было 143, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0264
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0264/
+• Вес: было 700, сейчас нет данных
+• Высота: было 80, сейчас нет данных
+• Длина: было 270, сейчас нет данных
+• Количество: было 41.0000, сейчас нет данных
+• Ширина: было 100, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0265
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0265/
+• Вес: было 340, сейчас нет данных
+• Высота: было 50, сейчас нет данных
+• Длина: было 200, сейчас нет данных
+• Количество: было 1.0000, сейчас нет данных
+• Ширина: было 200, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0266
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0266/
+• Вес: было 400, сейчас нет данных
+• Высота: было 80, сейчас нет данных
+• Длина: было 170, сейчас нет данных
+• Количество: было 35.0000, сейчас нет данных
+• Ширина: было 170, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0267
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0267/
+• Вес: было 400, сейчас нет данных
+• Высота: было 75, сейчас нет данных
+• Длина: было 140, сейчас нет данных
+• Количество: было 20.0000, сейчас нет данных
+• Ширина: было 140, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0268
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0268/
+• Вес: было 600, сейчас нет данных
+• Высота: было 60, сейчас нет данных
+• Длина: было 160, сейчас нет данных
+• Количество: было 541.0000, сейчас нет данных
+• Ширина: было 160, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0269
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-kit-0269/
+• Вес: было 270, сейчас нет данных
+• Высота: было 50, сейчас нет данных
+• Длина: было 190, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+• Ширина: было 180, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0270
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0270/
+• Вес: было 770, сейчас нет данных
+• Высота: было 60, сейчас нет данных
+• Длина: было 230, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+• Ширина: было 250, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0271
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0271/
+• Вес: было 200, сейчас нет данных
+• Высота: было 65, сейчас нет данных
+• Длина: было 160, сейчас нет данных
+• Количество: было 221.0000, сейчас нет данных
+• Ширина: было 160, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0272
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0272/
+• Вес: было 400, сейчас нет данных
+• Высота: было 40, сейчас нет данных
+• Длина: было 255, сейчас нет данных
+• Количество: было 1.0000, сейчас нет данных
+• Ширина: было 180, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0273
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0273/
+• Вес: было 300, сейчас нет данных
+• Высота: было 60, сейчас нет данных
+• Длина: было 150, сейчас нет данных
+• Количество: было 1.0000, сейчас нет данных
+• Ширина: было 150, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0274
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0274/
+• Вес: было 340, сейчас нет данных
+• Высота: было 50, сейчас нет данных
+• Длина: было 170, сейчас нет данных
+• Количество: было 1.0000, сейчас нет данных
+• Ширина: было 175, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0275
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0275/
+• Вес: было 380, сейчас нет данных
+• Высота: было 40, сейчас нет данных
+• Длина: было 260, сейчас нет данных
+• Количество: было 6.0000, сейчас нет данных
+• Ширина: было 280, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0276
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0276/
+• Вес: было 113, сейчас нет данных
+• Высота: было 50, сейчас нет данных
+• Длина: было 170, сейчас нет данных
+• Количество: было 195.0000, сейчас нет данных
+• Ширина: было 170, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0277
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0277/
+• Вес: было 400, сейчас нет данных
+• Высота: было 70, сейчас нет данных
+• Длина: было 160, сейчас нет данных
+• Количество: было 86.0000, сейчас нет данных
+• Ширина: было 160, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0278
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0278/
+• Вес: было 372, сейчас нет данных
+• Высота: было 65, сейчас нет данных
+• Длина: было 165, сейчас нет данных
+• Количество: было 230.0000, сейчас нет данных
+• Ширина: было 165, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0279
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0279/
+• Вес: было 300, сейчас нет данных
+• Высота: было 60, сейчас нет данных
+• Длина: было 150, сейчас нет данных
+• Количество: было 98.0000, сейчас нет данных
+• Ширина: было 150, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0280
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0280/
+• Вес: было 340, сейчас нет данных
+• Высота: было 70, сейчас нет данных
+• Длина: было 70, сейчас нет данных
+• Количество: было 163.0000, сейчас нет данных
+• Ширина: было 170, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0281
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0281/
+• Вес: было 420, сейчас нет данных
+• Высота: было 35, сейчас нет данных
+• Длина: было 234, сейчас нет данных
+• Количество: было 0.0000, сейчас нет данных
+• Ширина: было 233, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0282
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0282/
+• Вес: было 195, сейчас нет данных
+• Высота: было 90, сейчас нет данных
+• Длина: было 140, сейчас нет данных
+• Количество: было 94.0000, сейчас нет данных
+• Ширина: было 130, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0283
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0283/
+• Вес: было 260, сейчас нет данных
+• Высота: было 50, сейчас нет данных
+• Длина: было 170, сейчас нет данных
+• Количество: было 33.0000, сейчас нет данных
+• Ширина: было 170, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0287
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0287/
+• Вес: было 295, сейчас нет данных
+• Высота: было 38, сейчас нет данных
+• Длина: было 250, сейчас нет данных
+• Ширина: было 240, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0288
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhek-korting-kit-0288/
+• Вес: было 290, сейчас нет данных
+• Высота: было 55, сейчас нет данных
+• Длина: было 215, сейчас нет данных
+• Ширина: было 215, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0289
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0289/
+• Вес: было 160, сейчас нет данных
+• Высота: было 55, сейчас нет данных
+• Длина: было 150, сейчас нет данных
+• Ширина: было 165, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0290
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhki-korting-kit-0290/
+• Вес: было 300, сейчас нет данных
+• Высота: было 60, сейчас нет данных
+• Длина: было 150, сейчас нет данных
+• Ширина: было 150, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0291
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhek-korting-kit-0291/
+• Вес: было 469, сейчас нет данных
+• Высота: было 60, сейчас нет данных
+• Длина: было 180, сейчас нет данных
+• Ширина: было 180, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0292
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhek-korting-kit-0292/
+• Вес: было 300, сейчас нет данных
+• Высота: было 60, сейчас нет данных
+• Длина: было 150, сейчас нет данных
+• Ширина: было 150, сейчас нет данных
+
+Угольный фильтр для вытяжки Korting KIT 0293
+https://korting.ru/catalog/aksessuary/ugolnyy-filtr-dlya-vytyazhek-korting-kit-0293/
+• Вес: было 300, сейчас нет данных
+• Высота: было 60, сейчас нет данных
+• Длина: было 150, сейчас нет данных
+• Ширина: было 150, сейчас нет данных
+
+Универсальный фильтр для вытяжки Korting KIT 0284
+https://korting.ru/catalog/aksessuary/universalnyy-filtr-dlya-vytyazhki-korting-kit-0284/
+• Вес: было 160, сейчас нет данных
+• Высота: было 20, сейчас нет данных
+• Длина: было 130, сейчас нет данных
+• Ширина: было 300, сейчас нет данных
+
+Универсальный фильтр для вытяжки Korting KIT 0285
+https://korting.ru/catalog/aksessuary/universalnyy-filtr-dlya-vytyazhki-korting-kit-0285/
+• Вес: было 230, сейчас нет данных
+• Высота: было 35, сейчас нет данных
+• Длина: было 130, сейчас нет данных
+• Ширина: было 270, сейчас нет данных
+
+Универсальный фильтр для вытяжки Korting KIT 0286
+https://korting.ru/catalog/aksessuary/universalnyy-filtr-dlya-vytyazhki-korting-kit-0286/
+• Вес: было 377, сейчас нет данных
+• Высота: было 180, сейчас нет данных
+• Длина: было 60, сейчас нет данных
+• Ширина: было 180, сейчас нет данных

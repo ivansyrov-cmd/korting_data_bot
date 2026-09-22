@@ -1,26 +1,29 @@
 Изменения ТТХ
-Было: 2026-09-16 21:00:19 → стало: 2026-09-17 21:00:18
-Моделей с изменёнными ТТХ: 5, новых: 0, нет в выгрузке: 0
+Было: 2026-09-20 21:00:20 → стало: 2026-09-21 21:00:19
+Моделей с изменёнными ТТХ: 6, новых: 0, нет в выгрузке: 0
 
-KHI 6393 N
-https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-n/
-• Габариты (ВхШхГ): было 163х518х278, стало 192х518х278
-• Угольный фильтр: было KIT 0292 (в комплекте), стало KIT 0292
+HI 32071 KB
+https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-32071-kb/
+• Постоянный нагрев: появилось Да
+• Цвет регуляторов: появилось Черный
 
-KHI 6393 W
-https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-w/
-• Габариты (ВхШхГ): было 163х518х278, стало 192х518х278
-• Угольный фильтр: было KIT 0292 (в комплекте), стало KIT 0292
+HI 43053 B
+https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-43053-b/
+• Постоянный нагрев: появилось Да
 
-KHI 6393 X
-https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-x/
-• Габариты (ВхШхГ): было 163х518х278, стало 192х518х278
-• Угольный фильтр: было KIT 0292 (в комплекте), стало KIT 0292
+HI 43053 BW
+https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-43053-bw/
+• Постоянный нагрев: появилось Да
 
-KHI 6788 GGR
-https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6788-ggr/
-• Угольный фильтр: было KIT 0292 (в комплекте), стало KIT 0292
+HI 61071 KB
+https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-61071-kb/
+• Постоянный нагрев: появилось Да
+• Цвет регуляторов: появилось Черный
 
-KHI 6788 GN
-https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6788-gn/
-• Угольный фильтр: было KIT 0292 (в комплекте), стало KIT 0292
+HI 64560 BCH
+https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-64560-bch/
+• Постоянный нагрев: появилось Да
+
+HIB 64870 BS Smart
+https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hib-64870-bs-smart/
+• Постоянный нагрев: появилось Да

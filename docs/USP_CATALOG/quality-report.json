@@ -1,0 +1,43 @@
+{
+  "models": 390,
+  "usps": 3748,
+  "described_usps": 694,
+  "missing_photos": [
+    {
+      "category": "Варочные поверхности — газовые",
+      "model": "HG 3712 CX"
+    },
+    {
+      "category": "Варочные поверхности — газовые",
+      "model": "HG 6235 CTN"
+    },
+    {
+      "category": "Варочные поверхности — газовые",
+      "model": "HG 665 CX"
+    },
+    {
+      "category": "Варочные поверхности — газовые",
+      "model": "HG 674 CTSK"
+    },
+    {
+      "category": "Варочные поверхности — газовые",
+      "model": "HGG 7987 CTN FLC"
+    },
+    {
+      "category": "Духовые шкафы",
+      "model": "OKB 1350 S GNBX STEAM"
+    },
+    {
+      "category": "Духовые шкафы",
+      "model": "OKB 8731 CPGN"
+    },
+    {
+      "category": "Вытяжки",
+      "model": "KHI 6828 GW"
+    }
+  ],
+  "missing_feed_models": [],
+  "unmatched_usps": [],
+  "ambiguous_usps": [],
+  "fuzzy_matches": 0
+}

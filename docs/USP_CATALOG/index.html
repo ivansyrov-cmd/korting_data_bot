@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#003b4a">
+  <meta name="description" content="Каталог моделей KORTING и их ключевых преимуществ">
+  <title>KORTING — каталог преимуществ</title>
+  <link rel="preconnect" href="https://korting.ru">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <a class="brand" href="./" aria-label="KORTING — каталог преимуществ">
+        <span class="brand__name">körting</span>
+        <span class="brand__caption">каталог преимуществ</span>
+      </a>
+      <div class="hero__copy">
+        <p class="eyebrow">База продуктов</p>
+        <h1>Модели и преимущества KORTING</h1>
+        <p>Фотографии, списки USP и подробные описания технологий в одном месте.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="controls" aria-label="Фильтры каталога">
+    <div class="controls__inner">
+      <label class="search">
+        <span class="sr-only">Поиск</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/>
+        </svg>
+        <input id="search" type="search" autocomplete="off" placeholder="Найти модель или преимущество">
+        <kbd>Ctrl K</kbd>
+      </label>
+      <div class="summary" id="summary" aria-live="polite">Загрузка каталога…</div>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Категории"></nav>
+  </section>
+
+  <main class="main">
+    <div class="category-heading">
+      <div>
+        <p class="eyebrow">Категория</p>
+        <h2 id="category-title">Все модели</h2>
+      </div>
+      <button class="view-toggle" id="collapse-all" type="button">Свернуть описания</button>
+    </div>
+    <section class="catalog" id="catalog" aria-live="polite"></section>
+    <div class="empty" id="empty" hidden>
+      <span class="empty__mark">0</span>
+      <h2>Ничего не найдено</h2>
+      <p>Попробуйте изменить запрос или выбрать другую категорию.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>Каталог сформирован из мастер-глоссария USP</span>
+    <span id="updated"></span>
+  </footer>
+
+  <template id="product-template">
+    <article class="product-card">
+      <a class="product-card__visual" target="_blank" rel="noopener">
+        <img loading="lazy" decoding="async" alt="">
+        <span class="product-card__placeholder" aria-hidden="true">körting</span>
+      </a>
+      <div class="product-card__body">
+        <div class="product-card__topline">
+          <span class="product-card__category"></span>
+          <span class="product-card__count"></span>
+        </div>
+        <h3 class="product-card__model"></h3>
+        <p class="product-card__name"></p>
+        <div class="usp-list"></div>
+        <button class="show-more" type="button" aria-expanded="false"></button>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

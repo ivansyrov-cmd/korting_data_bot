@@ -195,7 +195,7 @@ def load_feed_products(feed_path: Path) -> dict[str, dict[str, str]]:
             if not headers:
                 continue
             model_index = 3
-            photo_index = locate_header(headers, "[DIRECT_PHOTO]")
+            photo_index = locate_header(headers, "[PHOTOS]")
             url_index = locate_header(headers, "[IE_DETAIL_PAGE_URL]", "URL СТРАНИЦЫ")
             name_index = locate_header(headers, "[IE_NAME]", "НАИМЕНОВАНИЕ ЭЛЕМЕНТА")
             if photo_index is None:

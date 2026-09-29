@@ -92,7 +92,7 @@ function renderTabs() {
   elements.tabs.innerHTML = "";
   elements.tabs.setAttribute("role", "tablist");
   const total = state.data.products.length;
-  elements.tabs.appendChild(makeTab("Все модели", "all", total));
+  elements.tabs.appendChild(makeTab("Все", "all", total));
   for (const category of state.data.categories) {
     elements.tabs.appendChild(
       makeTab(category.name, category.name, category.count),

@@ -45,7 +45,7 @@ button { color: inherit; }
 }
 
 .hero {
-  min-height: 160px;
+  min-height: 100px;
   color: #fff;
   background:
     radial-gradient(circle at 78% 24%, rgba(0, 169, 206, .24), transparent 31%),
@@ -54,7 +54,7 @@ button { color: inherit; }
 
 .hero__inner {
   width: min(1440px, calc(100% - 64px));
-  min-height: 160px;
+  min-height: 100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(220px, .6fr) minmax(500px, 1.4fr);
@@ -71,18 +71,18 @@ button { color: inherit; }
 
 .brand img {
   display: block;
-  width: clamp(190px, 20vw, 290px);
+  width: clamp(64px, 7vw, 97px);
   height: auto;
 }
 
 .hero__copy {
   max-width: 760px;
-  padding: 42px 0;
+  padding: 18px 0;
 }
 
 .hero h1 {
-  margin: 8px 0 16px;
-  font-size: clamp(36px, 5vw, 68px);
+  margin: 4px 0 8px;
+  font-size: clamp(18px, 2.5vw, 34px);
   font-weight: 400;
   line-height: 1.04;
   letter-spacing: -.035em;
@@ -101,7 +101,7 @@ button { color: inherit; }
   position: sticky;
   z-index: 20;
   top: 0;
-  margin-top: -35px;
+  margin-top: -20px;
   background: #f4f7f7;
   box-shadow: 0 12px 24px rgba(0, 48, 60, .06);
 }
@@ -411,8 +411,8 @@ kbd {
 @media (max-width: 900px) {
   .hero__inner {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 52px 0 72px;
+    gap: 8px;
+    padding: 12px 0 24px;
   }
 
   .hero__copy { padding: 0; }
@@ -430,7 +430,7 @@ kbd {
     width: min(100% - 28px, 1440px);
   }
 
-  .hero h1 { font-size: 38px; }
+  .hero h1 { font-size: 24px; }
 
   .controls__inner {
     align-items: stretch;

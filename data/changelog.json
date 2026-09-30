@@ -1,16 +1,35 @@
 {
-  "old_date": "2026-09-27 21:00:18",
-  "new_date": "2026-09-28 21:00:19",
-  "generated": "2026-09-29 09:21",
-  "changed": [],
-  "added": [
+  "old_date": "2026-09-28 21:00:19",
+  "new_date": "2026-09-29 21:00:18",
+  "generated": "2026-09-30 09:11",
+  "changed": [
     {
-      "model": "KMI 835 TGN",
-      "name": "Микроволновая печь KMI 835 TGN",
-      "category": "Микроволновые печи",
-      "url": "https://korting.ru/catalog/mikrovolnovye-pechi/mikrovolnovaya-pech-kmi-835-tgn/",
-      "fields": []
+      "model": "HIB 67010 HID M",
+      "name": "Индукционная варочная панель HIB 67010 HID M",
+      "category": "Варочные поверхности",
+      "url": "https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hib-67010-hid-m/",
+      "fields": [
+        {
+          "name": "Постоянный нагрев",
+          "old": "",
+          "new": "Да"
+        }
+      ]
+    },
+    {
+      "model": "HIB 97010 HID M",
+      "name": "Индукционная варочная панель HIB 97010 HID M",
+      "category": "Варочные поверхности",
+      "url": "https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hib-97010-hid-m/",
+      "fields": [
+        {
+          "name": "Постоянный нагрев",
+          "old": "",
+          "new": "Да"
+        }
+      ]
     }
   ],
+  "added": [],
   "removed": []
 }

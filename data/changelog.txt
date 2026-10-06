@@ -1,11 +1,15 @@
 Изменения ТТХ
-Было: 2026-09-28 21:00:19 → стало: 2026-09-29 21:00:18
-Моделей с изменёнными ТТХ: 2, новых: 0, нет в выгрузке: 0
+Было: 2026-10-04 21:00:19 → стало: 2026-10-05 21:00:18
+Моделей с изменёнными ТТХ: 3, новых: 0, нет в выгрузке: 0
 
-HIB 67010 HID M
-https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hib-67010-hid-m/
-• Постоянный нагрев: появилось Да
+KHI 6393 N
+https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-n/
+• Номинальная потребляемая мощность: было 125, стало 128
 
-HIB 97010 HID M
-https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hib-97010-hid-m/
-• Постоянный нагрев: появилось Да
+KHI 6393 W
+https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-w/
+• Номинальная потребляемая мощность: было 125, стало 128
+
+KHI 6393 X
+https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-x/
+• Номинальная потребляемая мощность: было 125, стало 128

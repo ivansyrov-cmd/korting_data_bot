@@ -1,44 +1,18 @@
 {
-  "old_date": "2026-10-04 21:00:19",
-  "new_date": "2026-10-05 21:00:18",
-  "generated": "2026-10-06 09:39",
+  "old_date": "2026-10-11 21:00:18",
+  "new_date": "2026-10-12 21:00:15",
+  "generated": "2026-10-13 09:55",
   "changed": [
     {
-      "model": "KHI 6393 N",
-      "name": "Полновстраиваемая вытяжка KHI 6393 N",
-      "category": "Вытяжки",
-      "url": "https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-n/",
+      "model": "KD 60IHP83 GR",
+      "name": "Сушильная машина KD 60IHP83 GR",
+      "category": "Сушильные машины",
+      "url": "https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60ihp83-gr/",
       "fields": [
         {
-          "name": "Номинальная потребляемая мощность (Вт)",
-          "old": "125",
-          "new": "128"
-        }
-      ]
-    },
-    {
-      "model": "KHI 6393 W",
-      "name": "Полновстраиваемая вытяжка KHI 6393 W",
-      "category": "Вытяжки",
-      "url": "https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-w/",
-      "fields": [
-        {
-          "name": "Номинальная потребляемая мощность (Вт)",
-          "old": "125",
-          "new": "128"
-        }
-      ]
-    },
-    {
-      "model": "KHI 6393 X",
-      "name": "Полновстраиваемая вытяжка KHI 6393 X",
-      "category": "Вытяжки",
-      "url": "https://korting.ru/catalog/vytyazhki/polnovstraivaemaya-vytyazhka-khi-6393-x/",
-      "fields": [
-        {
-          "name": "Номинальная потребляемая мощность (Вт)",
-          "old": "125",
-          "new": "128"
+          "name": "Слив конденсата",
+          "old": "",
+          "new": "Контейнер/Водоотвод"
         }
       ]
     }

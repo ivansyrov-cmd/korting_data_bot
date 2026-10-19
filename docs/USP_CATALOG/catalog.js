@@ -1,5 +1,8 @@
 "use strict";
 
+if (typeof document === "undefined") {
+  require("../../app.js");
+} else {
 const PREVIEW_COUNT = 3;
 const state = {
   data: null,
@@ -265,3 +268,4 @@ async function start() {
 }
 
 start();
+}

@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
-"""Bootstrap pip and install requirements on hosts without python3-pip."""
+"""Install vendored wheels with bundled pip.pyz — no system pip required."""
 from __future__ import annotations
 
 import subprocess
 import sys
-import urllib.request
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 REQ = ROOT / "requirements.txt"
-PIP_PYZ_URL = "https://bootstrap.pypa.io/pip/pip.pyz"
-GET_PIP_URL = "https://bootstrap.pypa.io/get-pip.py"
-TMP = Path("/tmp") if Path("/tmp").is_dir() else Path.cwd()
+PIP_PYZ = ROOT / "vendor" / "pip.pyz"
+WHEELS = ROOT / "vendor" / "wheels"
 
 
 def _run(cmd: list[str]) -> None:
@@ -19,52 +18,27 @@ def _run(cmd: list[str]) -> None:
     subprocess.check_call(cmd)
 
 
-def _has_pip() -> bool:
-    try:
-        subprocess.check_call(
-            [sys.executable, "-m", "pip", "--version"],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
-        return True
-    except Exception:
-        return False
+def _writable_dir() -> Path:
+    for folder in (
+        Path("/tmp/korting-pkgs"),
+        Path(tempfile.gettempdir()) / "korting-pkgs",
+        ROOT / ".deps",
+    ):
+        try:
+            folder.mkdir(parents=True, exist_ok=True)
+            probe = folder / ".write_test"
+            probe.write_text("ok", encoding="utf-8")
+            probe.unlink()
+            return folder
+        except OSError:
+            continue
+    return ROOT / ".deps"
 
 
-def _bootstrap_pip() -> None:
-    if _has_pip():
-        return
-    print("python has no pip, bootstrapping", flush=True)
-    try:
-        _run([sys.executable, "-m", "ensurepip", "--upgrade"])
-        if _has_pip():
-            return
-    except Exception as exc:
-        print(f"ensurepip failed: {exc}", flush=True)
-    get_pip = TMP / "get-pip.py"
-    try:
-        print(f"download {GET_PIP_URL}", flush=True)
-        urllib.request.urlretrieve(GET_PIP_URL, get_pip)
-        _run([sys.executable, str(get_pip)])
-        if _has_pip():
-            return
-    except Exception as exc:
-        print(f"get-pip failed: {exc}", flush=True)
-    try:
-        _run(["apt-get", "update", "-qq"])
-        _run(["apt-get", "install", "-y", "-qq", "python3-pip"])
-    except Exception as exc:
-        print(f"apt-get python3-pip failed: {exc}", flush=True)
-
-
-def _pip_install(args: list[str]) -> None:
-    if _has_pip():
-        _run([sys.executable, "-m", "pip", *args])
-        return
-    pyz = TMP / "pip.pyz"
-    print(f"download {PIP_PYZ_URL}", flush=True)
-    urllib.request.urlretrieve(PIP_PYZ_URL, pyz)
-    _run([sys.executable, str(pyz), *args])
+def _use_path(folder: Path) -> None:
+    text = str(folder)
+    if text not in sys.path:
+        sys.path.insert(0, text)
 
 
 def deps_ok() -> bool:
@@ -77,13 +51,28 @@ def deps_ok() -> bool:
 
 
 def ensure_deps() -> None:
+    target = _writable_dir()
+    _use_path(target)
     if deps_ok():
         return
     if not REQ.is_file():
         raise SystemExit(f"missing {REQ}")
-    print("installing python deps", flush=True)
-    _bootstrap_pip()
-    _pip_install(["install", "-r", str(REQ)])
+    if not PIP_PYZ.is_file():
+        raise SystemExit(f"missing bundled pip: {PIP_PYZ}")
+    print(f"installing python deps into {target}", flush=True)
+    cmd = [
+        sys.executable,
+        str(PIP_PYZ),
+        "install",
+        "--upgrade",
+        "--target",
+        str(target),
+    ]
+    if WHEELS.is_dir() and any(WHEELS.glob("*.whl")):
+        cmd += ["--no-index", "--find-links", str(WHEELS)]
+    cmd += ["-r", str(REQ)]
+    _run(cmd)
+    _use_path(target)
     if not deps_ok():
         raise SystemExit(
             "python packages are still missing after install "

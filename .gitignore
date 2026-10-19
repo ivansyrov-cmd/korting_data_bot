@@ -12,4 +12,5 @@ data/*.xlsx
 Thumbs.db
 ~$*
 .env
+.deps/
 

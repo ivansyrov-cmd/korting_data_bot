@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-"""Install vendored wheels with bundled pip.pyz — no system pip required."""
+"""Install vendored wheels without system pip (Alpine PEP 668 safe)."""
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 import tempfile
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -15,7 +17,9 @@ WHEELS = ROOT / "vendor" / "wheels"
 
 def _run(cmd: list[str]) -> None:
     print("run:", " ".join(cmd), flush=True)
-    subprocess.check_call(cmd)
+    env = os.environ.copy()
+    env["PIP_BREAK_SYSTEM_PACKAGES"] = "1"
+    subprocess.check_call(cmd, env=env)
 
 
 def _writable_dir() -> Path:
@@ -50,16 +54,18 @@ def deps_ok() -> bool:
         return False
 
 
-def ensure_deps() -> None:
-    target = _writable_dir()
-    _use_path(target)
-    if deps_ok():
-        return
-    if not REQ.is_file():
-        raise SystemExit(f"missing {REQ}")
-    if not PIP_PYZ.is_file():
-        raise SystemExit(f"missing bundled pip: {PIP_PYZ}")
-    print(f"installing python deps into {target}", flush=True)
+def _unpack_wheels(target: Path) -> None:
+    wheels = sorted(WHEELS.glob("*.whl")) if WHEELS.is_dir() else []
+    if not wheels:
+        raise FileNotFoundError(f"no wheels in {WHEELS}")
+    print(f"unpacking {len(wheels)} wheels into {target}", flush=True)
+    for whl in wheels:
+        print(f"unpack {whl.name}", flush=True)
+        with zipfile.ZipFile(whl) as zf:
+            zf.extractall(target)
+
+
+def _pip_target_install(target: Path) -> None:
     cmd = [
         sys.executable,
         str(PIP_PYZ),
@@ -67,11 +73,27 @@ def ensure_deps() -> None:
         "--upgrade",
         "--target",
         str(target),
+        "--break-system-packages",
     ]
     if WHEELS.is_dir() and any(WHEELS.glob("*.whl")):
         cmd += ["--no-index", "--find-links", str(WHEELS)]
     cmd += ["-r", str(REQ)]
     _run(cmd)
+
+
+def ensure_deps() -> None:
+    target = _writable_dir()
+    _use_path(target)
+    if deps_ok():
+        return
+    print(f"installing python deps into {target}", flush=True)
+    try:
+        _unpack_wheels(target)
+    except Exception as exc:
+        print(f"wheel unpack failed: {exc}", flush=True)
+        if not PIP_PYZ.is_file():
+            raise SystemExit(f"missing bundled pip: {PIP_PYZ}")
+        _pip_target_install(target)
     _use_path(target)
     if not deps_ok():
         raise SystemExit(

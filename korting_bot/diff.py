@@ -8,8 +8,6 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 
-from openpyxl import Workbook
-
 from .catalog import SKIP_PARAM_NAMES, SKIP_PARAM_PREFIXES
 from .paths import BUNDLED_CHANGELOG, CHANGELOG_JSON, CHANGELOG_TXT, CHANGELOG_XLSX, DATA_DIR
 from .synonyms import alnum, norm
@@ -281,6 +279,8 @@ def _from_json(data: dict) -> Changelog:
 
 
 def save_xlsx(report: Changelog, path: Path = CHANGELOG_XLSX) -> Path:
+    from openpyxl import Workbook
+
     wb = Workbook()
     ws = wb.active
     ws.title = "Изменения"

@@ -11,7 +11,7 @@ function run(index) {
     console.error("python not found");
     process.exit(1);
   }
-  const child = spawn(cmd, ["main.py"], {
+  const child = spawn(cmd, ["start.py"], {
     cwd: root,
     stdio: "inherit",
     env: process.env,

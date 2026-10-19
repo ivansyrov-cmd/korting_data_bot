@@ -11,8 +11,6 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from openpyxl import load_workbook
-
 from .paths import CATALOG_PATH, DATA_DIR, FEED_URL, SITE_BASE, YML_ENRICH_URL
 
 USER_AGENT = "KortingSpecsBot/1.0"
@@ -264,6 +262,8 @@ def _product_url(raw: str) -> str:
 
 
 def parse_xlsx(path: Path, source: str = FEED_URL, feed_date: str = "") -> dict:
+    from openpyxl import load_workbook
+
     wb = load_workbook(path, read_only=True, data_only=True)
     products = []
     seen: set[str] = set()

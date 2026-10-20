@@ -1,18 +1,18 @@
 {
-  "old_date": "2026-10-11 21:00:18",
-  "new_date": "2026-10-12 21:00:15",
-  "generated": "2026-10-13 09:55",
+  "old_date": "2026-10-18 21:00:17",
+  "new_date": "2026-10-19 21:00:18",
+  "generated": "2026-10-20 08:04",
   "changed": [
     {
-      "model": "KD 60IHP83 GR",
-      "name": "Сушильная машина KD 60IHP83 GR",
-      "category": "Сушильные машины",
-      "url": "https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60ihp83-gr/",
+      "model": "KWMT 1270 I",
+      "name": "Стиральная машина с вертикальной загрузкой KWMT 1270 I",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/stiralnaya-mashina-s-vertikalnoy-zagruzkoy-kwmt-1270-i/",
       "fields": [
         {
-          "name": "Слив конденсата",
-          "old": "",
-          "new": "Контейнер/Водоотвод"
+          "name": "Загрузка (кг)",
+          "old": "7.5",
+          "new": "7"
         }
       ]
     }

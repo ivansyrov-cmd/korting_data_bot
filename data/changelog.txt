@@ -1,11 +1,7 @@
 Изменения ТТХ
-Было: 2026-10-19 21:00:18 → стало: 2026-10-20 21:00:17
-Моделей с изменёнными ТТХ: 2, новых: 0, нет в выгрузке: 0
+Было: 2026-10-20 21:00:17 → стало: 2026-10-21 21:00:17
+Моделей с изменёнными ТТХ: 1, новых: 0, нет в выгрузке: 0
 
-HI 60504 B
-https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-60504-b/
+HI 30041 B
+https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-30041-b/
 • Постоянный нагрев: появилось Да
-
-KD 60IHP83 GR
-https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60ihp83-gr/
-• Слив конденсата: было Контейнер/Водоотвод, стало Водоотвод

@@ -1,31 +1,18 @@
 {
-  "old_date": "2026-10-19 21:00:18",
-  "new_date": "2026-10-20 21:00:17",
-  "generated": "2026-10-21 08:09",
+  "old_date": "2026-10-20 21:00:17",
+  "new_date": "2026-10-21 21:00:17",
+  "generated": "2026-10-22 08:10",
   "changed": [
     {
-      "model": "HI 60504 B",
-      "name": "Индукционная варочная панель HI 60504 B",
+      "model": "HI 30041 B",
+      "name": "Индукционная варочная панель HI 30041 B",
       "category": "Варочные поверхности",
-      "url": "https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-60504-b/",
+      "url": "https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-30041-b/",
       "fields": [
         {
           "name": "Постоянный нагрев",
           "old": "",
           "new": "Да"
-        }
-      ]
-    },
-    {
-      "model": "KD 60IHP83 GR",
-      "name": "Сушильная машина KD 60IHP83 GR",
-      "category": "Сушильные машины",
-      "url": "https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60ihp83-gr/",
-      "fields": [
-        {
-          "name": "Слив конденсата",
-          "old": "Контейнер/Водоотвод",
-          "new": "Водоотвод"
         }
       ]
     }

@@ -1,7 +1,15 @@
 Изменения ТТХ
-Было: 2026-10-20 21:00:17 → стало: 2026-10-21 21:00:17
-Моделей с изменёнными ТТХ: 1, новых: 0, нет в выгрузке: 0
+Было: 2026-11-01 21:00:13 → стало: 2026-11-02 21:00:17
+Моделей с изменёнными ТТХ: 2, новых: 2, нет в выгрузке: 0
 
-HI 30041 B
-https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-30041-b/
-• Постоянный нагрев: появилось Да
+KWDI 14I96
+https://korting.ru/catalog/stiralnye-mashiny/stiralnaya-mashina-s-sushkoy-kwdi-14i96/
+• Размеры встраивания (ВхШхГ): появилось 825x600x580
+
+KWMI 14IS94
+https://korting.ru/catalog/stiralnye-mashiny/stiralnaya-mashina-kwmi-14is94/
+• Размеры встраивания (ВхШхГ): появилось 825x600x580
+
+Новые модели в выгрузке:
+• KCM 1008 EX — Кофеварки
+• KCM 1009 EN — Кофеварки

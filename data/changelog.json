@@ -1,22 +1,50 @@
 {
-  "old_date": "2026-10-20 21:00:17",
-  "new_date": "2026-10-21 21:00:17",
-  "generated": "2026-10-22 08:10",
+  "old_date": "2026-11-01 21:00:13",
+  "new_date": "2026-11-02 21:00:17",
+  "generated": "2026-11-03 10:21",
   "changed": [
     {
-      "model": "HI 30041 B",
-      "name": "Индукционная варочная панель HI 30041 B",
-      "category": "Варочные поверхности",
-      "url": "https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-30041-b/",
+      "model": "KWDI 14I96",
+      "name": "Стиральная машина с сушкой KWDI 14I96",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/stiralnaya-mashina-s-sushkoy-kwdi-14i96/",
       "fields": [
         {
-          "name": "Постоянный нагрев",
+          "name": "Размеры встраивания (ВхШхГ) (мм)",
           "old": "",
-          "new": "Да"
+          "new": "825x600x580"
+        }
+      ]
+    },
+    {
+      "model": "KWMI 14IS94",
+      "name": "Стиральная машина KWMI 14IS94",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/stiralnaya-mashina-kwmi-14is94/",
+      "fields": [
+        {
+          "name": "Размеры встраивания (ВхШхГ) (мм)",
+          "old": "",
+          "new": "825x600x580"
         }
       ]
     }
   ],
-  "added": [],
+  "added": [
+    {
+      "model": "KCM 1008 EX",
+      "name": "Кофеварка KCM 1008 EX",
+      "category": "Кофеварки",
+      "url": "https://korting.ru/catalog/kofevarki/kofevarka-kcm-1008-ex/",
+      "fields": []
+    },
+    {
+      "model": "KCM 1009 EN",
+      "name": "Кофеварка KCM 1009 EN",
+      "category": "Кофеварки",
+      "url": "https://korting.ru/catalog/kofevarki/kofevarka-kcm-1009-en/",
+      "fields": []
+    }
+  ],
   "removed": []
 }

@@ -1,15 +1,92 @@
 Изменения ТТХ
-Было: 2026-11-01 21:00:13 → стало: 2026-11-02 21:00:17
-Моделей с изменёнными ТТХ: 2, новых: 2, нет в выгрузке: 0
+Было: 2026-11-02 21:00:17 → стало: 2026-11-03 21:00:14
+Моделей с изменёнными ТТХ: 22, новых: 0, нет в выгрузке: 0
 
-KWDI 14I96
-https://korting.ru/catalog/stiralnye-mashiny/stiralnaya-mashina-s-sushkoy-kwdi-14i96/
-• Размеры встраивания (ВхШхГ): появилось 825x600x580
+KNFC 64977 SI GN
+https://korting.ru/catalog/kholodilniki/kholodilnik-knfc-64977-si-gn/
+• Установка в нишу без бокового зазора: появилось Да
 
-KWMI 14IS94
-https://korting.ru/catalog/stiralnye-mashiny/stiralnaya-mashina-kwmi-14is94/
-• Размеры встраивания (ВхШхГ): появилось 825x600x580
+KNFC 64977 SI GW
+https://korting.ru/catalog/kholodilniki/kholodilnik-knfc-64977-si-gw/
+• Установка в нишу без бокового зазора: появилось Да
 
-Новые модели в выгрузке:
-• KCM 1008 EX — Кофеварки
-• KCM 1009 EN — Кофеварки
+KNFC 64977 SI X
+https://korting.ru/catalog/kholodilniki/kholodilnik-knfc-64977-si-x/
+• Установка в нишу без бокового зазора: появилось Да
+
+KNFF 80307 SI GN
+https://korting.ru/catalog/kholodilniki/chetyrekhdvernyy-kholodilnik-knff-80307-si-gn/
+• Установка в нишу без бокового зазора: появилось Да
+
+KNFF 80307 SI GW
+https://korting.ru/catalog/kholodilniki/chetyrekhdvernyy-kholodilnik-knff-80307-si-gw/
+• Установка в нишу без бокового зазора: появилось Да
+
+KNFF 80307 SI X
+https://korting.ru/catalog/kholodilniki/chetyrekhdvernyy-kholodilnik-knff-80307-si-x/
+• Установка в нишу без бокового зазора: появилось Да
+
+KNFM 94899 GN
+https://korting.ru/catalog/kholodilniki/chetyrekhdvernyy-kholodilnik-knfm-94899-gn/
+• Установка в нишу без бокового зазора: появилось Да
+
+KNFM 94899 XN
+https://korting.ru/catalog/kholodilniki/chetyrekhdvernyy-kholodilnik-knfm-94899-xn/
+• Установка в нишу без бокового зазора: появилось Да
+
+KWK 0901 G
+https://korting.ru/catalog/chayniki/steklyannyy-chaynik-kwk-0901-g/
+• Объем: появилось 1.7
+
+KWK 0902 G
+https://korting.ru/catalog/chayniki/steklyannyy-chaynik-kwk-0902-g/
+• Объем: появилось 1.7
+
+KWK 0903 G
+https://korting.ru/catalog/chayniki/steklyannyy-chaynik-kwk-0903-g/
+• Объем: появилось 1.7
+
+KWK 0904 Infinity
+https://korting.ru/catalog/chayniki/stalnoy-chaynik-kwk-0904-infinity/
+• Объем: появилось 1.7
+
+KWK 0905 Polar
+https://korting.ru/catalog/chayniki/stalnoy-chaynik-kwk-0905-polar/
+• Объем: появилось 1.7
+
+KWK 0906 Gourmet
+https://korting.ru/catalog/chayniki/stalnoy-chaynik-kwk-0906-gourmet/
+• Объем: появилось 1.7
+
+KWK 0907 G
+https://korting.ru/catalog/chayniki/steklyannyy-chaynik-kwk-0907-g/
+• Объем: появилось 1.7
+
+KWK 0908 G
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0908-g/
+• Объем: появилось 1.7
+
+KWK 0909 G
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0909-g/
+• Объем: было 1.5, стало 1.7
+• Объем: появилось 1.7
+
+KWK 0910 G
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0910-g/
+• Объем: появилось 1.2
+
+KWK 0911 G
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0911-g/
+• Объем: появилось 1.5
+
+KWK 0912 G
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0912-g/
+• Объем: появилось 1.7
+
+KWK 0913 S
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0913-s/
+• Объем: появилось 1.5
+
+KWK 0915 S
+https://korting.ru/catalog/chayniki/elektricheskiy-chaynik-kwk-0915-s/
+• Объем: появилось 1.7

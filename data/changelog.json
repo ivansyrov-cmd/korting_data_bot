@@ -1,31 +1,192 @@
 {
-  "old_date": "2026-11-04 21:00:14",
-  "new_date": "2026-11-05 21:00:14",
-  "generated": "2026-11-06 10:12",
+  "old_date": "2026-11-09 21:00:14",
+  "new_date": "2026-11-11 21:00:15",
+  "generated": "2026-11-12 10:30",
   "changed": [
     {
-      "model": "HI 30041 B",
-      "name": "Индукционная варочная панель HI 30041 B",
-      "category": "Варочные поверхности",
-      "url": "https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-30041-b/",
+      "model": "KD 60IHP83 GR",
+      "name": "Сушильная машина KD 60IHP83 GR",
+      "category": "Сушильные машины",
+      "url": "https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60ihp83-gr/",
       "fields": [
         {
-          "name": "Вилка питания",
-          "old": "Нет",
-          "new": "Да"
+          "name": "Габариты (ВхШхГ) (мм)",
+          "old": "853х600х584",
+          "new": "853х600х561"
+        },
+        {
+          "name": "Глубина (см)",
+          "old": "60",
+          "new": "56"
         }
       ]
     },
     {
-      "model": "HI 30041 BW",
-      "name": "Индукционная варочная панель HI 30041 BW",
-      "category": "Варочные поверхности",
-      "url": "https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-30041-bw/",
+      "model": "KWD 58IL14106",
+      "name": "Отдельностоящая стиральная машина с сушкой KWD 58IL14106",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-sushkoy-kwd-58il14106/",
       "fields": [
         {
-          "name": "Вилка питания",
-          "old": "Нет",
-          "new": "Да"
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWD 58L1496",
+      "name": "Отдельностоящая стиральная машина с сушкой KWD 58L1496",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-sushkoy-kwd-58l1496/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWD 58L1496 S",
+      "name": "Отдельностоящая стиральная машина с сушкой KWD 58L1496 S",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-sushkoy-kwd-58l1496-s/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWM 42IL1267",
+      "name": "Узкая стиральная машина KWM 42IL1267",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/uzkaya-stiralnaya-mashina-kwm-42il1267/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Электронное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWM 42ILS1269",
+      "name": "Узкая стиральная машина с паром KWM 42ILS1269",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/uzkaya-stiralnaya-mashina-s-parom-kwm-42ils1269/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Электронное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWM 42LS1267",
+      "name": "Узкая стиральная машина с паром KWM 42LS1267",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/uzkaya-stiralnaya-mashina-s-parom-kwm-42ls1267/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWM 42LS1267 B",
+      "name": "Узкая стиральная машина с паром KWM 42LS1267 B",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/uzkaya-stiralnaya-mashina-s-parom-kwm-42ls1267-b/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWM 42LS1267 N",
+      "name": "Узкая стиральная машина с паром KWM 42LS1267 N",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/uzkaya-stiralnaya-mashina-s-parom-kwm-42ls1267-n/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWM 53LS1278 S",
+      "name": "Отдельностоящая стиральная машина с паром KWM 53LS1278 S",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-parom-kwm-53ls1278-s/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWM 58ILS1297",
+      "name": "Отдельностоящая стиральная машина с паром KWM 58ILS1297",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-parom-kwm-58ils1297/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWM 58ILS1297 N",
+      "name": "Отдельностоящая стиральная машина с паром KWM 58ILS1297 N",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-parom-kwm-58ils1297-n/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWM 58ILS1297 S",
+      "name": "Отдельностоящая стиральная машина с паром KWM 58ILS1297 S",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-parom-kwm-58ils1297-s/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
+        }
+      ]
+    },
+    {
+      "model": "KWM 58ILS1299",
+      "name": "Отдельностоящая стиральная машина с паром KWM 58ILS1299",
+      "category": "Стиральные машины",
+      "url": "https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-parom-kwm-58ils1299/",
+      "fields": [
+        {
+          "name": "Управление",
+          "old": "Сенсорное",
+          "new": "Электронное сенсорное управление"
         }
       ]
     }

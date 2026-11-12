@@ -1,11 +1,60 @@
 Изменения ТТХ
-Было: 2026-11-04 21:00:14 → стало: 2026-11-05 21:00:14
-Моделей с изменёнными ТТХ: 2, новых: 0, нет в выгрузке: 0
+Было: 2026-11-09 21:00:14 → стало: 2026-11-11 21:00:15
+Моделей с изменёнными ТТХ: 14, новых: 0, нет в выгрузке: 0
 
-HI 30041 B
-https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-30041-b/
-• Вилка питания: было Нет, стало Да
+KD 60IHP83 GR
+https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60ihp83-gr/
+• Габариты (ВхШхГ): было 853х600х584, стало 853х600х561
+• Глубина: было 60, стало 56
 
-HI 30041 BW
-https://korting.ru/catalog/varochnye-poverkhnosti/induktsionnaya-varochnaya-panel-hi-30041-bw/
-• Вилка питания: было Нет, стало Да
+KWD 58IL14106
+https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-sushkoy-kwd-58il14106/
+• Управление: было Сенсорное, стало Электронное сенсорное управление
+
+KWD 58L1496
+https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-sushkoy-kwd-58l1496/
+• Управление: было Сенсорное, стало Электронное сенсорное управление
+
+KWD 58L1496 S
+https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-sushkoy-kwd-58l1496-s/
+• Управление: было Сенсорное, стало Электронное сенсорное управление
+
+KWM 42IL1267
+https://korting.ru/catalog/stiralnye-mashiny/uzkaya-stiralnaya-mashina-kwm-42il1267/
+• Управление: было Электронное, стало Электронное сенсорное управление
+
+KWM 42ILS1269
+https://korting.ru/catalog/stiralnye-mashiny/uzkaya-stiralnaya-mashina-s-parom-kwm-42ils1269/
+• Управление: было Электронное, стало Электронное сенсорное управление
+
+KWM 42LS1267
+https://korting.ru/catalog/stiralnye-mashiny/uzkaya-stiralnaya-mashina-s-parom-kwm-42ls1267/
+• Управление: было Сенсорное, стало Электронное сенсорное управление
+
+KWM 42LS1267 B
+https://korting.ru/catalog/stiralnye-mashiny/uzkaya-stiralnaya-mashina-s-parom-kwm-42ls1267-b/
+• Управление: было Сенсорное, стало Электронное сенсорное управление
+
+KWM 42LS1267 N
+https://korting.ru/catalog/stiralnye-mashiny/uzkaya-stiralnaya-mashina-s-parom-kwm-42ls1267-n/
+• Управление: было Сенсорное, стало Электронное сенсорное управление
+
+KWM 53LS1278 S
+https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-parom-kwm-53ls1278-s/
+• Управление: было Сенсорное, стало Электронное сенсорное управление
+
+KWM 58ILS1297
+https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-parom-kwm-58ils1297/
+• Управление: было Сенсорное, стало Электронное сенсорное управление
+
+KWM 58ILS1297 N
+https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-parom-kwm-58ils1297-n/
+• Управление: было Сенсорное, стало Электронное сенсорное управление
+
+KWM 58ILS1297 S
+https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-parom-kwm-58ils1297-s/
+• Управление: было Сенсорное, стало Электронное сенсорное управление
+
+KWM 58ILS1299
+https://korting.ru/catalog/stiralnye-mashiny/otdelnostoyashchaya-stiralnaya-mashina-s-parom-kwm-58ils1299/
+• Управление: было Сенсорное, стало Электронное сенсорное управление

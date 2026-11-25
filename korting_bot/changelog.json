@@ -1,30 +1,22 @@
 {
-  "old_date": "2026-11-22 21:00:16",
-  "new_date": "2026-11-23 21:00:14",
-  "generated": "2026-11-24 13:09",
+  "old_date": "2026-11-23 21:00:14",
+  "new_date": "2026-11-24 21:00:13",
+  "generated": "2026-11-25 11:56",
   "changed": [
     {
-      "model": "KD 60IHP83 GR",
-      "name": "Сушильная машина KD 60IHP83 GR",
-      "category": "Сушильные машины",
-      "url": "https://korting.ru/catalog/sushilnye-mashiny/sushilnaya-mashina-kd-60ihp83-gr/",
+      "model": "OKB 6061 CPGN",
+      "name": "Электрический духовой шкаф OKB 6061 CPGN",
+      "category": "Духовые шкафы",
+      "url": "https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-6061-cpgn/",
       "fields": [
         {
-          "name": "Класс энергопотребления",
-          "old": "A+++",
-          "new": "A+"
+          "name": "Автоматические программы приготовления (шт.)",
+          "old": "22",
+          "new": ""
         }
       ]
     }
   ],
-  "added": [
-    {
-      "model": "OKB 1390 S GNM",
-      "name": "Электрический духовой шкаф OKB 1390 S GNM",
-      "category": "Духовые шкафы",
-      "url": "https://korting.ru/catalog/dukhovye-shkafy/elektricheskiy-dukhovoy-shkaf-okb-1390-s-gnm/",
-      "fields": []
-    }
-  ],
+  "added": [],
   "removed": []
 }
